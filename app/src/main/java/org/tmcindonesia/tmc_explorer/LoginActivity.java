@@ -31,6 +31,13 @@ public class LoginActivity extends AppCompatActivity {
         RegisterPage = findViewById(R.id.buttonRegister);
         firebaseAuth = FirebaseAuth.getInstance();
 
+        // on create activity check if there is a user already login
+        // if yes, then go to home page
+        if (firebaseAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), Home.class));
+            finish();
+        }
+
         // click-register-button
         RegisterPage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +66,5 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
-
     }
 }
