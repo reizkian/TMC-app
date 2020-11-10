@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "161580484712",
+    "firebase_url": "https://mail-box-explorer.firebaseio.com",
+    "project_id": "mail-box-explorer",
+    "storage_bucket": "mail-box-explorer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161580484712:android:449cff4477650cd61393dd",
+        "android_client_info": {
+          "package_name": "org.tmcindonesia.mailboxexplorer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161580484712-5101t80d0grde89aj152punt0cnj2jam.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.tmcindonesia.mailboxexplorer",
+            "certificate_hash": "3b6b4e1b54c66b75997e257b0dd1599f436d04d1"
+          }
+        },
+        {
+          "client_id": "161580484712-cghvbjd4cg4sg5cj7s0e2nadol0ahtqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsPh4aTdU7gejZWSTYn797FTxtJbqFibk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161580484712-cghvbjd4cg4sg5cj7s0e2nadol0ahtqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
