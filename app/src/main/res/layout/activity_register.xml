@@ -9,8 +9,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="4dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:id="@+id/editTextEmailRegister"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="112dp"
         android:hint="Email"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +55,19 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextPasswordRegister" />
 
     <EditText
+        android:id="@+id/editTextDateBirth"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="Tanggal lahir (tanggal/bulan/tahun)"
+        android:textSize="15dp"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUserNameRegister" />
+
+    <EditText
         android:id="@+id/editTextCityRegister"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -64,7 +77,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUserNameRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDateBirth" />
+
+    <EditText
+        android:id="@+id/editTextProvinceRegister"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="Provinsi"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCityRegister" />
+
 
     <EditText
         android:id="@+id/editTextInstitutionRegister"
@@ -76,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCityRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextProvinceRegister" />
 
     <Button
         android:id="@+id/buttonRegisterCreate"
@@ -99,4 +125,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonRegisterCreate" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

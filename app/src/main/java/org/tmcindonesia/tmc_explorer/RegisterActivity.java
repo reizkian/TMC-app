@@ -3,12 +3,16 @@ package org.tmcindonesia.tmc_explorer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -22,17 +26,19 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText emailRegister, passwordRegister, userNameRegister, cityRegister, institutionRegister;
+    EditText emailRegister, passwordRegister, userNameRegister, dateBirthRegister, cityRegister, provinceRegister, institutionRegister;
     Button buttonRegister;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     ProgressBar progressBar;
     String userID;
+    DatePickerDialog.OnDateSetListener dateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +48,14 @@ public class RegisterActivity extends AppCompatActivity {
         emailRegister = findViewById(R.id.editTextEmailRegister);
         passwordRegister = findViewById(R.id.editTextPasswordRegister);
         userNameRegister = findViewById(R.id.editTextUserNameRegister);
+        dateBirthRegister = findViewById(R.id.editTextDateBirth);
         cityRegister = findViewById(R.id.editTextCityRegister);
+        provinceRegister = findViewById(R.id.editTextProvinceRegister);
         institutionRegister = findViewById(R.id.editTextInstitutionRegister);
         buttonRegister = findViewById(R.id.buttonRegisterCreate);
         progressBar = findViewById(R.id.progressBar);
 
+        // FIRE BASE
         // fire base authentication instance
         firebaseAuth = FirebaseAuth.getInstance();
         // if user is authenticated then go to home page
@@ -54,9 +63,39 @@ public class RegisterActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), Home.class));
             finish();
         }
-
         // fire store instance
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+        // DATE PICKER - user birth date
+        // edit text user birth date on click
+        dateBirthRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar calendar = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONDAY);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog dialog = new DatePickerDialog(
+                        RegisterActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        dateListener,
+                        year,month,day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+        // date picker dialog instance
+        dateListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month +1;
+                Log.d(TAG, "onDateSet: dd/mm/yyy is" + dayOfMonth +"/"+ month +"/"+ year);
+                String date = dayOfMonth +"/"+ month +"/"+ year;
+                dateBirthRegister.setText(date);
+            }
+        };
+
+
 
         // REGISTER button clicked
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +105,9 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = emailRegister.getText().toString().trim();
                 String password = passwordRegister.getText().toString().trim();
                 String username = userNameRegister.getText().toString().trim();
+                String datebirth = dateBirthRegister.getText().toString().trim();
                 String city = cityRegister.getText().toString().trim();
+                String province = provinceRegister.getText().toString().trim();
                 String institution = institutionRegister.getText().toString().trim();
 
                 // check if text box is empty
@@ -96,7 +137,7 @@ public class RegisterActivity extends AppCompatActivity {
                 // progressBar set to visible
                 progressBar.setVisibility(View.VISIBLE);
 
-                //REGISTER USER IN FIRE BASE
+                // REGISTER USER IN FIRE BASE
                 // handles user creation
                 firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -107,10 +148,12 @@ public class RegisterActivity extends AppCompatActivity {
                             userID = firebaseAuth.getCurrentUser().getUid();
                             DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
                             Map<String, Object> user  = new HashMap<>();
-                            user.put("FullName",username);
-                            user.put("email",email);
-                            user.put("kota", city);
-                            user.put("institusi", institution);
+                            user.put("Name",username);
+                            user.put("Birth Date", datebirth);
+                            user.put("Email",email);
+                            user.put("City", city);
+                            user.put("Province", province);
+                            user.put("Institution", institution);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
