@@ -115,6 +115,9 @@ public class Home extends AppCompatActivity {
                 if (position ==  0) {
                     Toast.makeText(Home.this, "Youtube Description", Toast.LENGTH_SHORT).show();
                 }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "Youtube Description", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
