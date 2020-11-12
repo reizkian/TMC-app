@@ -1,5 +1,8 @@
 package org.tmcindonesia.tmc_explorer;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -8,20 +11,56 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
+    //Variable for Button List
+    ListView listView;
+    String mTitle[] =
+            {"Seperti apakah Allah itu?",
+            "Seperti apakah Allah itu?",
+            "Darimana kita berasal?",
+            "Siapakah musuh kita?",
+            "Siapakah Juru Selamat yang di janjikan?",
+            "Yesus hidup sekarang!"};
+
+    String mDescription[] =
+            {"Allah begitu hebat dan ajaib",
+            "Hanya ada satu Allah, namun tiga pribadi",
+            "Allah adalah sang pencipta",
+            "Seorang musuh membawa dosa ke dunia",
+            "Dia yang menyelamatkan umat-Nya",
+            "Dia duduk di sebelah kanan Allah Bapa"};
+
+    int images[] =
+            {R.drawable.icon_satu,
+            R.drawable.icon_dua,
+            R.drawable.icon_tiga,
+            R.drawable.icon_empat,
+            R.drawable.icon_lima,
+            R.drawable.icon_enam};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // Collapsing Toolbar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        // Collapsing Toolbar
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         AppBarLayout appBarLayout = (AppBarLayout)findViewById(R.id.app_bar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
@@ -44,15 +83,70 @@ public class Home extends AppCompatActivity {
 
         // Floating Button
         FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
-
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                // open TMC Indonesia website
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/")));
             }
         });
 
+        // List View Button
+        listView = findViewById(R.id.listView);
+        // now create an adapter class
+        MyAdapter adapter = new MyAdapter(this, mTitle, mDescription, images);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "Facebook Description", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "Whatsapp Description", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "Twitter Description", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "Instagram Description", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "Youtube Description", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
+    class MyAdapter extends ArrayAdapter<String> {
+        Context context;
+        String rTitle[];
+        String rDescription[];
+        int rImgs[];
+
+        MyAdapter (Context c, String title[], String description[], int imgs[]) {
+            super(c, R.layout.row, R.id.textView1, title);
+            this.context = c;
+            this.rTitle = title;
+            this.rDescription = description;
+            this.rImgs = imgs;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View row = layoutInflater.inflate(R.layout.row, parent, false);
+            ImageView images = row.findViewById(R.id.image);
+            TextView myTitle = row.findViewById(R.id.textView1);
+            TextView myDescription = row.findViewById(R.id.textView2);
+
+            //set our resources on views
+            images.setImageResource(rImgs[position]);
+            myTitle.setText(rTitle[position]);
+            myDescription.setText(rDescription[position]);
+            return row;
+        }
     }
 }
