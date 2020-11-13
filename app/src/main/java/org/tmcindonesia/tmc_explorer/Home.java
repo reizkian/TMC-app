@@ -35,7 +35,13 @@ public class Home extends AppCompatActivity {
             "Darimana kita berasal?",
             "Siapakah musuh kita?",
             "Siapakah Juru Selamat yang di janjikan?",
-            "Yesus hidup sekarang!"};
+            "Yesus hidup sekarang!",
+            "Empat pertanyaan",
+            "Aku menjadi anak Allah!",
+            "Yesus akan datang kembali!",
+            "Empat hal yang Allah ingin aku tahu",
+            "Manusia baru dalam Kristus",
+            "Karunia terbesar dari Allah"};
 
     String mDescription[] =
             {"Allah begitu hebat dan ajaib",
@@ -43,7 +49,13 @@ public class Home extends AppCompatActivity {
             "Allah adalah sang pencipta",
             "Seorang musuh membawa dosa ke dunia",
             "Dia yang menyelamatkan umat-Nya",
-            "Dia duduk di sebelah kanan Allah Bapa"};
+            "Dia duduk di sebelah kanan Allah Bapa",
+            "Apa itu dosa?",
+            "Bagaimana aku dapat diselamatkan",
+            "Bagaimana kita tahu Tuhan Yesus akan datang kembali?",
+            "Aku menerima kehidupan yang kekal",
+            "Allah menjadikan aku baru",
+            "Yesus Kristus anak-Nya"};
 
     int images[] =
             {R.drawable.icon_satu,
@@ -51,7 +63,13 @@ public class Home extends AppCompatActivity {
             R.drawable.icon_tiga,
             R.drawable.icon_empat,
             R.drawable.icon_lima,
-            R.drawable.icon_enam};
+            R.drawable.icon_enam,
+            R.drawable.icon_tujuh,
+            R.drawable.icon_delapan,
+            R.drawable.icon_sembilan,
+            R.drawable.icon_sepuluh,
+            R.drawable.icon_sebelas,
+            R.drawable.icon_duabelas};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,22 +119,40 @@ public class Home extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
-                    Toast.makeText(Home.this, "Facebook Description", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Home.this, "1", Toast.LENGTH_SHORT).show();
                 }
                 if (position ==  0) {
-                    Toast.makeText(Home.this, "Whatsapp Description", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Home.this, "2", Toast.LENGTH_SHORT).show();
                 }
                 if (position ==  0) {
-                    Toast.makeText(Home.this, "Twitter Description", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Home.this, "3", Toast.LENGTH_SHORT).show();
                 }
                 if (position ==  0) {
-                    Toast.makeText(Home.this, "Instagram Description", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Home.this, "4", Toast.LENGTH_SHORT).show();
                 }
                 if (position ==  0) {
-                    Toast.makeText(Home.this, "Youtube Description", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Home.this, "5", Toast.LENGTH_SHORT).show();
                 }
                 if (position ==  0) {
-                    Toast.makeText(Home.this, "Youtube Description", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Home.this, "6", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "7", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "8", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "9", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "10", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "11", Toast.LENGTH_SHORT).show();
+                }
+                if (position ==  0) {
+                    Toast.makeText(Home.this, "12", Toast.LENGTH_SHORT).show();
                 }
             }
         });
