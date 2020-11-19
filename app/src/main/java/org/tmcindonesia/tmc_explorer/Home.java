@@ -44,8 +44,8 @@ public class Home extends AppCompatActivity {
             "Karunia terbesar dari Allah"};
 
     String mDescription[] =
-            {"Allah begitu hebat dan ajaib",
-            "Hanya ada satu Allah, namun tiga pribadi",
+            {"Bagian 1: Allah begitu hebat dan ajaib",
+            "Bagian 2: Hanya ada satu Allah, namun tiga pribadi",
             "Allah adalah sang pencipta",
             "Seorang musuh membawa dosa ke dunia",
             "Dia yang menyelamatkan umat-Nya",
@@ -119,40 +119,40 @@ public class Home extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
-                    Toast.makeText(Home.this, "1", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson1Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "2", Toast.LENGTH_SHORT).show();
+                if (position ==  1) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson2Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "3", Toast.LENGTH_SHORT).show();
+                if (position ==  2) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson3Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "4", Toast.LENGTH_SHORT).show();
+                if (position ==  3) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson4Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "5", Toast.LENGTH_SHORT).show();
+                if (position ==  4) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson5Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "6", Toast.LENGTH_SHORT).show();
+                if (position ==  5) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson6Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "7", Toast.LENGTH_SHORT).show();
+                if (position ==  6) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson7Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "8", Toast.LENGTH_SHORT).show();
+                if (position ==  7) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson8Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "9", Toast.LENGTH_SHORT).show();
+                if (position ==  8) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson9Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "10", Toast.LENGTH_SHORT).show();
+                if (position ==  9) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson10Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "11", Toast.LENGTH_SHORT).show();
+                if (position ==  10) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson11Read.class));
                 }
-                if (position ==  0) {
-                    Toast.makeText(Home.this, "12", Toast.LENGTH_SHORT).show();
+                if (position ==  11) {
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.lessons.Lesson12Read.class));
                 }
             }
         });
