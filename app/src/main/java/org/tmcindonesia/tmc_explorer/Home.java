@@ -71,6 +71,21 @@ public class Home extends AppCompatActivity {
             R.drawable.icon_sebelas,
             R.drawable.icon_duabelas};
 
+    String mLessonNumber[] = {
+            "pelajaran 1",
+            "pelajaran 2",
+            "pelajaran 3",
+            "pelajaran 4",
+            "pelajaran 5",
+            "pelajaran 6",
+            "pelajaran 7",
+            "pelajaran 8",
+            "pelajaran 9",
+            "pelajaran 10",
+            "pelajaran 11",
+            "pelajaran 12"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -113,7 +128,7 @@ public class Home extends AppCompatActivity {
         // List View Button
         listView = findViewById(R.id.listView);
         // now create an adapter class
-        MyAdapter adapter = new MyAdapter(this, mTitle, mDescription, images);
+        MyAdapter adapter = new MyAdapter(this, mTitle, mDescription, images, mLessonNumber);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -163,13 +178,15 @@ public class Home extends AppCompatActivity {
         String rTitle[];
         String rDescription[];
         int rImgs[];
+        String[] rLessonNumber;
 
-        MyAdapter (Context c, String title[], String description[], int imgs[]) {
+        MyAdapter (Context c, String title[], String description[], int imgs[], String lesson_number[]) {
             super(c, R.layout.row, R.id.textView1, title);
             this.context = c;
             this.rTitle = title;
             this.rDescription = description;
             this.rImgs = imgs;
+            this.rLessonNumber = lesson_number;
         }
 
         @NonNull
@@ -180,11 +197,13 @@ public class Home extends AppCompatActivity {
             ImageView images = row.findViewById(R.id.image);
             TextView myTitle = row.findViewById(R.id.textView1);
             TextView myDescription = row.findViewById(R.id.textView2);
+            TextView myLessonNumber = row.findViewById(R.id.textView3);
 
             //set our resources on views
             images.setImageResource(rImgs[position]);
             myTitle.setText(rTitle[position]);
             myDescription.setText(rDescription[position]);
+            myLessonNumber.setText(rLessonNumber[position]);
             return row;
         }
     }
