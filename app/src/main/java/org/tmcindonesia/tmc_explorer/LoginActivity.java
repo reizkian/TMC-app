@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     Button LoginPage, RegisterPage;
     EditText EmailLogin, PasswordLogin;
     FirebaseAuth firebaseAuth;
+    ProgressBar progressBarLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         LoginPage = findViewById(R.id.buttonLogin);
         RegisterPage = findViewById(R.id.buttonRegister);
         firebaseAuth = FirebaseAuth.getInstance();
+        progressBarLogin = findViewById(R.id.progressBarLogin);
 
 
         // NETWORK CHECK
@@ -63,6 +66,9 @@ public class LoginActivity extends AppCompatActivity {
         LoginPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // set progressBar to visible
+                progressBarLogin.setVisibility(View.VISIBLE);
+
                 String email_login = EmailLogin.getText().toString().trim();
                 String password_login = PasswordLogin.getText().toString().trim();
 

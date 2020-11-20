@@ -1,0 +1,16 @@
+** PDF PAGE INPUT NUMBERING **
+**        EXPLORER 1        **
+
+lesson1 - 2,3,4,5,6
+lesson2 - 10,11,12,13,14
+lesson3 - 18,19,20,21,22
+lesson4 - 26,27,28,29,30
+lesson5 - 34,35,36,37,38
+lesson6 - 42,43,44,45,46
+lesson7 - 50,51,52,53,54
+lesson8 - 58,59,60,61,62
+lesson9 - 66,67,68,69,70
+lesson10 - 74,75,76,77,78
+lesson11 - 82,83,84,85,86
+lesson12 - 90,91,92,93,94,95
+
