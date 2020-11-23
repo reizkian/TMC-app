@@ -20,6 +20,10 @@
     </style>
 
     <style name="Theme.TMC_Explorer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.TMC_Explorer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="collapsingToolbarLayoutTitleColor" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#373a40</item>
+    </style>
 </resources>

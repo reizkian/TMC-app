@@ -3,12 +3,16 @@ package org.tmcindonesia.tmc_explorer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -19,17 +23,29 @@ public class LoginActivity extends AppCompatActivity {
     Button LoginPage, RegisterPage;
     EditText EmailLogin, PasswordLogin;
     FirebaseAuth firebaseAuth;
+    ProgressBar progressBarLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        boolean networkConnection;
         EmailLogin = findViewById(R.id.editTextEmailLogin);
         PasswordLogin = findViewById(R.id.editTextPasswordLogin);
         LoginPage = findViewById(R.id.buttonLogin);
         RegisterPage = findViewById(R.id.buttonRegister);
         firebaseAuth = FirebaseAuth.getInstance();
+        progressBarLogin = findViewById(R.id.progressBarLogin);
+
+
+        // NETWORK CHECK
+        // if no internet, login is not necessary for user to use the App
+        networkConnection = isInternetActive();
+        if(!networkConnection){
+            startActivity(new Intent(getApplicationContext(), Home.class));
+            finish();
+        }
 
         // on create activity check if there is a user already login
         // if yes, then go to home page
@@ -50,6 +66,9 @@ public class LoginActivity extends AppCompatActivity {
         LoginPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // set progressBar to visible
+                progressBarLogin.setVisibility(View.VISIBLE);
+
                 String email_login = EmailLogin.getText().toString().trim();
                 String password_login = PasswordLogin.getText().toString().trim();
 
@@ -66,5 +85,21 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    // METHOD - check for internet connection
+    public boolean isInternetActive(){
+        // connectivity manager instance
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        //check mobile connection
+        boolean MobileConnection = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED;
+        // check wifi connection
+        boolean WifiConnection = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED;
+        // return value
+        if(MobileConnection || WifiConnection){
+            return true;
+        }else {
+            return false;
+        }
     }
 }

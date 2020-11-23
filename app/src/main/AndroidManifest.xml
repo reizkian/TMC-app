@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.tmcindonesia.tmc_explorer">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -9,10 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
+        <activity android:name=".lessons.Lesson5Read"></activity>
+        <activity android:name=".lessons.Lesson12Read" />
+        <activity android:name=".lessons.Lesson11Read" />
+        <activity android:name=".lessons.Lesson10Read" />
+        <activity android:name=".lessons.Lesson9Read" />
+        <activity android:name=".lessons.Lesson8Read" />
+        <activity android:name=".lessons.Lesson7Read" />
+        <activity android:name=".lessons.Lesson6Read" />
+        <activity android:name=".lessons.Lesson4Read" />
+        <activity android:name=".lessons.Lesson3Read" />
+        <activity android:name=".lessons.Lesson2Read" />
+        <activity android:name=".lessons.Lesson1Read" />
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.TMC_Explorer.NoActionBar"></activity>
+            android:theme="@style/Theme.TMC_Explorer.NoActionBar" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
