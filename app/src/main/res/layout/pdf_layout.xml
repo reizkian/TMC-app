@@ -12,5 +12,24 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       app:layout_constraintBottom_toBottomOf="parent" />
-  
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab_question"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/fab_margin"
+      android:tint="@color/white"
+      app:backgroundTint="#ec524b"
+      app:borderWidth="0dp"
+      app:layout_anchorGravity="bottom|end"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.954"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.976"
+      app:maxImageSize="50dp"
+      app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_24"
+      app:tint="@android:color/transparent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
