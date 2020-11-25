@@ -12,7 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
-        <activity android:name=".lessons.Lesson5Read"></activity>
+        <activity android:name=".questions.Questions"></activity>
+        <activity android:name=".questions.Question8" />
+        <activity android:name=".questions.Question7" />
+        <activity android:name=".questions.Question6" />
+        <activity android:name=".questions.Question5" />
+        <activity android:name=".questions.Question4" />
+        <activity android:name=".questions.Question3" />
+        <activity android:name=".questions.Question2" />
+        <activity android:name=".questions.Question1" />
+        <activity android:name=".lessons.Lesson5Read" />
         <activity android:name=".lessons.Lesson12Read" />
         <activity android:name=".lessons.Lesson11Read" />
         <activity android:name=".lessons.Lesson10Read" />
