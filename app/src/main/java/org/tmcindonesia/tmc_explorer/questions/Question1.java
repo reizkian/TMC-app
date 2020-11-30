@@ -19,8 +19,8 @@ public class Question1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question1);
 
-        UserAnswerTreasureHunt = (EditText)findViewById(R.id.answer_treasurehunt);
-        checkAnswer = (Button)findViewById(R.id.check_answer);
+        UserAnswerTreasureHunt = (EditText)findViewById(R.id.editText_AnswerTreasureHunt);
+        checkAnswer = (Button)findViewById(R.id.button_CheckAnswer);
 
         // True Answer for Treasure Hunt Question
         String trueAnswerTreasureHunt = "love god with all your heart";

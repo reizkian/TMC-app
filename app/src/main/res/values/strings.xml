@@ -13,33 +13,33 @@
     <!--    Q U E S T I O N    P A G E    L E S S O N   1 -->
     <!--    ============================================= -->
     <!--    question page 1-->
-    <string name="treasurehunt1_question1">Seperti apakah Allah itu?</string>
-    <string name="treasurehunt1_answer_1a">Allah seperti suatu "kekuatan" baik di dalam alam semesta</string>
-    <string name="treasurehunt1_answer_1b">Allah adalah seorang pribadi yang mengenal dan mencintai kita</string>
+    <string name="questionpage1_question1">Seperti apakah Allah itu?</string>
+    <string name="questionpage1_answer_1a">Allah seperti suatu "kekuatan" baik di dalam alam semesta</string>
+    <string name="questionpage1_answer_1b">Allah adalah seorang pribadi yang mengenal dan mencintai kita</string>
     <!--    question page 2-->
-    <string name="treasurehunt1_question2">Kita tak dapat melihat Allah karena</string>
-    <string name="treasurehunt1_answer_2a">Allah adalah roh dan kita tidak dapat melihat roh</string>
-    <string name="treasurehunt1_answer_2b">Allah sangat jauh sehingal kita tak dapat melihat-Nya</string>
+    <string name="questionpage1_question2">Kita tak dapat melihat Allah karena</string>
+    <string name="questionpage1_answer_2a">Allah adalah roh dan kita tidak dapat melihat roh</string>
+    <string name="questionpage1_answer_2b">Allah sangat jauh sehingal kita tak dapat melihat-Nya</string>
     <!--    question page 3-->
-    <string name="treasurehunt1_question3">Ketika Alkitab berkata Allah itu kudus, artinya</string>
-    <string name="treasurehunt1_answer_3a">Allah itu sangat baik</string>
-    <string name="treasurehunt1_answer_3b">Allah itu suci dan sempurna tanpa dosa sedikitpun</string>
+    <string name="questionpage1_question3">Ketika Alkitab berkata Allah itu kudus, artinya</string>
+    <string name="questionpage1_answer_3a">Allah itu sangat baik</string>
+    <string name="questionpage1_answer_3b">Allah itu suci dan sempurna tanpa dosa sedikitpun</string>
     <!--    question page 4-->
-    <string name="treasurehunt1_question4">Aku tahu Allah mengasihiku karena</string>
-    <string name="treasurehunt1_answer_4a">Ia akan memberikan Putra-Nya untuk mati menebus dosa ku</string>
-    <string name="treasurehunt1_answer_4b">Aku mearasa begitu</string>
+    <string name="questionpage1_question4">Aku tahu Allah mengasihiku karena</string>
+    <string name="questionpage1_answer_4a">Ia akan memberikan Putra-Nya untuk mati menebus dosa ku</string>
+    <string name="questionpage1_answer_4b">Aku mearasa begitu</string>
     <!--    question page 5-->
-    <string name="treasurehunt1_question5">Apa yang Allah ingin kita lakukan?</string>
-    <string name="treasurehunt1_answer_5a">Allah ingin kita mencintai-Nya dengan sepenuh hati kita</string>
-    <string name="treasurehunt1_answer_5b"> Allah ingin kita melakukan banyak kebaikan untuk-Nya</string>
+    <string name="questionpage1_question5">Apa yang Allah ingin kita lakukan?</string>
+    <string name="questionpage1_answer_5a">Allah ingin kita mencintai-Nya dengan sepenuh hati kita</string>
+    <string name="questionpage1_answer_5b"> Allah ingin kita melakukan banyak kebaikan untuk-Nya</string>
 
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   1 -->
     <!--    =============================================================== -->
-    <string name="MJWJ1_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ1_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ1_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ1_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ1_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ1_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ1_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ1_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
 
 
 
