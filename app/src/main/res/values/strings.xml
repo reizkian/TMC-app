@@ -19,7 +19,7 @@
     <!--    question page 2-->
     <string name="questionpage1_question2">Kita tak dapat melihat Allah karena</string>
     <string name="questionpage1_answer_2a">Allah adalah roh dan kita tidak dapat melihat roh</string>
-    <string name="questionpage1_answer_2b">Allah sangat jauh sehingal kita tak dapat melihat-Nya</string>
+    <string name="questionpage1_answer_2b">Allah sangat jauh sehinga kita tak dapat melihat-Nya</string>
     <!--    question page 3-->
     <string name="questionpage1_question3">Ketika Alkitab berkata Allah itu kudus, artinya</string>
     <string name="questionpage1_answer_3a">Allah itu sangat baik</string>
@@ -27,7 +27,7 @@
     <!--    question page 4-->
     <string name="questionpage1_question4">Aku tahu Allah mengasihiku karena</string>
     <string name="questionpage1_answer_4a">Ia akan memberikan Putra-Nya untuk mati menebus dosa ku</string>
-    <string name="questionpage1_answer_4b">Aku mearasa begitu</string>
+    <string name="questionpage1_answer_4b">Aku marasa begitu</string>
     <!--    question page 5-->
     <string name="questionpage1_question5">Apa yang Allah ingin kita lakukan?</string>
     <string name="questionpage1_answer_5a">Allah ingin kita mencintai-Nya dengan sepenuh hati kita</string>
@@ -75,12 +75,12 @@
     <string name="questionpage2_answer_5b">Ia tahu segalanya, bahkan pikiran-pikiran kita</string>
 
     <!--    =============================================================== -->
-    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   1 -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   2 -->
     <!--    =============================================================== -->
-    <string name="MJWJ2_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ2_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ2_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ2_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ2_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ2_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ2_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ2_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
 
 
 
@@ -118,10 +118,10 @@
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   3 -->
     <!--    =============================================================== -->
-    <string name="MJWJ3_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ3_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ3_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ3_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ3_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ3_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ3_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ3_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
 
 
 
@@ -159,10 +159,10 @@
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   4 -->
     <!--    =============================================================== -->
-    <string name="MJWJ4_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ4_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ4_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ4_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ4_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ4_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ4_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ4_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
 
 
 
@@ -200,11 +200,11 @@
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   5 -->
     <!--    =============================================================== -->
-    <string name="MJWJ5_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ5_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ5_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ5_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
-    
+    <string name="MJWJ5_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ5_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ5_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ5_question4">4. Kami mendorongmu unt uk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+
 
 
 
@@ -241,10 +241,10 @@
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   5 -->
     <!--    =============================================================== -->
-    <string name="MJWJ6_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ6_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ6_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ6_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ6_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ6_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ6_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ6_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
     
 
 
@@ -282,10 +282,10 @@
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   7 -->
     <!--    =============================================================== -->
-    <string name="MJWJ7_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ7_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ7_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ7_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ7_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ7_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ7_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ7_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
 
     
 
@@ -324,10 +324,10 @@
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   8 -->
     <!--    =============================================================== -->
-    <string name="MJWJ8_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ8_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ8_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ8_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ8_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ8_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ8_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ8_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
     
     
 
@@ -366,10 +366,10 @@
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   9 -->
     <!--    =============================================================== -->
-    <string name="MJWJ9_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ9_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ9_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ9_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ9_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ9_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ9_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ9_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
     
     
 
@@ -408,10 +408,10 @@
     <!--    ================================================================ -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   10 -->
     <!--    ================================================================ -->
-    <string name="MJWJ10_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ10_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ10_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ10_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ10_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ10_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ10_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ10_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
         
     
 
@@ -450,10 +450,10 @@
     <!--    ================================================================ -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   11 -->
     <!--    ================================================================ -->
-    <string name="MJWJ11_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ11_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ11_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ11_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ11_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ11_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ11_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ11_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
             
     
 
@@ -492,8 +492,8 @@
     <!--    ================================================================ -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   12 -->
     <!--    ================================================================ -->
-    <string name="MJWJ12_question1">Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ12_question2">Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ12_question3">Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ12_question4">Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
+    <string name="MJWJ12_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ12_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ12_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ12_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!?</string>
 </resources>
