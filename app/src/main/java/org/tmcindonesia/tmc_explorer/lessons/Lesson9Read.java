@@ -2,9 +2,12 @@ package org.tmcindonesia.tmc_explorer.lessons;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.github.barteksc.pdfviewer.PDFView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.tmcindonesia.tmc_explorer.R;
 

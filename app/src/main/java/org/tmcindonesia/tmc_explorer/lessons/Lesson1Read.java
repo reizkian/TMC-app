@@ -1,16 +1,20 @@
 package org.tmcindonesia.tmc_explorer.lessons;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnRenderListener;
 import com.github.barteksc.pdfviewer.util.FitPolicy;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.tmcindonesia.tmc_explorer.R;
 
 public class Lesson1Read extends AppCompatActivity {
-
+    FloatingActionButton fab_goToQuestion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,5 +40,15 @@ public class Lesson1Read extends AppCompatActivity {
                 .pageFling(false)
                 .nightMode(false)
                 .load();
+
+        FloatingActionButton fab_goToQuestion;
+        fab_goToQuestion = findViewById(R.id.fab_question);
+        fab_goToQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer.questions.Question1.class));
+            }
+        });
+
     }
 }
