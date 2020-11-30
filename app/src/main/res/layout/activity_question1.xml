@@ -29,11 +29,12 @@
             android:id="@+id/imageView_treasurehunt_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView_berburuharta"
+            android:layout_marginTop="-72dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:layout_marginTop="-70dp"
-            app:srcCompat="@drawable/treasurehunt_1"
-            android:layout_below="@+id/imageView_berburuharta"/>
+            app:srcCompat="@drawable/treasurehunt_1" />
+
         <EditText
             android:id="@+id/editText_AnswerTreasureHunt"
             android:layout_width="match_parent"
@@ -48,7 +49,7 @@
             android:background="@drawable/paper_box"
             android:layout_below="@+id/imageView_treasurehunt_1"/>
         <Button
-            android:id="@+id/button_CheckAnswer"
+            android:id="@+id/button_CheckAnswer_TreasureHunt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/editText_AnswerTreasureHunt"
@@ -65,7 +66,7 @@
             android:id="@+id/relativeLayout_QuestionPage1_MultipleChoiceContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button_CheckAnswer">
+            android:layout_below="@id/button_CheckAnswer_TreasureHunt">
             <!--    question page 1-->
             <RelativeLayout
                 android:id="@+id/relativeLayout_QuestionPage1_MultipleChoiceContainer1"
@@ -196,7 +197,7 @@
                 </RadioGroup>
             </RelativeLayout>
 
-            <!--    question page 4-->
+            <!--    question page 5-->
             <RelativeLayout
                 android:id="@+id/relativeLayout_QuestionPage1_MultipleChoiceContainer5"
                 android:layout_width="match_parent"
@@ -228,8 +229,17 @@
                         android:text="@string/questionpage1_answer_5b"  />
                 </RadioGroup>
             </RelativeLayout>
+            <Button
+                android:id="@+id/button_CheckAnswer_QuestionsPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ok"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#fbe087"
+                android:textColor="#000000"
+                android:layout_below="@+id/relativeLayout_QuestionPage1_MultipleChoiceContainer5" />
         </RelativeLayout>
-
         <!--    =============================================================== -->
         <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   1 -->
         <!--    =============================================================== -->
@@ -242,6 +252,7 @@
                     android:id="@+id/MJWJ"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="40dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:src="@drawable/mjwj"
@@ -326,15 +337,16 @@
                         android:layout_below="@id/relativeLayout_QuestionPage1_MJWJQuestion4"
                         android:textSize="@dimen/MJWJAnswer"/>
                 </RelativeLayout>
+                <Button
+                    android:id="@+id/button_CheckAnswer_MJWJ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ok"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#fbe087"
+                    android:textColor="#000000"
+                    android:layout_below="@id/relativeLayout_QuestionPage1_MJWJContainer4" />
             </RelativeLayout>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ok"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#fbe087"
-                android:textColor="#000000"
-                android:layout_below="@id/relativeLayout_QuestionPage1_MJWJContainer" />
     </RelativeLayout>
 </ScrollView>
