@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".questions.LESSON2">
+    tools:context=".questions.LESSON12">
 
     <RelativeLayout
         android:id="@+id/relativeLayout_ScrollContainer"
@@ -16,217 +16,174 @@
             android:layout_marginTop="-65dp"
             app:srcCompat="@drawable/swatch"/>
 
-        <ImageView
-            android:id="@+id/imageView_berburuharta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_marginTop="40dp"
-            app:srcCompat="@drawable/berburu_harta"/>
-
-        <ImageView
-            android:id="@+id/imageView_treasurehunt_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView_berburuharta"
-            android:layout_marginTop="-72dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            app:srcCompat="@drawable/treasurehunt_2" />
-
-        <EditText
-            android:id="@+id/editText_AnswerTreasureHunt"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:hint="jawab kode rahasia disini"
-            android:textSize="25dp"
-            tools:layout_editor_absoluteX="16dp"
-            android:gravity="center"
-            android:background="@drawable/paper_box"
-            android:layout_below="@+id/imageView_treasurehunt_2"/>
-        <Button
-            android:id="@+id/button_CheckAnswer_TreasureHunt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editText_AnswerTreasureHunt"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="#fbe087"
-            android:textColor="#000000"
-            android:text="OK" />
-
         <!--    ============================================= -->
-        <!--    Q U E S T I O N    P A G E    L E S S O N   2 -->
+        <!--    Q U E S T I O N    P A G E    L E S S O N   1 -->
         <!--    ============================================= -->
         <RelativeLayout
-            android:id="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer"
+            android:id="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button_CheckAnswer_TreasureHunt">
+            android:layout_marginTop="45dp">
             <!--    question page 1-->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer1"
+                android:id="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MultipleChoiceQuestion1"
+                    android:id="@+id/textView_QuestionPage12_MultipleChoiceQuestion1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage2_question1"
+                    android:text="@string/questionpage12_question1"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
-                    android:id="@+id/radioGroup_QuestionPage2_MultipleChoiceQuestion1"
+                    android:id="@+id/radioGroup_QuestionPage12_MultipleChoiceQuestion1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_below="@+id/textView_QuestionPage2_MultipleChoiceQuestion1">
+                    android:layout_below="@+id/textView_QuestionPage12_MultipleChoiceQuestion1">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_1a"
+                        android:id="@+id/radioButton_questionpage12_answer_1a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_1a" />
+                        android:text="@string/questionpage12_answer_1a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_1b"
+                        android:id="@+id/radioButton_questionpage12_answer_1b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_1b"  />
+                        android:text="@string/questionpage12_answer_1b"  />
                 </RadioGroup>
             </RelativeLayout>
             <!--    question page 2-->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer2"
+                android:id="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
-                android:layout_below="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer1">
+                android:layout_below="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer1">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MultipleChoiceQuestion2"
+                    android:id="@+id/textView_QuestionPage12_MultipleChoiceQuestion2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage2_question2"
+                    android:text="@string/questionpage12_question2"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
-                    android:id="@+id/radioGroup_QuestionPage2_MultipleChoiceQuestion2"
+                    android:id="@+id/radioGroup_QuestionPage12_MultipleChoiceQuestion2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_below="@+id/textView_QuestionPage2_MultipleChoiceQuestion2">
+                    android:layout_below="@+id/textView_QuestionPage12_MultipleChoiceQuestion2">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_2a"
+                        android:id="@+id/radioButton_questionpage12_answer_2a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_2a" />
+                        android:text="@string/questionpage12_answer_2a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_2b"
+                        android:id="@+id/radioButton_questionpage12_answer_2b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_2b"  />
+                        android:text="@string/questionpage12_answer_2b"  />
                 </RadioGroup>
             </RelativeLayout>
 
             <!--    question page 3-->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer3"
+                android:id="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
-                android:layout_below="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer2">
+                android:layout_below="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer2">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MultipleChoiceQuestion3"
+                    android:id="@+id/textView_QuestionPage12_MultipleChoiceQuestion3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage2_question3"
+                    android:text="@string/questionpage12_question3"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
-                    android:id="@+id/radioGroup_QuestionPage2_MultipleChoiceQuestion3"
+                    android:id="@+id/radioGroup_QuestionPage12_MultipleChoiceQuestion3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_below="@+id/textView_QuestionPage2_MultipleChoiceQuestion3">
+                    android:layout_below="@+id/textView_QuestionPage12_MultipleChoiceQuestion3">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_3a"
+                        android:id="@+id/radioButton_questionpage12_answer_3a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_3a" />
+                        android:text="@string/questionpage12_answer_3a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_3b"
+                        android:id="@+id/radioButton_questionpage12_answer_3b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_3b"  />
+                        android:text="@string/questionpage12_answer_3b"  />
                 </RadioGroup>
             </RelativeLayout>
 
-            <!--question page 4-->
+            <!--    question page 4-->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer4"
+                android:id="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
-                android:layout_below="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer3">
+                android:layout_below="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer3">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MultipleChoiceQuestion4"
+                    android:id="@+id/textView_QuestionPage12_MultipleChoiceQuestion4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage2_question4"
+                    android:text="@string/questionpage12_question4"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
-                    android:id="@+id/radioGroup_QuestionPage2_MultipleChoiceQuestion4"
+                    android:id="@+id/radioGroup_QuestionPage12_MultipleChoiceQuestion4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_below="@+id/textView_QuestionPage2_MultipleChoiceQuestion4">
+                    android:layout_below="@+id/textView_QuestionPage12_MultipleChoiceQuestion4">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_4a"
+                        android:id="@+id/radioButton_questionpage12_answer_4a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_4a" />
+                        android:text="@string/questionpage12_answer_4a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_4b"
+                        android:id="@+id/radioButton_questionpage12_answer_4b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_4b"  />
+                        android:text="@string/questionpage12_answer_4b"  />
                 </RadioGroup>
             </RelativeLayout>
 
             <!--    question page 5-->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer5"
+                android:id="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
-                android:layout_below="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer4">
+                android:layout_below="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer4">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MultipleChoiceQuestion5"
+                    android:id="@+id/textView_QuestionPage12_MultipleChoiceQuestion5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage2_question5"
+                    android:text="@string/questionpage12_question5"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
-                    android:id="@+id/radioGroup_QuestionPage2_MultipleChoiceQuestion5"
+                    android:id="@+id/radioGroup_QuestionPage12_MultipleChoiceQuestion5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_below="@+id/textView_QuestionPage2_MultipleChoiceQuestion5">
+                    android:layout_below="@+id/textView_QuestionPage12_MultipleChoiceQuestion5">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_5a"
+                        android:id="@+id/radioButton_questionpage12_answer_5a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_5a" />
+                        android:text="@string/questionpage12_answer_5a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage2_answer_5b"
+                        android:id="@+id/radioButton_questionpage12_answer_5b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage2_answer_5b"  />
+                        android:text="@string/questionpage12_answer_5b"  />
                 </RadioGroup>
             </RelativeLayout>
             <Button
@@ -238,16 +195,16 @@
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#fbe087"
                 android:textColor="#000000"
-                android:layout_below="@+id/relativeLayout_QuestionPage2_MultipleChoiceContainer5" />
+                android:layout_below="@+id/relativeLayout_QuestionPage12_MultipleChoiceContainer5" />
         </RelativeLayout>
         <!--    =============================================================== -->
         <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   1 -->
         <!--    =============================================================== -->
         <RelativeLayout
-            android:id="@+id/relativeLayout_QuestionPage2_MJWJContainer"
+            android:id="@+id/relativeLayout_QuestionPage12_MJWJContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/relativeLayout_QuestionPage2_MultipleChoiceContainer">
+            android:layout_below="@id/relativeLayout_QuestionPage12_MultipleChoiceContainer">
             <ImageView
                 android:id="@+id/MJWJ"
                 android:layout_width="match_parent"
@@ -259,82 +216,82 @@
                 />
             <!-- My Journey With Jesus Question 1 -->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MJWJContainer1"
+                android:id="@+id/relativeLayout_QuestionPage12_MJWJContainer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
                 android:layout_below="@+id/MJWJ">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MJWJQuestion1"
+                    android:id="@+id/textView_QuestionPage12_MJWJQuestion1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/MJWJ1_question1"
                     android:textSize="@dimen/MJWJQuestion"/>
                 <EditText
-                    android:id="@+id/editText_QuestionPage2_MJWJAnswer1"
+                    android:id="@+id/editText_QuestionPage12_MJWJAnswer1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView_QuestionPage2_MJWJQuestion1"
+                    android:layout_below="@id/textView_QuestionPage12_MJWJQuestion1"
                     android:textSize="@dimen/MJWJAnswer"/>
             </RelativeLayout>
             <!-- My Journey With Jesus Question 2 -->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MJWJContainer2"
+                android:id="@+id/relativeLayout_QuestionPage12_MJWJContainer2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
-                android:layout_below="@+id/relativeLayout_QuestionPage2_MJWJContainer1">
+                android:layout_below="@+id/relativeLayout_QuestionPage12_MJWJContainer1">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MJWJQuestion2"
+                    android:id="@+id/textView_QuestionPage12_MJWJQuestion2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/MJWJ1_question2"
                     android:textSize="@dimen/MJWJQuestion"/>
                 <EditText
-                    android:id="@+id/editText_QuestionPage2_MJWJAnswer2"
+                    android:id="@+id/editText_QuestionPage12_MJWJAnswer2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView_QuestionPage2_MJWJQuestion2"
+                    android:layout_below="@id/textView_QuestionPage12_MJWJQuestion2"
                     android:textSize="@dimen/MJWJAnswer"/>
             </RelativeLayout>
             <!-- My Journey With Jesus Question 3 -->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MJWJContainer3"
+                android:id="@+id/relativeLayout_QuestionPage12_MJWJContainer3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
-                android:layout_below="@+id/relativeLayout_QuestionPage2_MJWJContainer2">
+                android:layout_below="@+id/relativeLayout_QuestionPage12_MJWJContainer2">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MJWJQuestion3"
+                    android:id="@+id/textView_QuestionPage12_MJWJQuestion3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/MJWJ1_question3"
                     android:textSize="@dimen/MJWJQuestion"/>
                 <EditText
-                    android:id="@+id/editText_QuestionPage2_MJWJAnswer3"
+                    android:id="@+id/editText_QuestionPage12_MJWJAnswer3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView_QuestionPage2_MJWJQuestion3"
+                    android:layout_below="@id/textView_QuestionPage12_MJWJQuestion3"
                     android:textSize="@dimen/MJWJAnswer"/>
             </RelativeLayout>
             <!-- My Journey With Jesus Question 4 -->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage2_MJWJContainer4"
+                android:id="@+id/relativeLayout_QuestionPage12_MJWJContainer4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
-                android:layout_below="@+id/relativeLayout_QuestionPage2_MJWJContainer3">
+                android:layout_below="@+id/relativeLayout_QuestionPage12_MJWJContainer3">
                 <TextView
-                    android:id="@+id/textView_QuestionPage2_MJWJQuestion4"
+                    android:id="@+id/textView_QuestionPage12_MJWJQuestion4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/MJWJ1_question4"
                     android:textSize="@dimen/MJWJQuestion"/>
                 <EditText
-                    android:id="@+id/editText_QuestionPage2_MJWJAnswer4"
+                    android:id="@+id/editText_QuestionPage12_MJWJAnswer4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView_QuestionPage2_MJWJQuestion4"
+                    android:layout_below="@id/textView_QuestionPage12_MJWJQuestion4"
                     android:textSize="@dimen/MJWJAnswer"/>
             </RelativeLayout>
             <Button
@@ -346,7 +303,7 @@
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#fbe087"
                 android:textColor="#000000"
-                android:layout_below="@id/relativeLayout_QuestionPage2_MJWJContainer4" />
+                android:layout_below="@id/relativeLayout_QuestionPage12_MJWJContainer4" />
         </RelativeLayout>
     </RelativeLayout>
 </ScrollView>

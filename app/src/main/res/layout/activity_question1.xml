@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".questions.Question1">
+    tools:context=".questions.LESSON1">
 
     <RelativeLayout
         android:id="@+id/relativeLayout_ScrollContainer"
@@ -208,7 +208,7 @@
                     android:id="@+id/textView_QuestionPage1_MultipleChoiceQuestion5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage1_question4"
+                    android:text="@string/questionpage1_question5"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
@@ -265,16 +265,16 @@
                     android:padding="@dimen/MultipleChoiceContainer"
                     android:layout_below="@+id/MJWJ">
                     <TextView
-                        android:id="@+id/relativeLayout_QuestionPage1_MJWJQuestion1"
+                        android:id="@+id/textView_QuestionPage1_MJWJQuestion1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/MJWJ1_question1"
                         android:textSize="@dimen/MJWJQuestion"/>
                     <EditText
-                        android:id="@+id/relativeLayout_QuestionPage1_MJWJAnswer1"
+                        android:id="@+id/editText_QuestionPage1_MJWJAnswer1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/relativeLayout_QuestionPage1_MJWJQuestion1"
+                        android:layout_below="@id/textView_QuestionPage1_MJWJQuestion1"
                         android:textSize="@dimen/MJWJAnswer"/>
                 </RelativeLayout>
                 <!-- My Journey With Jesus Question 2 -->
@@ -285,16 +285,16 @@
                     android:padding="@dimen/MultipleChoiceContainer"
                     android:layout_below="@+id/relativeLayout_QuestionPage1_MJWJContainer1">
                     <TextView
-                        android:id="@+id/relativeLayout_QuestionPage1_MJWJQuestion2"
+                        android:id="@+id/textView_QuestionPage1_MJWJQuestion2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/MJWJ1_question2"
                         android:textSize="@dimen/MJWJQuestion"/>
                     <EditText
-                        android:id="@+id/relativeLayout_QuestionPage1_MJWJAnswer2"
+                        android:id="@+id/editText_QuestionPage1_MJWJAnswer2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/relativeLayout_QuestionPage1_MJWJQuestion2"
+                        android:layout_below="@id/textView_QuestionPage1_MJWJQuestion2"
                         android:textSize="@dimen/MJWJAnswer"/>
                 </RelativeLayout>
                 <!-- My Journey With Jesus Question 3 -->
@@ -305,16 +305,16 @@
                     android:padding="@dimen/MultipleChoiceContainer"
                     android:layout_below="@+id/relativeLayout_QuestionPage1_MJWJContainer2">
                     <TextView
-                        android:id="@+id/relativeLayout_QuestionPage1_MJWJQuestion3"
+                        android:id="@+id/textView_QuestionPage1_MJWJQuestion3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/MJWJ1_question3"
                         android:textSize="@dimen/MJWJQuestion"/>
                     <EditText
-                        android:id="@+id/relativeLayout_QuestionPage1_MJWJAnswer3"
+                        android:id="@+id/editText_QuestionPage1_MJWJAnswer3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/relativeLayout_QuestionPage1_MJWJQuestion3"
+                        android:layout_below="@id/textView_QuestionPage1_MJWJQuestion3"
                         android:textSize="@dimen/MJWJAnswer"/>
                 </RelativeLayout>
                 <!-- My Journey With Jesus Question 4 -->
@@ -325,16 +325,16 @@
                     android:padding="@dimen/MultipleChoiceContainer"
                     android:layout_below="@+id/relativeLayout_QuestionPage1_MJWJContainer3">
                     <TextView
-                        android:id="@+id/relativeLayout_QuestionPage1_MJWJQuestion4"
+                        android:id="@+id/textView_QuestionPage1_MJWJQuestion4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/MJWJ1_question4"
                         android:textSize="@dimen/MJWJQuestion"/>
                     <EditText
-                        android:id="@+id/relativeLayout_QuestionPage1_MJWJAnswer4"
+                        android:id="@+id/editText_QuestionPage1_MJWJAnswer4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/relativeLayout_QuestionPage1_MJWJQuestion4"
+                        android:layout_below="@id/textView_QuestionPage1_MJWJQuestion4"
                         android:textSize="@dimen/MJWJAnswer"/>
                 </RelativeLayout>
                 <Button

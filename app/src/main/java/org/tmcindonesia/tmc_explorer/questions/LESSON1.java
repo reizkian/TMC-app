@@ -1,9 +1,12 @@
 package org.tmcindonesia.tmc_explorer.questions;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,11 +14,23 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import org.tmcindonesia.tmc_explorer.Home;
 import org.tmcindonesia.tmc_explorer.R;
+import org.tmcindonesia.tmc_explorer.UserAnswer;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Question1 extends AppCompatActivity {
+public class LESSON1 extends AppCompatActivity {
+    FirebaseFirestore firebaseFirestore;
+    FirebaseAuth firebaseAuth;
+    String userID;
+    public static final String TAG = "TAG";
     // variable TREASURE HUNT
     private EditText UserAnswerTreasureHunt;
     private Button checkAnswerTreasureHunt;
@@ -24,6 +39,12 @@ public class Question1 extends AppCompatActivity {
     private RadioGroup rgqp_question1, rgqp_question2, rgqp_question3, rgqp_question4, rgqp_question5;
     private RadioButton rb_question1, rb_question2, rb_question3, rb_question4, rb_question5;
     private Button getCheckAnswerQuestionsPage;
+    private int numberOfCorrectAnswer = 0;
+    // variable MY JOURNEY WITH JESUS
+    private EditText mjwj_answer1, mjwj_answer2, mjwj_answer3, mjwj_answer4;
+    private String AnswersMJWJ[]={};
+    private Button getAnswerMJWJ;
+    private String userAnswers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,29 +55,30 @@ public class Question1 extends AppCompatActivity {
         UserAnswerTreasureHunt = (EditText)findViewById(R.id.editText_AnswerTreasureHunt);
         checkAnswerTreasureHunt = (Button)findViewById(R.id.button_CheckAnswer_TreasureHunt);
         // True Answer for Treasure Hunt Question
-        String trueAnswerTreasureHunt = "love god with all your heart";
+        String trueAnswerTreasureHunt = "LOVE GOD WITH ALL YOUR HEART";
         // OK button clicked TREASURE HUNT
         checkAnswerTreasureHunt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // take user input as answer
-                String userInputAnswer = UserAnswerTreasureHunt.getText().toString().trim().toLowerCase();
+                String userInputAnswer = UserAnswerTreasureHunt.getText().toString().trim().toUpperCase();
 
                 // compare to true answer
                 if(userInputAnswer.equals(trueAnswerTreasureHunt)){
                     // change button color to green
-                    checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(org.tmcindonesia.tmc_explorer.questions.Question1.this, R.color.green_true_answer));
+                    checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(LESSON1.this, R.color.green_true_answer));
                     // notify correct answer
-                    Toast.makeText(org.tmcindonesia.tmc_explorer.questions.Question1.this, "Jawaban Kamu Benar!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LESSON1.this, "Jawaban Kamu Benar!",Toast.LENGTH_SHORT).show();
                 }
                 if(!userInputAnswer.equals(trueAnswerTreasureHunt)){
                     // change button color to red
-                    checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(org.tmcindonesia.tmc_explorer.questions.Question1.this, R.color.red_false_answer));
+                    checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(LESSON1.this, R.color.red_false_answer));
                     // notify wrong answer
-                    Toast.makeText(org.tmcindonesia.tmc_explorer.questions.Question1.this, "Jawaban Kamu Salah, ayo coba lagi",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LESSON1.this, "Jawaban Kamu Salah, ayo coba lagi",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
 
         // *******************************QUESTIONS PAGE*********************************
         // get layout ID radio group
@@ -94,17 +116,80 @@ public class Question1 extends AppCompatActivity {
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, rb_index_array);
             }
             // getNumberOfCorrectAnswer
-            private void checkAnswerQuestionsPage(int[] listOfCorrectAnswer, int[] listOfUserAnswer) {
-                int numberOfCorrectAnswer = 0;
+            public void checkAnswerQuestionsPage(int[] listOfCorrectAnswer, int[] listOfUserAnswer) {
                 for (int index=0; index<listOfCorrectAnswer.length; index++){
                     if(listOfCorrectAnswer[index]==listOfUserAnswer[index]){
                         numberOfCorrectAnswer++;
                     }
                 }
-                Toast.makeText(org.tmcindonesia.tmc_explorer.questions.Question1.this,
+                Toast.makeText(LESSON1.this,
                         String.valueOf(numberOfCorrectAnswer)+" soal kamu jawab dengan benar",
                         Toast.LENGTH_SHORT).show();
+                // reset number
+                numberOfCorrectAnswer=0;
             }
         });
+
+        // ***************************MY JOURNEY WITH JESUS*******************************
+        // get layout ID
+        mjwj_answer1 = (EditText)findViewById(R.id.editText_QuestionPage1_MJWJAnswer1);
+        mjwj_answer2 = (EditText)findViewById(R.id.editText_QuestionPage1_MJWJAnswer2);
+        mjwj_answer3 = (EditText)findViewById(R.id.editText_QuestionPage1_MJWJAnswer3);
+        mjwj_answer4 = (EditText)findViewById(R.id.editText_QuestionPage1_MJWJAnswer4);
+        getAnswerMJWJ = (Button)findViewById(R.id.button_CheckAnswer_MJWJ);
+        // Ok button clicked MY JOURNEY WITH JESUS
+        getAnswerMJWJ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // create instance
+                UserAnswer userAnswers = new UserAnswer(
+                        numberOfCorrectAnswer,
+                        mjwj_answer1.getText().toString().trim(),
+                        mjwj_answer2.getText().toString().trim(),
+                        mjwj_answer3.getText().toString().trim(),
+                        mjwj_answer4.getText().toString().trim()
+                );
+                // write data base method
+                writeUserAnswerToDataBase(userAnswers);
+                // toast
+                Toast.makeText(LESSON1.this,
+                        "Terimakasih, ayo lanjutkan pelajaran mu",
+                        Toast.LENGTH_SHORT).show();
+                // move to home page
+                startActivity(new Intent(getApplicationContext(), Home.class));
+            }
+        });
+    }
+
+
+    // WRITE DATA TO FIRE STORE DATA BASE
+    public void writeUserAnswerToDataBase(UserAnswer userAnswers){
+        // get the content
+        String className = this.getLocalClassName().toString();
+        Map<String, Object> answers  = new HashMap<>();
+        answers.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
+        answers.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());
+        answers.put(getResources().getString(R.string.MJWJ1_question2), userAnswers.getUserAnswerMJWJ2());
+        answers.put(getResources().getString(R.string.MJWJ1_question3), userAnswers.getUserAnswerMJWJ3());
+        answers.put(getResources().getString(R.string.MJWJ1_question4), userAnswers.getUserAnswerMJWJ4());
+        // create fire base instance
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        String userID = firebaseAuth.getCurrentUser().getUid();
+        // actually write on cloud
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection("User Answer").document(className)
+                .set(answers)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "successfully written!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error writing document", e);
+                    }
+                });
     }
 }

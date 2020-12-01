@@ -41,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
     String userID;
     DatePickerDialog.OnDateSetListener dateListener;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +99,6 @@ public class RegisterActivity extends AppCompatActivity {
         };
 
 
-
         // REGISTER button clicked
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,9 +140,6 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-
-
-
                 // REGISTER USER IN FIRE BASE
                 // handles user creation
                 if(!password.equals(confirmpass)) {
@@ -160,7 +157,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
                                 // FireStore Data Base
                                 userID = firebaseAuth.getCurrentUser().getUid();
-                                DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
+                                DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID);
                                 Map<String, Object> user  = new HashMap<>();
                                 user.put("Name",username);
                                 user.put("Birth Date", datebirth);
