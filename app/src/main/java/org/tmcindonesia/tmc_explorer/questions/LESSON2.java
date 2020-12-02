@@ -134,10 +134,10 @@ public class LESSON2 extends AppCompatActivity {
 
         // ***************************MY JOURNEY WITH JESUS*******************************
         // get layout ID
-        mjwj_answer1 = (EditText)findViewById(R.id.editText_QuestionPage1_MJWJAnswer1);
-        mjwj_answer2 = (EditText)findViewById(R.id.editText_QuestionPage1_MJWJAnswer2);
-        mjwj_answer3 = (EditText)findViewById(R.id.editText_QuestionPage1_MJWJAnswer3);
-        mjwj_answer4 = (EditText)findViewById(R.id.editText_QuestionPage1_MJWJAnswer4);
+        mjwj_answer1 = (EditText)findViewById(R.id.editText_QuestionPage2_MJWJAnswer1);
+        mjwj_answer2 = (EditText)findViewById(R.id.editText_QuestionPage2_MJWJAnswer2);
+        mjwj_answer3 = (EditText)findViewById(R.id.editText_QuestionPage2_MJWJAnswer3);
+        mjwj_answer4 = (EditText)findViewById(R.id.editText_QuestionPage2_MJWJAnswer4);
         getAnswerMJWJ = (Button)findViewById(R.id.button_CheckAnswer_MJWJ);
         // Ok button clicked MY JOURNEY WITH JESUS
         getAnswerMJWJ.setOnClickListener(new View.OnClickListener() {
