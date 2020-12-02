@@ -34,7 +34,7 @@
                     android:id="@+id/textView_QuestionPage11_MultipleChoiceQuestion1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage9_question1"
+                    android:text="@string/questionpage11_question1"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
@@ -44,15 +44,15 @@
                     android:layout_centerVertical="true"
                     android:layout_below="@+id/textView_QuestionPage11_MultipleChoiceQuestion1">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_1a"
+                        android:id="@+id/radioButton_questionpage11_answer_1a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_1a" />
+                        android:text="@string/questionpage11_answer_1a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_1b"
+                        android:id="@+id/radioButton_questionpage11_answer_1b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_1b"  />
+                        android:text="@string/questionpage11_answer_1b"  />
                 </RadioGroup>
             </RelativeLayout>
             <!--    question page 2-->
@@ -66,7 +66,7 @@
                     android:id="@+id/textView_QuestionPage11_MultipleChoiceQuestion2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage9_question2"
+                    android:text="@string/questionpage11_question2"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
@@ -76,15 +76,15 @@
                     android:layout_centerVertical="true"
                     android:layout_below="@+id/textView_QuestionPage11_MultipleChoiceQuestion2">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_2a"
+                        android:id="@+id/radioButton_questionpage11_answer_2a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_2a" />
+                        android:text="@string/questionpage11_answer_2a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_2b"
+                        android:id="@+id/radioButton_questionpage11_answer_2b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_2b"  />
+                        android:text="@string/questionpage11_answer_2b"  />
                 </RadioGroup>
             </RelativeLayout>
 
@@ -99,7 +99,7 @@
                     android:id="@+id/textView_QuestionPage11_MultipleChoiceQuestion3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage9_question3"
+                    android:text="@string/questionpage11_question3"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
@@ -109,15 +109,15 @@
                     android:layout_centerVertical="true"
                     android:layout_below="@+id/textView_QuestionPage11_MultipleChoiceQuestion3">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_3a"
+                        android:id="@+id/radioButton_questionpage11_answer_3a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_3a" />
+                        android:text="@string/questionpage11_answer_3a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_3b"
+                        android:id="@+id/radioButton_questionpage11_answer_3b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_3b"  />
+                        android:text="@string/questionpage11_answer_3b"  />
                 </RadioGroup>
             </RelativeLayout>
 
@@ -132,7 +132,7 @@
                     android:id="@+id/textView_QuestionPage11_MultipleChoiceQuestion4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage9_question4"
+                    android:text="@string/questionpage11_question4"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
@@ -142,15 +142,15 @@
                     android:layout_centerVertical="true"
                     android:layout_below="@+id/textView_QuestionPage11_MultipleChoiceQuestion4">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_4a"
+                        android:id="@+id/radioButton_questionpage11_answer_4a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_4a" />
+                        android:text="@string/questionpage11_answer_4a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_4b"
+                        android:id="@+id/radioButton_questionpage11_answer_4b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_4b"  />
+                        android:text="@string/questionpage11_answer_4b"  />
                 </RadioGroup>
             </RelativeLayout>
 
@@ -165,7 +165,7 @@
                     android:id="@+id/textView_QuestionPage11_MultipleChoiceQuestion5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/questionpage9_question5"
+                    android:text="@string/questionpage11_question5"
                     android:justificationMode="inter_word"
                     android:textSize="20sp" />
                 <RadioGroup
@@ -175,15 +175,15 @@
                     android:layout_centerVertical="true"
                     android:layout_below="@+id/textView_QuestionPage11_MultipleChoiceQuestion5">
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_5a"
+                        android:id="@+id/radioButton_questionpage11_answer_5a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_5a" />
+                        android:text="@string/questionpage11_answer_5a" />
                     <RadioButton
-                        android:id="@+id/radioButton_questionpage9_answer_5b"
+                        android:id="@+id/radioButton_questionpage11_answer_5b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/questionpage9_answer_5b"  />
+                        android:text="@string/questionpage11_answer_5b"  />
                 </RadioGroup>
             </RelativeLayout>
             <Button

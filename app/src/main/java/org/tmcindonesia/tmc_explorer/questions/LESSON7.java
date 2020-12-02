@@ -1,10 +1,7 @@
 package org.tmcindonesia.tmc_explorer.questions;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +10,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -34,17 +35,23 @@ public class LESSON7 extends AppCompatActivity {
     // variable TREASURE HUNT
     private EditText UserAnswerTreasureHunt;
     private Button checkAnswerTreasureHunt;
+    private static final String keyUserAnswerTreasureHunt = "keyUserAnswerTreasureHunt";
     // variable QUESTIONS PAGE
-    private int correctAnswerQuestionsPage[] = {1,0,1,1,0};
+    private int correctAnswerQuestionsPage[] = {1, 0, 1, 1, 0};
     private RadioGroup rgqp_question1, rgqp_question2, rgqp_question3, rgqp_question4, rgqp_question5;
     private RadioButton rb_question1, rb_question2, rb_question3, rb_question4, rb_question5;
     private Button getCheckAnswerQuestionsPage;
     private int numberOfCorrectAnswer = 0;
     // variable MY JOURNEY WITH JESUS
     private EditText mjwj_answer1, mjwj_answer2, mjwj_answer3, mjwj_answer4;
-    private String AnswersMJWJ[]={};
+    private String AnswersMJWJ[] = {};
     private Button getAnswerMJWJ;
     private String userAnswers;
+    private static final String key_mjwj_answer1 = "key_mjwj_answer1";
+    private static final String key_mjwj_answer2 = "key_mjwj_answer2";
+    private static final String key_mjwj_answer3 = "key_mjwj_answer3";
+    private static final String key_mjwj_answer4 = "key_mjwj_answer4";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +59,8 @@ public class LESSON7 extends AppCompatActivity {
 
         // *******************************TREASURE HUNT**********************************
         // get layout id
-        UserAnswerTreasureHunt = (EditText)findViewById(R.id.editText_AnswerTreasureHunt);
-        checkAnswerTreasureHunt = (Button)findViewById(R.id.button_CheckAnswer_TreasureHunt);
+        UserAnswerTreasureHunt = (EditText) findViewById(R.id.editText_AnswerTreasureHunt);
+        checkAnswerTreasureHunt = (Button) findViewById(R.id.button_CheckAnswer_TreasureHunt);
         // True Answer for Treasure Hunt Question
         String trueAnswerTreasureHunt = "JESUS SAVES ALL WHO TRUST HIM";
         // OK button clicked TREASURE HUNT
@@ -64,17 +71,17 @@ public class LESSON7 extends AppCompatActivity {
                 String userInputAnswer = UserAnswerTreasureHunt.getText().toString().trim().toUpperCase();
 
                 // compare to true answer
-                if(userInputAnswer.equals(trueAnswerTreasureHunt)){
+                if (userInputAnswer.equals(trueAnswerTreasureHunt)) {
                     // change button color to green
                     checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(LESSON7.this, R.color.green_true_answer));
                     // notify correct answer
-                    Toast.makeText(LESSON7.this, "Jawaban Kamu Benar!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LESSON7.this, "Jawaban Kamu Benar!", Toast.LENGTH_SHORT).show();
                 }
-                if(!userInputAnswer.equals(trueAnswerTreasureHunt)){
+                if (!userInputAnswer.equals(trueAnswerTreasureHunt)) {
                     // change button color to red
                     checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(LESSON7.this, R.color.red_false_answer));
                     // notify wrong answer
-                    Toast.makeText(LESSON7.this, "Jawaban Kamu Salah, ayo coba lagi",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LESSON7.this, "Jawaban Kamu Salah, ayo coba lagi", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -115,28 +122,29 @@ public class LESSON7 extends AppCompatActivity {
                 //toast
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, rb_index_array);
             }
+
             // getNumberOfCorrectAnswer
             public void checkAnswerQuestionsPage(int[] listOfCorrectAnswer, int[] listOfUserAnswer) {
-                for (int index=0; index<listOfCorrectAnswer.length; index++){
-                    if(listOfCorrectAnswer[index]==listOfUserAnswer[index]){
+                for (int index = 0; index < listOfCorrectAnswer.length; index++) {
+                    if (listOfCorrectAnswer[index] == listOfUserAnswer[index]) {
                         numberOfCorrectAnswer++;
                     }
                 }
                 Toast.makeText(LESSON7.this,
-                        String.valueOf(numberOfCorrectAnswer)+" soal kamu jawab dengan benar",
+                        String.valueOf(numberOfCorrectAnswer) + " soal kamu jawab dengan benar",
                         Toast.LENGTH_SHORT).show();
                 // reset number
-                numberOfCorrectAnswer=0;
+                numberOfCorrectAnswer = 0;
             }
         });
 
         // ***************************MY JOURNEY WITH JESUS*******************************
         // get layout ID
-        mjwj_answer1 = (EditText)findViewById(R.id.editText_QuestionPage7_MJWJAnswer1);
-        mjwj_answer2 = (EditText)findViewById(R.id.editText_QuestionPage7_MJWJAnswer2);
-        mjwj_answer3 = (EditText)findViewById(R.id.editText_QuestionPage7_MJWJAnswer3);
-        mjwj_answer4 = (EditText)findViewById(R.id.editText_QuestionPage7_MJWJAnswer4);
-        getAnswerMJWJ = (Button)findViewById(R.id.button_CheckAnswer_MJWJ);
+        mjwj_answer1 = (EditText) findViewById(R.id.editText_QuestionPage7_MJWJAnswer1);
+        mjwj_answer2 = (EditText) findViewById(R.id.editText_QuestionPage7_MJWJAnswer2);
+        mjwj_answer3 = (EditText) findViewById(R.id.editText_QuestionPage7_MJWJAnswer3);
+        mjwj_answer4 = (EditText) findViewById(R.id.editText_QuestionPage7_MJWJAnswer4);
+        getAnswerMJWJ = (Button) findViewById(R.id.button_CheckAnswer_MJWJ);
         // Ok button clicked MY JOURNEY WITH JESUS
         getAnswerMJWJ.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,14 +167,15 @@ public class LESSON7 extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Home.class));
             }
         });
+        LoadPreferences();
     }
 
 
     // WRITE DATA TO FIRE STORE DATA BASE
-    public void writeUserAnswerToDataBase(UserAnswer userAnswers){
+    public void writeUserAnswerToDataBase(UserAnswer userAnswers) {
         // get the content
         String className = this.getLocalClassName().toString();
-        Map<String, Object> answers  = new HashMap<>();
+        Map<String, Object> answers = new HashMap<>();
         answers.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
         answers.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());
         answers.put(getResources().getString(R.string.MJWJ1_question2), userAnswers.getUserAnswerMJWJ2());
@@ -191,5 +200,33 @@ public class LESSON7 extends AppCompatActivity {
                         Log.w(TAG, "Error writing document", e);
                     }
                 });
+    }
+
+    // SAVE PREFERENCE WHEN BACK BACK PRESSED and ACTIVITY GET DESTROYED
+    private void SavePreferences() {
+        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString());
+        editor.putString(key_mjwj_answer1, mjwj_answer1.getText().toString());
+        editor.putString(key_mjwj_answer2, mjwj_answer2.getText().toString());
+        editor.putString(key_mjwj_answer3, mjwj_answer3.getText().toString());
+        editor.putString(key_mjwj_answer4, mjwj_answer4.getText().toString());
+        editor.commit();
+    }
+
+    private void LoadPreferences() {
+        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        // set text just like when the user leave it (back pressed)
+        UserAnswerTreasureHunt.setText(sharedPreferences.getString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString()));
+        mjwj_answer1.setText(sharedPreferences.getString(key_mjwj_answer1, mjwj_answer1.getText().toString()));
+        mjwj_answer2.setText(sharedPreferences.getString(key_mjwj_answer2, mjwj_answer2.getText().toString()));
+        mjwj_answer3.setText(sharedPreferences.getString(key_mjwj_answer3, mjwj_answer3.getText().toString()));
+        mjwj_answer4.setText(sharedPreferences.getString(key_mjwj_answer4, mjwj_answer4.getText().toString()));
+    }
+
+    @Override
+    public void onBackPressed() {
+        SavePreferences();
+        super.onBackPressed();
     }
 }
