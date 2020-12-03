@@ -365,7 +365,7 @@
                     android:layout_height="315dp"
                     android:src="@drawable/jesuspray"
                     android:layout_below="@id/button_CheckAnswer_MJWJ"
-                    android:layout_marginTop="0dp"
+                    android:layout_marginTop="-85dp"
                     android:scaleType="fitXY"/>
             </RelativeLayout>
         </RelativeLayout>

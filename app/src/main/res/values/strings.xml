@@ -439,8 +439,6 @@
     <!--    ================================================================ -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   12 -->
     <!--    ================================================================ -->
-    <string name="MJWJ12_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ12_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ12_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ12_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+    <string name="keputusanku">“Tuhanku Yesus, takhta hatiku adalah milik-Mu! Aku memilih untuk hidup seperti Kristus dan bukan menurut egoku sendiri.” </string>
+    <string name="MJWJ12_question1">Tuliskan KESAKSIAN, kesan kesan kamu , atau perubahan apa yang kamu alami setelah Belajar Explorer Satu</string>
 </resources>

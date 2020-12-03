@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.tmc_explorer.Home;
 import org.tmcindonesia.tmc_explorer.R;
+import org.tmcindonesia.tmc_explorer.TestimonyAnswer;
 import org.tmcindonesia.tmc_explorer.UserAnswer;
 
 import java.util.HashMap;
@@ -38,14 +39,12 @@ public class LESSON12 extends AppCompatActivity {
     private Button getCheckAnswerQuestionsPage;
     private int numberOfCorrectAnswer = 0;
     // variable MY JOURNEY WITH JESUS
-    private EditText mjwj_answer1, mjwj_answer2, mjwj_answer3, mjwj_answer4;
+    private EditText mjwj_answer1, mjwj_answer2;
     private String AnswersMJWJ[] = {};
     private Button getAnswerMJWJ;
-    private String userAnswers;
     private static final String key_mjwj_answer1 = "key_mjwj_answer1";
     private static final String key_mjwj_answer2 = "key_mjwj_answer2";
-    private static final String key_mjwj_answer3 = "key_mjwj_answer3";
-    private static final String key_mjwj_answer4 = "key_mjwj_answer4";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,25 +104,21 @@ public class LESSON12 extends AppCompatActivity {
 
         // ***************************MY JOURNEY WITH JESUS*******************************
         // get layout ID
-        mjwj_answer1 = (EditText) findViewById(R.id.editText_QuestionPage12_MJWJAnswer1);
-        mjwj_answer2 = (EditText) findViewById(R.id.editText_QuestionPage12_MJWJAnswer2);
-        mjwj_answer3 = (EditText) findViewById(R.id.editText_QuestionPage12_MJWJAnswer3);
-        mjwj_answer4 = (EditText) findViewById(R.id.editText_QuestionPage12_MJWJAnswer4);
+        mjwj_answer1 = (EditText) findViewById(R.id.editText_tanggalHidupSepertiKristus);
+        mjwj_answer2 = (EditText) findViewById(R.id.editText_QuestionPage12_kesaksianExplorerSatu);
         getAnswerMJWJ = (Button) findViewById(R.id.button_CheckAnswer_MJWJ);
         // Ok button clicked MY JOURNEY WITH JESUS
         getAnswerMJWJ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // create instance
-                UserAnswer userAnswers = new UserAnswer(
+                TestimonyAnswer testimonyAnswer = new TestimonyAnswer(
                         numberOfCorrectAnswer,
                         mjwj_answer1.getText().toString().trim(),
-                        mjwj_answer2.getText().toString().trim(),
-                        mjwj_answer3.getText().toString().trim(),
-                        mjwj_answer4.getText().toString().trim()
+                        mjwj_answer2.getText().toString().trim()
                 );
                 // write data base method
-                writeUserAnswerToDataBase(userAnswers);
+                writeUserAnswerToDataBase(testimonyAnswer);
                 // toast
                 Toast.makeText(LESSON12.this,
                         "Terimakasih, ayo lanjutkan pelajaran mu",
@@ -137,15 +132,13 @@ public class LESSON12 extends AppCompatActivity {
 
 
     // WRITE DATA TO FIRE STORE DATA BASE
-    public void writeUserAnswerToDataBase(UserAnswer userAnswers) {
+    public void writeUserAnswerToDataBase(TestimonyAnswer testimonyAnswer) {
         // get the content
         String className = this.getLocalClassName().toString();
         Map<String, Object> answers = new HashMap<>();
-        answers.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
-        answers.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());
-        answers.put(getResources().getString(R.string.MJWJ1_question2), userAnswers.getUserAnswerMJWJ2());
-        answers.put(getResources().getString(R.string.MJWJ1_question3), userAnswers.getUserAnswerMJWJ3());
-        answers.put(getResources().getString(R.string.MJWJ1_question4), userAnswers.getUserAnswerMJWJ4());
+        answers.put("Correct answer", testimonyAnswer.getNumberOfCorrectAnswer());
+        answers.put("Keputusanku untuk hidup seperti Kristus", testimonyAnswer.getUserAnswerMJWJ1());
+        answers.put("Kesaksian setelah mempelajari Explorer Satu", testimonyAnswer.getUserAnswerMJWJ2());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -173,8 +166,6 @@ public class LESSON12 extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(key_mjwj_answer1, mjwj_answer1.getText().toString());
         editor.putString(key_mjwj_answer2, mjwj_answer2.getText().toString());
-        editor.putString(key_mjwj_answer3, mjwj_answer3.getText().toString());
-        editor.putString(key_mjwj_answer4, mjwj_answer4.getText().toString());
         editor.commit();
     }
 
@@ -183,8 +174,6 @@ public class LESSON12 extends AppCompatActivity {
         // set text just like when the user leave it (back pressed)
         mjwj_answer1.setText(sharedPreferences.getString(key_mjwj_answer1, mjwj_answer1.getText().toString()));
         mjwj_answer2.setText(sharedPreferences.getString(key_mjwj_answer2, mjwj_answer2.getText().toString()));
-        mjwj_answer3.setText(sharedPreferences.getString(key_mjwj_answer3, mjwj_answer3.getText().toString()));
-        mjwj_answer4.setText(sharedPreferences.getString(key_mjwj_answer4, mjwj_answer4.getText().toString()));
     }
 
     @Override
