@@ -294,12 +294,9 @@
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   8 -->
     <!--    =============================================================== -->
-    <string name="MJWJ8_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
-    <string name="MJWJ8_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
-    <string name="MJWJ8_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
-    <string name="MJWJ8_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
-
-
+    <string name="MJWJ8_question1">Sudahkah kamu menerima Yesus sebagai juru Selamatmu?</string>
+    <string name="MJWJ8_question2">Jika ya, kapan?</string>
+    <string name="MJWJ8_AcceptJesusPrayer">Tuhan Yesus Kristus,  aku tahu,  aku telah berdosa,  dan aku sungguh menyesal atas dosa doaaku.  Aku percaya bahwa Kaulah Anak Allah dan Kau telah mati di kayu salib untuk dosa-dosaku.  Masuklah  ke dalam hatiku. Hari ini pada tanggal </string>
     <!--    ###########################################################################################################-->
     <!--    ############################################# L E S S O N 9 ###############################################-->
     <!--    ###########################################################################################################-->

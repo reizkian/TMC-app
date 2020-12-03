@@ -48,12 +48,13 @@
             android:gravity="center"
             android:background="@drawable/paper_box"
             android:layout_below="@+id/imageView_treasurehunt_8"/>
+
         <Button
             android:id="@+id/button_CheckAnswer_TreasureHunt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/editText_AnswerTreasureHunt"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:backgroundTint="#fbe087"
             android:textColor="#000000"
@@ -234,7 +235,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ok"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#fbe087"
                 android:textColor="#000000"
@@ -268,7 +269,7 @@
                     android:id="@+id/textView_QuestionPage8_MJWJQuestion1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/MJWJ1_question1"
+                    android:text="@string/MJWJ8_question1"
                     android:textSize="@dimen/MJWJQuestion"/>
                 <EditText
                     android:id="@+id/editText_QuestionPage8_MJWJAnswer1"
@@ -288,7 +289,7 @@
                     android:id="@+id/textView_QuestionPage8_MJWJQuestion2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/MJWJ1_question2"
+                    android:text="@string/MJWJ8_question2"
                     android:textSize="@dimen/MJWJQuestion"/>
                 <EditText
                     android:id="@+id/editText_QuestionPage8_MJWJAnswer2"
@@ -297,56 +298,76 @@
                     android:layout_below="@id/textView_QuestionPage8_MJWJQuestion2"
                     android:textSize="@dimen/MJWJAnswer"/>
             </RelativeLayout>
-            <!-- My Journey With Jesus Question 3 -->
+            <!-- My Journey With Jesus Prayer -->
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage8_MJWJContainer3"
+                android:id="@+id/relativeLayout_QuestionPage8_PrayerContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer"
                 android:layout_below="@+id/relativeLayout_QuestionPage8_MJWJContainer2">
                 <TextView
-                    android:id="@+id/textView_QuestionPage8_MJWJQuestion3"
+                    android:id="@+id/textView_QuestionPage8_PrayerInvitation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/MJWJ1_question3"
-                    android:textSize="@dimen/MJWJQuestion"/>
+                    android:text="Kalau belum, ucapkan doa ini sekarang:"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:layout_centerHorizontal="true"/>
+                <TextView
+                    android:id="@+id/textView_QuestionPage8_PrayerAcceptJesus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/MJWJ8_AcceptJesusPrayer"
+                    android:textSize="@dimen/MJWJQuestion"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:layout_below="@id/textView_QuestionPage8_PrayerInvitation"/>
                 <EditText
-                    android:id="@+id/editText_QuestionPage8_MJWJAnswer3"
+                    android:id="@+id/editText_DateAcceptedJesus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView_QuestionPage8_MJWJQuestion3"
-                    android:textSize="@dimen/MJWJAnswer"/>
+                    android:gravity="center"
+                    android:hint="masukan tanggal hari ini"
+                    android:layout_below="@id/textView_QuestionPage8_PrayerAcceptJesus"
+                    />
+                <TextView
+                    android:id="@+id/textView_QuestionPage8_Amen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aku menerimaMu sebagai Juruselamatku \n Amin"
+                    android:textSize="@dimen/MJWJQuestion"
+                    android:padding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:layout_below="@id/editText_DateAcceptedJesus"/>
             </RelativeLayout>
-            <!-- My Journey With Jesus Question 4 -->
+
             <RelativeLayout
-                android:id="@+id/relativeLayout_QuestionPage8_MJWJContainer4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/MultipleChoiceContainer"
-                android:layout_below="@+id/relativeLayout_QuestionPage8_MJWJContainer3">
-                <TextView
-                    android:id="@+id/textView_QuestionPage8_MJWJQuestion4"
-                    android:layout_width="match_parent"
+                android:gravity="bottom"
+                android:id="@+id/relativeLayout_QuestionPage8_bot"
+                android:layout_below="@id/relativeLayout_QuestionPage8_PrayerContainer">
+                <Button
+                    android:id="@+id/button_CheckAnswer_MJWJ"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/MJWJ1_question4"
-                    android:textSize="@dimen/MJWJQuestion"/>
-                <EditText
-                    android:id="@+id/editText_QuestionPage8_MJWJAnswer4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textView_QuestionPage8_MJWJQuestion4"
-                    android:textSize="@dimen/MJWJAnswer"/>
+                    android:text="ok"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#fbe087"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="20dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="315dp"
+                    android:src="@drawable/jesuspray"
+                    android:layout_below="@id/button_CheckAnswer_MJWJ"
+                    android:layout_marginTop="0dp"
+                    android:scaleType="fitXY"/>
             </RelativeLayout>
-            <Button
-                android:id="@+id/button_CheckAnswer_MJWJ"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ok"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#fbe087"
-                android:textColor="#000000"
-                android:layout_below="@id/relativeLayout_QuestionPage8_MJWJContainer4" />
         </RelativeLayout>
     </RelativeLayout>
 </ScrollView>

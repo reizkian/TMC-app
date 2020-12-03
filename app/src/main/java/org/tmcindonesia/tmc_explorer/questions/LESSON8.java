@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.tmcindonesia.tmc_explorer.AcceptJesusAnswer;
 import org.tmcindonesia.tmc_explorer.Home;
 import org.tmcindonesia.tmc_explorer.R;
 import org.tmcindonesia.tmc_explorer.UserAnswer;
@@ -43,14 +44,13 @@ public class LESSON8 extends AppCompatActivity {
     private Button getCheckAnswerQuestionsPage;
     private int numberOfCorrectAnswer = 0;
     // variable MY JOURNEY WITH JESUS
-    private EditText mjwj_answer1, mjwj_answer2, mjwj_answer3, mjwj_answer4;
+    private EditText mjwj_answer1, mjwj_answer2, mjwj_answer3;
     private String AnswersMJWJ[] = {};
     private Button getAnswerMJWJ;
     private String userAnswers;
-    private static final String key_mjwj_answer1 = "key_mjwj_answer1";
-    private static final String key_mjwj_answer2 = "key_mjwj_answer2";
-    private static final String key_mjwj_answer3 = "key_mjwj_answer3";
-    private static final String key_mjwj_answer4 = "key_mjwj_answer4";
+    private static final String key_mjwj_askAlreadyAcceptJesus = "key_mjwj_askAlreadyAcceptJesus";
+    private static final String key_mjwj_askWhenAcceptJesus = "key_mjwj_askWhenAcceptJesus";
+    private static final String key_mjwj_dateTodayAcceptJesus = "key_mjwj_askWhenAcceptJesus";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,23 +142,21 @@ public class LESSON8 extends AppCompatActivity {
         // get layout ID
         mjwj_answer1 = (EditText) findViewById(R.id.editText_QuestionPage8_MJWJAnswer1);
         mjwj_answer2 = (EditText) findViewById(R.id.editText_QuestionPage8_MJWJAnswer2);
-        mjwj_answer3 = (EditText) findViewById(R.id.editText_QuestionPage8_MJWJAnswer3);
-        mjwj_answer4 = (EditText) findViewById(R.id.editText_QuestionPage8_MJWJAnswer4);
+        mjwj_answer3 = (EditText) findViewById(R.id.editText_DateAcceptedJesus);
         getAnswerMJWJ = (Button) findViewById(R.id.button_CheckAnswer_MJWJ);
         // Ok button clicked MY JOURNEY WITH JESUS
         getAnswerMJWJ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // create instance
-                UserAnswer userAnswers = new UserAnswer(
+                AcceptJesusAnswer acceptJesusAnswer = new AcceptJesusAnswer(
                         numberOfCorrectAnswer,
                         mjwj_answer1.getText().toString().trim(),
                         mjwj_answer2.getText().toString().trim(),
-                        mjwj_answer3.getText().toString().trim(),
-                        mjwj_answer4.getText().toString().trim()
+                        mjwj_answer3.getText().toString().trim()
                 );
                 // write data base method
-                writeUserAnswerToDataBase(userAnswers);
+                writeUserAnswerToDataBase(acceptJesusAnswer);
                 // toast
                 Toast.makeText(LESSON8.this,
                         "Terimakasih, ayo lanjutkan pelajaran mu",
@@ -172,15 +170,14 @@ public class LESSON8 extends AppCompatActivity {
 
 
     // WRITE DATA TO FIRE STORE DATA BASE
-    public void writeUserAnswerToDataBase(UserAnswer userAnswers) {
+    public void writeUserAnswerToDataBase(AcceptJesusAnswer acceptJesusAnswer) {
         // get the content
         String className = this.getLocalClassName().toString();
         Map<String, Object> answers = new HashMap<>();
-        answers.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
-        answers.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());
-        answers.put(getResources().getString(R.string.MJWJ1_question2), userAnswers.getUserAnswerMJWJ2());
-        answers.put(getResources().getString(R.string.MJWJ1_question3), userAnswers.getUserAnswerMJWJ3());
-        answers.put(getResources().getString(R.string.MJWJ1_question4), userAnswers.getUserAnswerMJWJ4());
+        answers.put("Correct answer", acceptJesusAnswer.getNumberOfCorrectAnswer());
+        answers.put(getResources().getString(R.string.MJWJ8_question1), acceptJesusAnswer.getUserAnswerMJWJ1());
+        answers.put(getResources().getString(R.string.MJWJ8_question2), acceptJesusAnswer.getUserAnswerMJWJ2());
+        answers.put("Setelah belajar materi ini, Aku menerima Yesus sebagai Juru selamat pada tanggal", acceptJesusAnswer.getUserAnswerMJWJ3());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
@@ -200,6 +197,7 @@ public class LESSON8 extends AppCompatActivity {
                         Log.w(TAG, "Error writing document", e);
                     }
                 });
+
     }
 
     // SAVE PREFERENCE WHEN BACK BACK PRESSED and ACTIVITY GET DESTROYED
@@ -207,10 +205,9 @@ public class LESSON8 extends AppCompatActivity {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString());
-        editor.putString(key_mjwj_answer1, mjwj_answer1.getText().toString());
-        editor.putString(key_mjwj_answer2, mjwj_answer2.getText().toString());
-        editor.putString(key_mjwj_answer3, mjwj_answer3.getText().toString());
-        editor.putString(key_mjwj_answer4, mjwj_answer4.getText().toString());
+        editor.putString(key_mjwj_askAlreadyAcceptJesus, mjwj_answer1.getText().toString());
+        editor.putString(key_mjwj_askWhenAcceptJesus, mjwj_answer2.getText().toString());
+        editor.putString(key_mjwj_dateTodayAcceptJesus, mjwj_answer3.getText().toString());
         editor.commit();
     }
 
@@ -218,7 +215,9 @@ public class LESSON8 extends AppCompatActivity {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         // set text just like when the user leave it (back pressed)
         UserAnswerTreasureHunt.setText(sharedPreferences.getString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString()));
-
+        mjwj_answer1.setText(sharedPreferences.getString(key_mjwj_askAlreadyAcceptJesus, mjwj_answer1.getText().toString()));
+        mjwj_answer2.setText(sharedPreferences.getString(key_mjwj_askWhenAcceptJesus, mjwj_answer2.getText().toString()));
+        mjwj_answer3.setText(sharedPreferences.getString(key_mjwj_dateTodayAcceptJesus, mjwj_answer3.getText().toString()));
     }
 
     @Override
