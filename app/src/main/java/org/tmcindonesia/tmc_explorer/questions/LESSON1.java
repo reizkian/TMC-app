@@ -40,6 +40,11 @@ public class LESSON1 extends AppCompatActivity {
     private int correctAnswerQuestionsPage[] = {1, 0, 1, 0, 0};
     private RadioGroup rgqp_question1, rgqp_question2, rgqp_question3, rgqp_question4, rgqp_question5;
     private RadioButton rb_question1, rb_question2, rb_question3, rb_question4, rb_question5;
+    private static final String key_rb_question1 = "key_rb_question1";
+    private static final String key_rb_question2 = "key_rb_question2";
+    private static final String key_rb_question3 = "key_rb_question3";
+    private static final String key_rb_question4 = "key_rb_question4";
+    private static final String key_rb_question5 = "key_rb_question5";
     private Button getCheckAnswerQuestionsPage;
     private int numberOfCorrectAnswer = 0;
     // variable MY JOURNEY WITH JESUS
@@ -72,13 +77,13 @@ public class LESSON1 extends AppCompatActivity {
                 String userInputAnswer = UserAnswerTreasureHunt.getText().toString().trim().toUpperCase();
 
                 // compare to true answer
-                if (userInputAnswer.equals(trueAnswerTreasureHunt)) {
+                if (userInputAnswer.equals(trueAnswerTreasureHunt.trim())) {
                     // change button color to green
                     checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(LESSON1.this, R.color.green_true_answer));
                     // notify correct answer
                     Toast.makeText(LESSON1.this, "Jawaban Kamu Benar!", Toast.LENGTH_SHORT).show();
                 }
-                if (!userInputAnswer.equals(trueAnswerTreasureHunt)) {
+                if (!userInputAnswer.equals(trueAnswerTreasureHunt.trim())) {
                     // change button color to red
                     checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(LESSON1.this, R.color.red_false_answer));
                     // notify wrong answer
@@ -107,13 +112,13 @@ public class LESSON1 extends AppCompatActivity {
                 int rb_id_question4 = rgqp_question4.getCheckedRadioButtonId();
                 int rb_id_question5 = rgqp_question5.getCheckedRadioButtonId();
                 int rb_id_array[] = {rb_id_question1, rb_id_question2, rb_id_question3, rb_id_question4, rb_id_question5};
-                // get layout ID radio button
+                // get layout ID radio button which is choose
                 rb_question1 = (RadioButton) findViewById(rb_id_question1);
                 rb_question2 = (RadioButton) findViewById(rb_id_question2);
                 rb_question3 = (RadioButton) findViewById(rb_id_question3);
                 rb_question4 = (RadioButton) findViewById(rb_id_question4);
                 rb_question5 = (RadioButton) findViewById(rb_id_question5);
-                //get radio button index
+                //get radio button index which is choose
                 int rb_index_question1 = rgqp_question1.indexOfChild(rb_question1);
                 int rb_index_question2 = rgqp_question2.indexOfChild(rb_question2);
                 int rb_index_question3 = rgqp_question3.indexOfChild(rb_question3);
@@ -208,7 +213,15 @@ public class LESSON1 extends AppCompatActivity {
     private void SavePreferences() {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        // save user answer TREASURE HUNT
         editor.putString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString());
+        // save user answer MULTIPLE CHOICE
+        editor.putInt(key_rb_question1, rgqp_question1.getCheckedRadioButtonId());
+        editor.putInt(key_rb_question2, rgqp_question2.getCheckedRadioButtonId());
+        editor.putInt(key_rb_question3, rgqp_question3.getCheckedRadioButtonId());
+        editor.putInt(key_rb_question4, rgqp_question4.getCheckedRadioButtonId());
+        editor.putInt(key_rb_question5, rgqp_question5.getCheckedRadioButtonId());
+        // save user answer MY JOURNEY WITH JESUS
         editor.putString(key_mjwj_answer1, mjwj_answer1.getText().toString());
         editor.putString(key_mjwj_answer2, mjwj_answer2.getText().toString());
         editor.putString(key_mjwj_answer3, mjwj_answer3.getText().toString());
@@ -219,7 +232,15 @@ public class LESSON1 extends AppCompatActivity {
     private void LoadPreferences() {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         // set text just like when the user leave it (back pressed)
+        // load user answer TREASURE HUNT
         UserAnswerTreasureHunt.setText(sharedPreferences.getString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString()));
+        // load user answer MULTIPLE CHOICE
+        rgqp_question1.check(sharedPreferences.getInt(key_rb_question1,rgqp_question1.getCheckedRadioButtonId()));
+        rgqp_question2.check(sharedPreferences.getInt(key_rb_question2,rgqp_question2.getCheckedRadioButtonId()));
+        rgqp_question3.check(sharedPreferences.getInt(key_rb_question3,rgqp_question3.getCheckedRadioButtonId()));
+        rgqp_question4.check(sharedPreferences.getInt(key_rb_question4,rgqp_question4.getCheckedRadioButtonId()));
+        rgqp_question5.check(sharedPreferences.getInt(key_rb_question5,rgqp_question5.getCheckedRadioButtonId()));
+        // load user answer MY JOURNEY WITH JESUS
         mjwj_answer1.setText(sharedPreferences.getString(key_mjwj_answer1, mjwj_answer1.getText().toString()));
         mjwj_answer2.setText(sharedPreferences.getString(key_mjwj_answer2, mjwj_answer2.getText().toString()));
         mjwj_answer3.setText(sharedPreferences.getString(key_mjwj_answer3, mjwj_answer3.getText().toString()));
