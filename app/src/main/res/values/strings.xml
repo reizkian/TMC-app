@@ -1,94 +1,444 @@
 <resources>
     <string name="app_name">TMC Explorer</string>
     <string name="title_activity_home">TMC Indonesia</string>
-    <string name="large_text">
-        "Material is the metaphor.\n\n"
-
-        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
-        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
-        "technologically advanced and open to imagination and magic.\n"
-        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
-        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
-        "flexibility of the material creates new affordances that supercede those in the physical "
-        "world, without breaking the rules of physics.\n"
-        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
-        "interact, and exist in space and in relation to each other. Realistic lighting shows "
-        "seams, divides space, and indicates moving parts.\n\n"
-
-        "Bold, graphic, intentional.\n\n"
-
-        "The foundational elements of print based design typography, grids, space, scale, color, "
-        "and use of imagery guide visual treatments. These elements do far more than please the "
-        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
-        "imagery, large scale typography, and intentional white space create a bold and graphic "
-        "interface that immerse the user in the experience.\n"
-        "An emphasis on user actions makes core functionality immediately apparent and provides "
-        "waypoints for the user.\n\n"
-
-        "Motion provides meaning.\n\n"
-
-        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
-        "inflection points that initiate motion, transforming the whole design.\n"
-        "All action takes place in a single environment. Objects are presented to the user without "
-        "breaking the continuity of experience even as they transform and reorganize.\n"
-        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
-        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
-
-        "3D world.\n\n"
-
-        "The material environment is a 3D space, which means all objects have x, y, and z "
-        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
-        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
-        "position along the z-axis and has a standard 1dp thickness.\n"
-        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
-        "emulated by manipulating the y-axis.\n\n"
-
-        "Light and shadow.\n\n"
-
-        "Within the material environment, virtual lights illuminate the scene. Key lights create "
-        "directional shadows, while ambient light creates soft shadows from all angles.\n"
-        "Shadows in the material environment are cast by these two light sources. In Android "
-        "development, shadows occur when light sources are blocked by sheets of material at "
-        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
-        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
-
-        "Resting elevation.\n\n"
-
-        "All material objects, regardless of size, have a resting elevation, or default elevation "
-        "that does not change. If an object changes elevation, it should return to its resting "
-        "elevation as soon as possible.\n\n"
-
-        "Component elevations.\n\n"
-
-        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
-        "does not vary from 6dp in one app to 16dp in another app).\n"
-        "Components may have different resting elevations across platforms, depending on the depth "
-        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
-
-        "Responsive elevation and dynamic elevation offsets.\n\n"
-
-        "Some component types have responsive elevation, meaning they change elevation in response "
-        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
-        "changes are consistently implemented using dynamic elevation offsets.\n"
-        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
-        "to the component’s resting state. They ensure that elevation changes are consistent "
-        "across actions and component types. For example, all components that lift on press have "
-        "the same elevation change relative to their resting elevation.\n"
-        "Once the input event is completed or cancelled, the component will return to its resting "
-        "elevation.\n\n"
-
-        "Avoiding elevation interference.\n\n"
-
-        "Components with responsive elevations may encounter other components as they move between "
-        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
-        "through other material, components avoid interfering with one another any number of ways, "
-        "whether on a per component basis or using the entire app layout.\n"
-        "On a component level, components can move or be removed before they cause interference. "
-        "For example, a floating action button (FAB) can disappear or move off screen before a "
-        "user picks up a card, or it can move if a snackbar appears.\n"
-        "On the layout level, design your app layout to minimize opportunities for interference. "
-        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
-        "when a user tries to pick up one of cards.\n\n"
-    </string>
     <string name="action_settings">Settings</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 1 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   1 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage1_question1">Seperti apakah Allah itu?</string>
+    <string name="questionpage1_answer_1a">Allah seperti suatu "kekuatan" baik di dalam alam semesta</string>
+    <string name="questionpage1_answer_1b">Allah adalah seorang pribadi yang mengenal dan mencintai kita</string>
+    <!--    question page 2-->
+    <string name="questionpage1_question2">Kita tak dapat melihat Allah karena</string>
+    <string name="questionpage1_answer_2a">Allah adalah roh dan kita tidak dapat melihat roh</string>
+    <string name="questionpage1_answer_2b">Allah sangat jauh sehinga kita tak dapat melihat-Nya</string>
+    <!--    question page 3-->
+    <string name="questionpage1_question3">Ketika Alkitab berkata Allah itu kudus, artinya</string>
+    <string name="questionpage1_answer_3a">Allah itu sangat baik</string>
+    <string name="questionpage1_answer_3b">Allah itu suci dan sempurna tanpa dosa sedikitpun</string>
+    <!--    question page 4-->
+    <string name="questionpage1_question4">Aku tahu Allah mengasihiku karena</string>
+    <string name="questionpage1_answer_4a">Ia akan memberikan Putra-Nya untuk mati menebus dosa ku</string>
+    <string name="questionpage1_answer_4b">Aku merasa begitu</string>
+    <!--    question page 5-->
+    <string name="questionpage1_question5">Apa yang Allah ingin kita lakukan?</string>
+    <string name="questionpage1_answer_5a">Allah ingin kita mencintai-Nya dengan sepenuh hati kita</string>
+    <string name="questionpage1_answer_5b"> Allah ingin kita melakukan banyak kebaikan untuk-Nya</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   1 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ1_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ1_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ1_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ1_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 2 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   2 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage2_question1">Alkitab berkata bahwa Allah adalah</string>
+    <string name="questionpage2_answer_1a">Satu Allah dalam tiga pribadi, yaitu Bapa, Anak, dan Roh Kudus</string>
+    <string name="questionpage2_answer_1b">Tiga pribadi yang berbeda</string>
+    <!--    question page 2-->
+    <string name="questionpage2_question2">Allah dapat berada di mana pun pada saat yang sama karena</string>
+    <string name="questionpage2_answer_2a">Ia dapat pergi dengan sangat cepat</string>
+    <string name="questionpage2_answer_2b">Ia adalah Tuhan dan Ia adalah Roh</string>
+    <!--    question page 3-->
+    <string name="questionpage2_question3">Karena Allah itu kudus dan adil, maka</string>
+    <string name="questionpage2_answer_3a">Ia harus menghukum segala dosa</string>
+    <string name="questionpage2_answer_3b">Ia bisa mengabaikan dosa-dosa kita</string>
+    <!--    question page 4-->
+    <string name="questionpage2_question4">Karena Allah itu setia, sehingga</string>
+    <string name="questionpage2_answer_4a">Ia hampir selalu memenuhi janji-Nya</string>
+    <string name="questionpage2_answer_4b">Ia selalu memenuhi janji-Nya</string>
+    <!--    question page 5-->
+    <string name="questionpage2_question5">Karena Allah itu maha bijaksana, maka</string>
+    <string name="questionpage2_answer_5a">Ia hampir tahu segalanya</string>
+    <string name="questionpage2_answer_5b">Ia tahu segalanya, bahkan pikiran-pikiran kita</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   2 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ2_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ2_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ2_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ2_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 3 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   3 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage3_question1">Bagaimana langit dan bumi terwujud?</string>
+    <string name="questionpage3_answer_1a">Oleh ledakan besar</string>
+    <string name="questionpage3_answer_1b">Tuhan menciptakannya</string>
+    <!--    question page 2-->
+    <string name="questionpage3_question2">Bagaimana Allah menciptakan langit dan bumi?</string>
+    <string name="questionpage3_answer_2a">Allah menciptakan dengan bekerja keras</string>
+    <string name="questionpage3_answer_2b">Allah menciptakan dengan firman-Nyah</string>
+    <!--    question page 3-->
+    <string name="questionpage3_question3">Fakta yang benar tentang manusia adalah</string>
+    <string name="questionpage3_answer_3a">Manusia diciptakan oleh Allah, sesuai gambar dan wujud-Nya</string>
+    <string name="questionpage3_answer_3b">Manusia berevolusi dari hewan dalam proses waktu yang lama</string>
+    <!--    question page 4-->
+    <string name="questionpage3_question4">Dari semua hal yang Ia ciptakan, mana yang paling dikasihi Allah?</string>
+    <string name="questionpage3_answer_4a">Planet-planet dan bintang-bintang yang indah.</string>
+    <string name="questionpage3_answer_4b">Manusia</string>
+    <!--    question page 5-->
+    <string name="questionpage3_question5">Hal yang paling ajaib tentang kita adalah</string>
+    <string name="questionpage3_answer_5a">Kita bisa membuat komputer dan pesawat luar angkasa</string>
+    <string name="questionpage3_answer_5b">Allah dapat tinggal di dalam hati kita</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   3 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ3_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ3_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ3_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ3_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 4 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   4 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage4_question1">Dari Alkitab kita belajar bahwa</string>
+    <string name="questionpage4_answer_1a">Setan hanyalah karakter ciptaan yang dipercayai dan tidak benar-benar ada.</string>
+    <string name="questionpage4_answer_1b">Setan adalah musuh terbesar Allah dan juga musuh kita</string>
+    <!--    question page 2-->
+    <string name="questionpage4_question2">Dari Alkitab kita belajar bahwa</string>
+    <string name="questionpage4_answer_2a">Mulanya Setan diciptakan sebagai malaikat, namun kemudian ia memberontak kepada Allah.</string>
+    <string name="questionpage4_answer_2b">Setan memang telah selalu menjadi musuh Tuhan.</string>
+    <!--    question page 3-->
+    <string name="questionpage4_question3">Menipu orang berarti</string>
+    <string name="questionpage4_answer_3a">Menceritakan kepada mereka apa yang ingin mereka dengar.</string>
+    <string name="questionpage4_answer_3b">Membuat mereka memercayai hal yang tidak benar.</string>
+    <!--    question page 4-->
+    <string name="questionpage4_question4">Setan mencobai kita dengan hal-hal yang </string>
+    <string name="questionpage4_answer_4a">Selalu terlihat buruk.</string>
+    <string name="questionpage4_answer_4b">Bisa terlihat indah, namun sebenarnya tidak baik.</string>
+    <!--    question page 5-->
+    <string name="questionpage4_question5">Kita dapat terhindar dari tipu daya Setan dengan</string>
+    <string name="questionpage4_answer_5a">Mengenal dan menaati apa yang Allah firmankan dalam Alkitab.</string>
+    <string name="questionpage4_answer_5b">Mengetahui nasihat orang-orang dalam berbagai buku.</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   4 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ4_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ4_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ4_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ4_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 5 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   5 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage5_question1">Juruselamat yang dijanjikan bernama YESUS karena</string>
+    <string name="questionpage5_answer_1a">Yesus adalah nama yang indah.</string>
+    <string name="questionpage5_answer_1b">Yesuslah yang menyelamatkan kita dari dosa-dosa kita.</string>
+    <!--    question page 2-->
+    <string name="questionpage5_question2">Yohanes Pembaptis menyebut Yesus “Anak Domba Allah” karena</string>
+    <string name="questionpage5_answer_2a">Yesus akan mati untuk menebus hidup kita yang berdosa</string>
+    <string name="questionpage5_answer_2b">Yesus lembut bagai seekor anak domba.</string>
+    <!--    question page 3-->
+    <string name="questionpage5_question3">Dari Alkitab kita belajar bahwa Yesus datang ke dunia</string>
+    <string name="questionpage5_answer_3a">Hanya untuk melakukan banyak keajaiban.</string>
+    <string name="questionpage5_answer_3b">Untuk mati di kayu salib menanggung dosa-dosa kita.</string>
+    <!--    question page 4-->
+    <string name="questionpage5_question4">Salah satu pencuri yang disalibkan bersama Yesus diselamatkan karena</string>
+    <string name="questionpage5_answer_4a">Ia lebih baik dari pencuri yang satunya.</string>
+    <string name="questionpage5_answer_4b">Ia percaya bahwa Tuhan Yesus adalah Juruselamatnya.</string>
+    <!--    question page 5-->
+    <string name="questionpage5_question5">Allah ingin aku percaya bahwa</string>
+    <string name="questionpage5_answer_5a">Yesus adalah orang hebat.</string>
+    <string name="questionpage5_answer_5b">Yesus adalah Anak Allah yang mati karena dosa-dosaku.</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   5 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ5_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ5_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ5_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ5_question4">4. Kami mendorongmu unt uk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 6 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   6 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage6_question1">Kebangkitan Kristus membuktikan bahwa</string>
+    <string name="questionpage6_answer_1a">Ia adalah manusia hebat yang pernah hidup di dunia dengan begitu mengagumkan.</string>
+    <string name="questionpage6_answer_1b">Ia adalah Anak Allah, dan semua yang Ia katakan benar adanya</string>
+    <!--    question page 2-->
+    <string name="questionpage6_question2">Ketika Yesus kembali ke Surga, Ia kembali sebagai</string>
+    <string name="questionpage6_answer_2a">Manusia hebat yang menyenangkan Allah.</string>
+    <string name="questionpage6_answer_2b">Pemenang Perkasa atas iblis dan semua penguasa kegelapan</string>
+    <!--    question page 3-->
+    <string name="questionpage6_question3">Ketika Tuhan Yesus kembali ke Surga, Allah Bapa</string>
+    <string name="questionpage6_answer_3a">Memberi-Nya tempat kehormatan di tempat Maha tinggi</string>
+    <string name="questionpage6_answer_3b">Memberi-Nya tempat kehormatan tinggi.</string>
+    <!--    question page 4-->
+    <string name="questionpage6_question4">Di manakah Yesus sekarang?</string>
+    <string name="questionpage6_answer_4a">Dia masih di dalam liang kubur</string>
+    <string name="questionpage6_answer_4b">Dia berada di Surga, duduk di sebelah kanan Allah Bapa.</string>
+    <!--    question page 5-->
+    <string name="questionpage6_question5">Menurut firman Allah, apa yang harus kulakukan agar diselamatkan?</string>
+    <string name="questionpage6_answer_5a">Percaya kepada Tuhan Yesus Kristus.</string>
+    <string name="questionpage6_answer_5b">Melakukan banyak perbuatan baik..</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   5 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ6_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ6_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ6_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ6_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 7 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   7 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage7_question1">Hal yang paling buruk dalam dunia ini adalah</string>
+    <string name="questionpage7_answer_1a">Bencana gunung berapi.</string>
+    <string name="questionpage7_answer_1b">Dosa.</string>
+    <!--    question page 2-->
+    <string name="questionpage7_question2">Yang menyebabkan aku berkata dan melakukan hal yang tidak baik adalah karena</string>
+    <string name="questionpage7_answer_2a">Aku memiliki dosa di hatiku.</string>
+    <string name="questionpage7_answer_2b">Perbuatan orang lain membuatku marah.</string>
+    <!--    question page 3-->
+    <string name="questionpage7_question3">Saat aku sadar bahwa aku berada di jalan yang salah</string>
+    <string name="questionpage7_answer_3a">Aku minta maaf kepada Tuhan.</string>
+    <string name="questionpage7_answer_3b">Aku harus berbalik dan kembali ke jalan Tuhan.</string>
+    <!--    question page 4-->
+    <string name="questionpage7_question4">Bagaimana Allah menunjukkan bahwa Dia mengasihi kita?</string>
+    <string name="questionpage7_answer_4a">Ia mengabaikan dosa-dosa kita</string>
+    <string name="questionpage7_answer_4b">Ia memberikan Anak-Nya untuk mengambil alih hukuman kita.</string>
+    <!--    question page 5-->
+    <string name="questionpage7_question5">Allah mengampuni seluruh dosaku</string>
+    <string name="questionpage7_answer_5a">Saat aku percaya bahwa Tuhan Yesus adalah Juruselamatku.</string>
+    <string name="questionpage7_answer_5b">Saat aku berjanji kepada Tuhan bahwa aku akan menjadi lebih baik.</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   7 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ7_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ7_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ7_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ7_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 8 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   8 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage8_question1">Diselamatkan berarti</string>
+    <string name="questionpage8_answer_1a">Allah mengampuni dosa-dosaku dan menjadikanku anak-Nya.</string>
+    <string name="questionpage8_answer_1b">Aku adalah orang yang taat beragama.</string>
+    <!--    question page 2-->
+    <string name="questionpage8_question2">Aku dapat diselamatkan</string>
+    <string name="questionpage8_answer_2a">Dengan melakukan banyak perbuatan baik</string>
+    <string name="questionpage8_answer_2b">Dengan percaya bahwa Yesus adalah Juruselamatku.</string>
+    <!--    question page 3-->
+    <string name="questionpage8_question3">Anak-anak</string>
+    <string name="questionpage8_answer_3a">Dapat percaya kepada Yesus dan menerima-Nya sebagai Juruselamat mereka.</string>
+    <string name="questionpage8_answer_3b">Harus menunggu sampai mereka dewasa untuk bisa diselamatkan.</string>
+    <!--    question page 4-->
+    <string name="questionpage8_question4">Aku menerima Yesus sebagai Juruselamatku</string>
+    <string name="questionpage8_answer_4a">Dengan berusaha keras menjadi orang baik.</string>
+    <string name="questionpage8_answer_4b">Dengan percaya bahwa Ia mati untuk menebus hidupku yang berdosa dan meminta-Nya masuk ke dalam hatiku</string>
+    <!--    question page 5-->
+    <string name="questionpage8_question5">Alkitab berkata bahwa</string>
+    <string name="questionpage8_answer_5a">Aku tidak bisa benar-benar tahu apakah aku diselamatkan.</string>
+    <string name="questionpage8_answer_5b">Jika aku memiliki Yesus di hatiku, aku punya kehidupan yang kekal.</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   8 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ8_question1">Sudahkah kamu menerima Yesus sebagai juru Selamatmu?</string>
+    <string name="MJWJ8_question2">Jika ya, kapan?</string>
+    <string name="MJWJ8_AcceptJesusPrayer">Tuhan Yesus Kristus,  aku tahu,  aku telah berdosa,  dan aku sungguh menyesal atas dosa doaaku.  Aku percaya bahwa Kaulah Anak Allah dan Kau telah mati di kayu salib untuk dosa-dosaku.  Masuklah  ke dalam hatiku. Hari ini pada tanggal </string>
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 9 ###############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================= -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   9 -->
+    <!--    ============================================= -->
+    <!--    question page 1-->
+    <string name="questionpage9_question1">Saat Yesus datang kembali untuk orang-orang percaya, orang percaya yang telah mati akan</string>
+    <string name="questionpage9_answer_1a">Melewati masa-masa indah yang akan terjadi.</string>
+    <string name="questionpage9_answer_1b">Segera hidup kembali secara instan dan menjadi yang pertama yang dibangkitkan untuk bertemu Dia.</string>
+    <!--    question page 2-->
+    <string name="questionpage9_question2">Orang percaya yang masih hidup saat Yesus datang akan</string>
+    <string name="questionpage9_answer_2a">Segera diubah dan menjadi seperti Kristus</string>
+    <string name="questionpage9_answer_2b">Naik ke Surga dalam tubuh manusia lama mereka</string>
+    <!--    question page 3-->
+    <string name="questionpage9_question3">Keselamatan</string>
+    <string name="questionpage9_answer_3a">Adalah karunia yang kita dapat pada saat kita menerima Yesus sebagai Juruselamat kita.</string>
+    <string name="questionpage9_answer_3b">Diperoleh dari perbuatan baik yang kita kumpulkan.</string>
+    <!--    question page 4-->
+    <string name="questionpage9_question4">Mahkota bagi orang yang melayani Tuhan Yesus dengan setia</string>
+    <string name="questionpage9_answer_4a">Diberikan dalam hidup kita sekarang.</string>
+    <string name="questionpage9_answer_4b">Diberikan atas usaha kita, dan kita akan menerima-Nya saat kita berada di Surga</string>
+    <!--    question page 5-->
+    <string name="questionpage9_question5">Empat kata yang memberitahu kita bagaimana kita selalu bersiap-siap untuk menyambut kedatangan Tuhan adalah</string>
+    <string name="questionpage9_answer_5a">Bekerja, Percaya, Berdoa, Memberi.</string>
+    <string name="questionpage9_answer_5b">Mengasihi, Taat, Melayani, Berjaga-jaga.</string>
+
+    <!--    =============================================================== -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   9 -->
+    <!--    =============================================================== -->
+    <string name="MJWJ9_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ9_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ9_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ9_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 10 ##############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================== -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   10 -->
+    <!--    ============================================== -->
+    <!--    question page 1-->
+    <string name="questionpage10_question1">Musuhku, Setan,</string>
+    <string name="questionpage10_answer_1a">Dapat membawaku keluar dari keluarga Allah saat aku berdosa</string>
+    <string name="questionpage10_answer_1b">Tidak akan pernah dapat membawaku keluar dari keluarga Tuhan.</string>
+    <!--    question page 2-->
+    <string name="questionpage10_question2">Aku tahu bahwa aku diselamatkan karena</string>
+    <string name="questionpage10_answer_2a">Perasaanku mengatakan seperti itu.</string>
+    <string name="questionpage10_answer_2b">Firman Allah berkata demikian.</string>
+    <!--    question page 3-->
+    <string name="questionpage10_question3">Mengenai cobaan,</string>
+    <string name="questionpage10_answer_3a">Allah selalu memberikan jalan keluar, supaya aku tidak berdosa.</string>
+    <string name="questionpage10_answer_3b">Pencobaan itu begitu besar, hingga aku tidak mungkin tidak jatuh dalam dosa.</string>
+    <!--    question page 4-->
+    <string name="questionpage10_question4">Saat aku berdosa, aku harus</string>
+    <string name="questionpage10_answer_4a">Langsung menghadap Tuhan dan mengakui dosa-dosaku kepada-Nya.</string>
+    <string name="questionpage10_answer_4b">Berbuat baik untuk menutupi kesalahan yang telah kuperbuat.</string>
+    <!--    question page 5-->
+    <string name="questionpage10_question5">Saat aku punya masalah, aku harus</string>
+    <string name="questionpage10_answer_5a">Berdoa kepada Bapaku yang di Surga dalam nama Yesus dan “menyerahkan segala kekhawatiranku kepada-Nya”.</string>
+    <string name="questionpage10_answer_5b">Ingat bahwa Tuhan terlalu sibuk untuk mengurusi masalahku.</string>
+
+    <!--    ================================================================ -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   10 -->
+    <!--    ================================================================ -->
+    <string name="MJWJ10_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ10_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ10_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ10_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 11 ##############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================== -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   11 -->
+    <!--    ============================================== -->
+    <!--    question page 1-->
+    <string name="questionpage11_question1">Ketika Allah melihatku dalam keadaan belum diselamatkan, Dia melihatku</string>
+    <string name="questionpage11_answer_1a">Sebagai orang baik yang mencoba berbuat benar</string>
+    <string name="questionpage11_answer_1b">Dosa-dosaku yang banyak, Dia melihatku sebagai orang berdosa dan Ia melihatku berada di dalam keluarga Adam yang berdosa. </string>
+    <!--    question page 2-->
+    <string name="questionpage11_question2">Allah melepaskanku dari dosa-dosaku</string>
+    <string name="questionpage11_answer_2a">Dengan menimpakan dosa-dosaku kepada Anak-Nya di kayu salib.</string>
+    <string name="questionpage11_answer_2b">Dengan berpura-pura tidak tahu tentang dosa-dosaku</string>
+    <!--    question page 3-->
+    <string name="questionpage11_question3">Allah melepaskanku dari manusia lamaku yang berdosa dengan</string>
+    <string name="questionpage11_answer_3a">Menolongku menjadi orang yang lebih baik</string>
+    <string name="questionpage11_answer_3b">Meletakkan aku di dalam Kristus pada kayu salib.</string>
+    <!--    question page 4-->
+    <string name="questionpage11_question4">Saat Kristus mati di kayu salib,</string>
+    <string name="questionpage11_answer_4a">Aku “mati” bersama-Nya. Saat Ia bangkit dari kubur, aku pun “bangkit” bersama-Nya sebagai manusia baru dalam Kristus</string>
+    <string name="questionpage11_answer_4b">Itulah akhir hidup-Nya.</string>
+    <!--    question page 5-->
+    <string name="questionpage11_question5">Siapakah aku sekarang?</string>
+    <string name="questionpage11_answer_5a">Aku adalah pribadi seperti yang orang lain pikirkan tentang aku.</string>
+    <string name="questionpage11_answer_5b">Aku adalah pribadi seperti yang Allah katakan tentang aku, yaitu manusia baru di dalam Kristus</string>
+
+    <!--    ================================================================ -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   11 -->
+    <!--    ================================================================ -->
+    <string name="MJWJ11_question1">1. Hal terpenting apa yang kamu pelajari dari bab in?</string>
+    <string name="MJWJ11_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
+    <string name="MJWJ11_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
+    <string name="MJWJ11_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan?</string>
+
+
+    <!--    ###########################################################################################################-->
+    <!--    ############################################# L E S S O N 12 ##############################################-->
+    <!--    ###########################################################################################################-->
+
+    <!--    ============================================== -->
+    <!--    Q U E S T I O N    P A G E    L E S S O N   12 -->
+    <!--    ============================================== -->
+    <!--    question page 1-->
+    <string name="questionpage12_question1">Anugerah Allah terbesar bagi kita adalah</string>
+    <string name="questionpage12_answer_1a">Anak-Nya. Ia telah memberikan Kristus kepada kita, untuk hidup di dalam kita.</string>
+    <string name="questionpage12_answer_1b">Kebahagiaan. Tuhan membuat kita bahagia dengan memberikan apa yang kita minta</string>
+    <!--    question page 2-->
+    <string name="questionpage12_question2">Masalah terbesarku adalah</string>
+    <string name="questionpage12_answer_2a">Apa yang orang lain katakan dan perbuat kepadaku</string>
+    <string name="questionpage12_answer_2b">Diriku sendiri! Egoku selalu menjadi masalah paling besar</string>
+    <!--    question page 3-->
+    <string name="questionpage12_question3">Saat ego bertakhta di dalam hati</string>
+    <string name="questionpage12_answer_3a">Aku menjadi orang yang egois. Aku tidak berbahagia dan banyak melakukan dosa dalam hidupku</string>
+    <string name="questionpage12_answer_3b">Aku akan bahagia karena aku hidup untuk membahagiakan diriku sendiri.</string>
+    <!--    question page 4-->
+    <string name="questionpage12_question4">Saat Kristus bertakhta dalam hatiku, orang lain akan dapat melihat</string>
+    <string name="questionpage12_answer_4a">Indahnya hidup Kristus di dalam aku.</string>
+    <string name="questionpage12_answer_4b">Betapa baiknya aku.</string>
+    <!--    question page 5-->
+    <string name="questionpage12_question5">Rahasia dari hidup kristiani adalah</string>
+    <string name="questionpage12_answer_5a">Berusaha keras untuk menjadi orang baik.</string>
+    <string name="questionpage12_answer_5b">Berkata “TIDAK” pada ego sendiri dan bergantung kepada Kristus untuk hidup di dalamku.</string>
+
+    <!--    ================================================================ -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   12 -->
+    <!--    ================================================================ -->
+    <string name="keputusanku">“Tuhanku Yesus, takhta hatiku adalah milik-Mu! Aku memilih untuk hidup seperti Kristus dan bukan menurut egoku sendiri.” </string>
+    <string name="MJWJ12_question1">Tuliskan KESAKSIAN, kesan kesan kamu , atau perubahan apa yang kamu alami setelah Belajar Explorer Satu</string>
 </resources>

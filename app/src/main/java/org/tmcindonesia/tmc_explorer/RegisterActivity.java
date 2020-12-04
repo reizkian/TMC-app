@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,13 +33,14 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText emailRegister, passwordRegister, userNameRegister, dateBirthRegister, cityRegister, provinceRegister, institutionRegister;
+    EditText emailRegister, passwordRegister, getPasswordRegisterConfirm, userNameRegister, dateBirthRegister, cityRegister, provinceRegister, institutionRegister;
     Button buttonRegister;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     ProgressBar progressBar;
     String userID;
     DatePickerDialog.OnDateSetListener dateListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         emailRegister = findViewById(R.id.editTextEmailRegister);
         passwordRegister = findViewById(R.id.editTextPasswordRegister);
+        getPasswordRegisterConfirm = findViewById(R.id.editTextConfirmPasswordRegister);
         userNameRegister = findViewById(R.id.editTextUserNameRegister);
         dateBirthRegister = findViewById(R.id.editTextDateBirth);
         cityRegister = findViewById(R.id.editTextCityRegister);
@@ -96,7 +99,6 @@ public class RegisterActivity extends AppCompatActivity {
         };
 
 
-
         // REGISTER button clicked
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
                 //get the text box string
                 String email = emailRegister.getText().toString().trim();
                 String password = passwordRegister.getText().toString().trim();
+                String confirmpass = getPasswordRegisterConfirm.getText().toString().trim();
                 String username = userNameRegister.getText().toString().trim();
                 String datebirth = dateBirthRegister.getText().toString().trim();
                 String city = cityRegister.getText().toString().trim();
@@ -118,6 +121,9 @@ public class RegisterActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(password)) {
                     passwordRegister.setError("masukan password untuk mendaftar");
                     return;
+                }
+                if(TextUtils.isEmpty(confirmpass)){
+                    getPasswordRegisterConfirm.setError("masukan konfirmasi pasword untuk mendaftar");
                 }
                 if (TextUtils.isEmpty(city)) {
                     cityRegister.setError("masukan kota asal anda");
@@ -134,44 +140,52 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                // progressBar set to visible
-                progressBar.setVisibility(View.VISIBLE);
-
                 // REGISTER USER IN FIRE BASE
                 // handles user creation
-                firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(RegisterActivity.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
-                            // FireStore Data Base
-                            userID = firebaseAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
-                            Map<String, Object> user  = new HashMap<>();
-                            user.put("Name",username);
-                            user.put("Birth Date", datebirth);
-                            user.put("Email",email);
-                            user.put("City", city);
-                            user.put("Province", province);
-                            user.put("Institution", institution);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d(TAG,"onSuccess: create user profile" + userID);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG,"onFailure: "+ e.toString());
-                                }
-                            });
-                            // go to HOME activity
-                            startActivity(new Intent(getApplicationContext(), Home.class));
-                        }else {
-                            Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                if(!password.equals(confirmpass)) {
+                    // error message password cannot be confirmed
+                    Toast.makeText(RegisterActivity.this, "ulangi password tidak sama", Toast.LENGTH_SHORT).show();
+                }
+                if(password.equals(confirmpass)){
+                    // progressBar set to visible
+                    progressBar.setVisibility(View.VISIBLE);
+                    // create user
+                    firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(RegisterActivity.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
+                                // FireStore Data Base
+                                userID = firebaseAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID);
+                                Map<String, Object> user  = new HashMap<>();
+                                user.put("Name",username);
+                                user.put("Birth Date", datebirth);
+                                user.put("Email",email);
+                                user.put("City", city);
+                                user.put("Province", province);
+                                user.put("Institution", institution);
+                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG,"onSuccess: create user profile" + userID);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG,"onFailure: "+ e.toString());
+                                    }
+                                });
+                                // go to HOME activity
+                                startActivity(new Intent(getApplicationContext(), Home.class));
+                            }else
+                            {
+                                Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
+
             }
         });
     }
