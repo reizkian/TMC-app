@@ -159,6 +159,8 @@ public class LESSON6 extends AppCompatActivity {
                 );
                 // write data base method
                 writeUserAnswerToDataBase(userAnswers);
+                // save preferences
+                SavePreferences();
                 // toast
                 Toast.makeText(LESSON6.this,
                         "Terimakasih, ayo lanjutkan pelajaran mu",
