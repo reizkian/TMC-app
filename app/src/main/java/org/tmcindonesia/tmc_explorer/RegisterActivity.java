@@ -41,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
     String userID;
     DatePickerDialog.OnDateSetListener dateListener;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +99,6 @@ public class RegisterActivity extends AppCompatActivity {
         };
 
 
-
         // REGISTER button clicked
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,49 +139,53 @@ public class RegisterActivity extends AppCompatActivity {
                     passwordRegister.setError("Password harus lebih dari 6 huruf");
                     return;
                 }
-                // error message password cannot be confirmed
-                if(!password.equals(confirmpass)){
-                    Toast.makeText(RegisterActivity.this, "ulangi password tidak sama", Toast.LENGTH_SHORT).show();
-                }
-
-                // progressBar set to visible
-                progressBar.setVisibility(View.VISIBLE);
 
                 // REGISTER USER IN FIRE BASE
                 // handles user creation
-                firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(RegisterActivity.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
-                            // FireStore Data Base
-                            userID = firebaseAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = firebaseFirestore.collection("users").document(userID);
-                            Map<String, Object> user  = new HashMap<>();
-                            user.put("Name",username);
-                            user.put("Birth Date", datebirth);
-                            user.put("Email",email);
-                            user.put("City", city);
-                            user.put("Province", province);
-                            user.put("Institution", institution);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d(TAG,"onSuccess: create user profile" + userID);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG,"onFailure: "+ e.toString());
-                                }
-                            });
-                            // go to HOME activity
-                            startActivity(new Intent(getApplicationContext(), Home.class));
-                        }else {
-                            Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                if(!password.equals(confirmpass)) {
+                    // error message password cannot be confirmed
+                    Toast.makeText(RegisterActivity.this, "ulangi password tidak sama", Toast.LENGTH_SHORT).show();
+                }
+                if(password.equals(confirmpass)){
+                    // progressBar set to visible
+                    progressBar.setVisibility(View.VISIBLE);
+                    // create user
+                    firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(RegisterActivity.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
+                                // FireStore Data Base
+                                userID = firebaseAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID);
+                                Map<String, Object> user  = new HashMap<>();
+                                user.put("Name",username);
+                                user.put("Birth Date", datebirth);
+                                user.put("Email",email);
+                                user.put("City", city);
+                                user.put("Province", province);
+                                user.put("Institution", institution);
+                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG,"onSuccess: create user profile" + userID);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG,"onFailure: "+ e.toString());
+                                    }
+                                });
+                                // go to HOME activity
+                                startActivity(new Intent(getApplicationContext(), Home.class));
+                            }else
+                            {
+                                Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
-                    }
-                });
+                    });
+                }
+
             }
         });
     }
