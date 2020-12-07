@@ -74,18 +74,18 @@ public class Home extends AppCompatActivity {
                     R.drawable.icon_duabelas};
 
     String mLessonNumber[] = {
-            "pelajaran 1",
-            "pelajaran 2",
-            "pelajaran 3",
-            "pelajaran 4",
-            "pelajaran 5",
-            "pelajaran 6",
-            "pelajaran 7",
-            "pelajaran 8",
-            "pelajaran 9",
-            "pelajaran 10",
-            "pelajaran 11",
-            "pelajaran 12"
+            "Pelajaran 1",
+            "Pelajaran 2",
+            "Pelajaran 3",
+            "Pelajaran 4",
+            "Pelajaran 5",
+            "Pelajaran 6",
+            "Pelajaran 7",
+            "Pelajaran 8",
+            "Pelajaran 9",
+            "Pelajaran 10",
+            "Pelajaran 11",
+            "Pelajaran 12"
     };
 
     @Override
