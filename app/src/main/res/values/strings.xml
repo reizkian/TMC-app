@@ -30,7 +30,7 @@
     <!--    question page 5-->
     <string name="questionpage1_question5">Apa yang Allah ingin kita lakukan?</string>
     <string name="questionpage1_answer_5a">Allah ingin kita mencintai-Nya dengan sepenuh hati kita</string>
-    <string name="questionpage1_answer_5b"> Allah ingin kita melakukan banyak kebaikan untuk-Nya</string>
+    <string name="questionpage1_answer_5b">Allah ingin kita melakukan banyak kebaikan untuk-Nya</string>
 
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   1 -->
@@ -160,7 +160,7 @@
     <!--    Q U E S T I O N    P A G E    L E S S O N   5 -->
     <!--    ============================================= -->
     <!--    question page 1-->
-    <string name="questionpage5_question1">Juruselamat yang dijanjikan bernama YESUS karena</string>
+    <string name="questionpage5_question1">Juru Selamat yang dijanjikan bernama YESUS karena</string>
     <string name="questionpage5_answer_1a">Yesus adalah nama yang indah.</string>
     <string name="questionpage5_answer_1b">Yesuslah yang menyelamatkan kita dari dosa-dosa kita.</string>
     <!--    question page 2-->
@@ -174,7 +174,7 @@
     <!--    question page 4-->
     <string name="questionpage5_question4">Salah satu pencuri yang disalibkan bersama Yesus diselamatkan karena</string>
     <string name="questionpage5_answer_4a">Ia lebih baik dari pencuri yang satunya.</string>
-    <string name="questionpage5_answer_4b">Ia percaya bahwa Tuhan Yesus adalah Juruselamatnya.</string>
+    <string name="questionpage5_answer_4b">Ia percaya bahwa Tuhan Yesus adalah Juru Selamatnya.</string>
     <!--    question page 5-->
     <string name="questionpage5_question5">Allah ingin aku percaya bahwa</string>
     <string name="questionpage5_answer_5a">Yesus adalah orang hebat.</string>
@@ -251,7 +251,7 @@
     <string name="questionpage7_answer_4b">Ia memberikan Anak-Nya untuk mengambil alih hukuman kita.</string>
     <!--    question page 5-->
     <string name="questionpage7_question5">Allah mengampuni seluruh dosaku</string>
-    <string name="questionpage7_answer_5a">Saat aku percaya bahwa Tuhan Yesus adalah Juruselamatku.</string>
+    <string name="questionpage7_answer_5a">Saat aku percaya bahwa Tuhan Yesus adalah Juru Selamatku.</string>
     <string name="questionpage7_answer_5b">Saat aku berjanji kepada Tuhan bahwa aku akan menjadi lebih baik.</string>
 
     <!--    =============================================================== -->
@@ -277,13 +277,13 @@
     <!--    question page 2-->
     <string name="questionpage8_question2">Aku dapat diselamatkan</string>
     <string name="questionpage8_answer_2a">Dengan melakukan banyak perbuatan baik</string>
-    <string name="questionpage8_answer_2b">Dengan percaya bahwa Yesus adalah Juruselamatku.</string>
+    <string name="questionpage8_answer_2b">Dengan percaya bahwa Yesus adalah Juru Selamatku.</string>
     <!--    question page 3-->
     <string name="questionpage8_question3">Anak-anak</string>
-    <string name="questionpage8_answer_3a">Dapat percaya kepada Yesus dan menerima-Nya sebagai Juruselamat mereka.</string>
+    <string name="questionpage8_answer_3a">Dapat percaya kepada Yesus dan menerima-Nya sebagai Juru Selamat mereka.</string>
     <string name="questionpage8_answer_3b">Harus menunggu sampai mereka dewasa untuk bisa diselamatkan.</string>
     <!--    question page 4-->
-    <string name="questionpage8_question4">Aku menerima Yesus sebagai Juruselamatku</string>
+    <string name="questionpage8_question4">Aku menerima Yesus sebagai Juru Selamatku</string>
     <string name="questionpage8_answer_4a">Dengan berusaha keras menjadi orang baik.</string>
     <string name="questionpage8_answer_4b">Dengan percaya bahwa Ia mati untuk menebus hidupku yang berdosa dan meminta-Nya masuk ke dalam hatiku</string>
     <!--    question page 5-->
@@ -314,7 +314,7 @@
     <string name="questionpage9_answer_2b">Naik ke Surga dalam tubuh manusia lama mereka</string>
     <!--    question page 3-->
     <string name="questionpage9_question3">Keselamatan</string>
-    <string name="questionpage9_answer_3a">Adalah karunia yang kita dapat pada saat kita menerima Yesus sebagai Juruselamat kita.</string>
+    <string name="questionpage9_answer_3a">Adalah karunia yang kita dapat pada saat kita menerima Yesus sebagai Juru Selamat kita.</string>
     <string name="questionpage9_answer_3b">Diperoleh dari perbuatan baik yang kita kumpulkan.</string>
     <!--    question page 4-->
     <string name="questionpage9_question4">Mahkota bagi orang yang melayani Tuhan Yesus dengan setia</string>
