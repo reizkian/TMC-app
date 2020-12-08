@@ -328,14 +328,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:hint="masukan tanggal hari ini"
+                    android:hint="Masukkan tanggal hari ini"
                     android:layout_below="@id/textView_QuestionPage8_PrayerAcceptJesus"
                     />
                 <TextView
                     android:id="@+id/textView_QuestionPage8_Amen"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Aku menerimaMu sebagai Juruselamatku \n Amin"
+                    android:text="Aku menerimamu sebagai Juru Selamatku \n Amin"
                     android:textSize="@dimen/MJWJQuestion"
                     android:padding="10dp"
                     android:layout_centerHorizontal="true"
