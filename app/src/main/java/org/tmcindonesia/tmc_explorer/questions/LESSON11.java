@@ -32,7 +32,7 @@ public class LESSON11 extends AppCompatActivity {
     String userID;
     public static final String TAG = "TAG";
     // variable QUESTIONS PAGE
-    private int correctAnswerQuestionsPage[] = {0, 1, 0, 1, 0};
+    private int correctAnswerQuestionsPage[] = {1, 0, 1, 0, 1};
     private RadioGroup rgqp_question1, rgqp_question2, rgqp_question3, rgqp_question4, rgqp_question5;
     private RadioButton rb_question1, rb_question2, rb_question3, rb_question4, rb_question5;
     private Button getCheckAnswerQuestionsPage;
