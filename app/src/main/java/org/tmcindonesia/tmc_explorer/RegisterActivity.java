@@ -88,6 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
         // date picker dialog instance
         dateListener = new DatePickerDialog.OnDateSetListener() {
             @Override
