@@ -33,7 +33,7 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText emailRegister, passwordRegister, getPasswordRegisterConfirm, userNameRegister, dateBirthRegister, cityRegister, provinceRegister, institutionRegister;
+    EditText emailRegister, passwordRegister, getPasswordRegisterConfirm, userNameRegister, userPhoneRegister, dateBirthRegister, cityRegister, provinceRegister, institutionRegister;
     Button buttonRegister;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
@@ -51,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
         passwordRegister = findViewById(R.id.editTextPasswordRegister);
         getPasswordRegisterConfirm = findViewById(R.id.editTextConfirmPasswordRegister);
         userNameRegister = findViewById(R.id.editTextUserNameRegister);
+        userPhoneRegister = findViewById(R.id.editTextUserPhone);
         dateBirthRegister = findViewById(R.id.editTextDateBirth);
         cityRegister = findViewById(R.id.editTextCityRegister);
         provinceRegister = findViewById(R.id.editTextProvinceRegister);
@@ -108,6 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String password = passwordRegister.getText().toString().trim();
                 String confirmpass = getPasswordRegisterConfirm.getText().toString().trim();
                 String username = userNameRegister.getText().toString().trim();
+                String phonenumber = userPhoneRegister.getText().toString().trim();
                 String datebirth = dateBirthRegister.getText().toString().trim();
                 String city = cityRegister.getText().toString().trim();
                 String province = provinceRegister.getText().toString().trim();
@@ -120,6 +122,14 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 if (TextUtils.isEmpty(password)) {
                     passwordRegister.setError("masukan password untuk mendaftar");
+                    return;
+                }
+                if (TextUtils.isEmpty(username)) {
+                    passwordRegister.setError("masukan nama untuk mendaftar");
+                    return;
+                }
+                if (TextUtils.isEmpty(phonenumber)) {
+                    passwordRegister.setError("masukan nomor hand phone untuk mendaftar");
                     return;
                 }
                 if(TextUtils.isEmpty(confirmpass)){
@@ -160,6 +170,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID);
                                 Map<String, Object> user  = new HashMap<>();
                                 user.put("Name",username);
+                                user.put("Phone",phonenumber);
                                 user.put("Birth Date", datebirth);
                                 user.put("Email",email);
                                 user.put("City", city);

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
-        <activity android:name=".questions.LESSON12"></activity>
+        <activity android:name=".CertificateGenerator"></activity>
+        <activity android:name=".questions.LESSON12" />
         <activity android:name=".questions.LESSON11" />
         <activity android:name=".questions.LESSON10" />
         <activity android:name=".questions.LESSON9" />
