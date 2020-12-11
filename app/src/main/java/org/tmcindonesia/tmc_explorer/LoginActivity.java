@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
     Button LoginPage;
     TextView RegisterPage;
-    TextInputLayout EmailLogin, PasswordLogin;
+    EditText EmailLogin, PasswordLogin;
     FirebaseAuth firebaseAuth;
     ProgressBar progressBarLogin;
 
@@ -34,8 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         boolean networkConnection;
-        EmailLogin = findViewById(R.id.editTextEmailLogin);
-        PasswordLogin = findViewById(R.id.editTextPasswordLogin);
+        EmailLogin = findViewById(R.id.email);
+        PasswordLogin = findViewById(R.id.password);
         LoginPage = findViewById(R.id.buttonLogin);
         RegisterPage = findViewById(R.id.buttonRegister);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -72,8 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                 // set progressBar to visible
                 progressBarLogin.setVisibility(View.VISIBLE);
 
-                String email_login = EmailLogin.getEditText().toString().trim();
-                String password_login = PasswordLogin.getEditText().toString().trim();
+                String email_login = EmailLogin.getText().toString().trim();
+                String password_login = PasswordLogin.getText().toString().trim();
 
                 firebaseAuth.signInWithEmailAndPassword(email_login,password_login).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -83,6 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), Home.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Log.w("FireBaseLoginAttempt", "email: "+email_login+", password: "+ password_login);
                         }
                     }
                 });
