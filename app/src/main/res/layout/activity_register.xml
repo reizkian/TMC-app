@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backplate"
     tools:context=".RegisterActivity">
 
     <RelativeLayout
+        android:id="@+id/relativeLayout_RegisterContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="750dp"-->
-<!--            android:src="@drawable/backplate"-->
-<!--            android:scaleType="fitXY"/>-->
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="850dp"
+            android:src="@drawable/backplate"
+            android:scaleType="fitXY"/>
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="300dp"
