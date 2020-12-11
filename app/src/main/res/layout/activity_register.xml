@@ -4,24 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/register_page"
+    android:background="@drawable/backplate"
     tools:context=".RegisterActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="match_parent">
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="750dp"-->
+<!--            android:src="@drawable/backplate"-->
+<!--            android:scaleType="fitXY"/>-->
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/tmc" />
+            app:srcCompat="@drawable/tmcnewlogo" />
 
         <EditText
             android:id="@+id/editTextEmailRegister"
@@ -29,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="-30dp"
             android:hint="Email"
             android:textSize="15dp" />
 
@@ -93,15 +97,14 @@
             android:layout_below="@+id/editTextUserPhone"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="4dp"
+            android:cursorVisible="false"
+            android:focusable="false"
             android:hint="Tanggal lahir (tanggal/bulan/tahun)"
             android:inputType="date"
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            android:focusable="false"
-            android:cursorVisible="false"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/editTextCityRegister"
@@ -150,6 +153,7 @@
             android:layout_below="@+id/editTextInstitutionRegister"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
+            android:backgroundTint="#ec1b30"
             android:text="DAFTAR"
             android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -163,9 +167,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/buttonRegisterCreate"
             android:layout_centerHorizontal="true"
-            android:visibility="invisible"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_marginBottom="20dp"
+            android:indeterminateDrawable="@drawable/progress"
+            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </RelativeLayout>
