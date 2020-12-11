@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">TMC Explorer</string>
+    <string name="app_name">TMC Indonesia</string>
     <string name="title_activity_home">TMC Indonesia</string>
     <string name="action_settings">Settings</string>
+    <string name="daftar">Belum punya akun? <b>Daftar</b></string>
 
 
     <!--    ###########################################################################################################-->
