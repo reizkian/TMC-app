@@ -11,17 +11,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ProgressBar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-    Button LoginPage, RegisterPage;
-    EditText EmailLogin, PasswordLogin;
+    Button LoginPage;
+    TextView RegisterPage;
+    TextInputLayout EmailLogin, PasswordLogin;
     FirebaseAuth firebaseAuth;
     ProgressBar progressBarLogin;
 
@@ -69,8 +72,8 @@ public class LoginActivity extends AppCompatActivity {
                 // set progressBar to visible
                 progressBarLogin.setVisibility(View.VISIBLE);
 
-                String email_login = EmailLogin.getText().toString().trim();
-                String password_login = PasswordLogin.getText().toString().trim();
+                String email_login = EmailLogin.getEditText().toString().trim();
+                String password_login = PasswordLogin.getEditText().toString().trim();
 
                 firebaseAuth.signInWithEmailAndPassword(email_login,password_login).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

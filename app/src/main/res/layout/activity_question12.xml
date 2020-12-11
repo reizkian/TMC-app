@@ -31,14 +31,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/MultipleChoiceContainer">
-
+            <ImageView
+                android:id="@+id/ayojawab"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:paddingTop="40dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="-50dp"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/ayojawab"
+                />
             <TextView
                 android:id="@+id/textView_QuestionPage12_MultipleChoiceQuestion1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:justificationMode="inter_word"
                 android:text="@string/questionpage12_question1"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_below="@id/ayojawab"/>
 
             <RadioGroup
                 android:id="@+id/radioGroup_QuestionPage12_MultipleChoiceQuestion1"
@@ -286,18 +297,11 @@
         <ImageView
             android:id="@+id/congratulation"
             android:layout_width="wrap_content"
-            android:layout_height="700dp"
+            android:layout_height="310dp"
             android:src="@drawable/jesusthronecongrats"
             android:layout_below="@id/relativeLayout_QuestionPage12_MJWJContainer"
             android:layout_marginTop="0dp"
             android:scaleType="fitXY"/>
-        <TextView
-            android:padding="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Kamu telah menyelesaikan Explorer Satu. Ayo lanjutkan belajar Explorer Dua agar kamu dapat sertifikat"
-            android:textSize="@dimen/MJWJQuestion"
-            android:gravity="center"
-            android:layout_below="@id/congratulation"/>
+
     </RelativeLayout>
 </ScrollView>

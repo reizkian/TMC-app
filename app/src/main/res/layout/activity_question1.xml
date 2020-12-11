@@ -66,18 +66,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/button_CheckAnswer_TreasureHunt">
+
             <!--    question page 1-->
             <RelativeLayout
                 android:id="@+id/relativeLayout_QuestionPage1_MultipleChoiceContainer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer">
+                <ImageView
+                    android:id="@+id/ayojawab"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:paddingTop="40dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_marginTop="-50dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/ayojawab"
+                    />
                 <TextView
                     android:id="@+id/textView_QuestionPage1_MultipleChoiceQuestion1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/questionpage1_question1"
                     android:justificationMode="inter_word"
+                    android:layout_below="@id/ayojawab"
                     android:textSize="20sp" />
                 <RadioGroup
                     android:id="@+id/radioGroup_QuestionPage1_MultipleChoiceQuestion1"

@@ -74,13 +74,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer">
+                <ImageView
+                    android:id="@+id/ayojawab"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:paddingTop="40dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_marginTop="-50dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/ayojawab"
+                    />
                 <TextView
                     android:id="@+id/textView_QuestionPage8_MultipleChoiceQuestion1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/questionpage8_question1"
                     android:justificationMode="inter_word"
-                    android:textSize="20sp" />
+                    android:textSize="20sp" android:layout_below="@id/ayojawab"/>
                 <RadioGroup
                     android:id="@+id/radioGroup_QuestionPage8_MultipleChoiceQuestion1"
                     android:layout_width="wrap_content"
@@ -328,14 +339,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:hint="masukan tanggal hari ini"
+                    android:hint="Masukkan tanggal hari ini"
                     android:layout_below="@id/textView_QuestionPage8_PrayerAcceptJesus"
                     />
                 <TextView
                     android:id="@+id/textView_QuestionPage8_Amen"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Aku menerimaMu sebagai Juruselamatku \n Amin"
+                    android:text="Aku menerimamu sebagai Juru Selamatku \n Amin"
                     android:textSize="@dimen/MJWJQuestion"
                     android:padding="10dp"
                     android:layout_centerHorizontal="true"

@@ -73,13 +73,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/MultipleChoiceContainer">
+                <ImageView
+                    android:id="@+id/ayojawab"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:paddingTop="40dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_marginTop="-50dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/ayojawab"
+                    />
                 <TextView
                     android:id="@+id/textView_QuestionPage6_MultipleChoiceQuestion1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/questionpage6_question1"
                     android:justificationMode="inter_word"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:layout_below="@id/ayojawab"/>
                 <RadioGroup
                     android:id="@+id/radioGroup_QuestionPage6_MultipleChoiceQuestion1"
                     android:layout_width="wrap_content"

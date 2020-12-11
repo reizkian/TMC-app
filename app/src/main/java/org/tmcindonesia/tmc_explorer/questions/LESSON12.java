@@ -3,6 +3,7 @@ package org.tmcindonesia.tmc_explorer.questions;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,10 +20,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.tmcindonesia.tmc_explorer.Home;
+import org.tmcindonesia.tmc_explorer.CertificateGenerator;
 import org.tmcindonesia.tmc_explorer.R;
 import org.tmcindonesia.tmc_explorer.TestimonyAnswer;
-import org.tmcindonesia.tmc_explorer.UserAnswer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -117,18 +117,28 @@ public class LESSON12 extends AppCompatActivity {
                         mjwj_answer1.getText().toString().trim(),
                         mjwj_answer2.getText().toString().trim()
                 );
+                // check if text box is empty
+                if (TextUtils.isEmpty(mjwj_answer1.getText().toString().trim())) {
+                    Toast.makeText(LESSON12.this,
+                            "Kamu melum menjawab keputusan mu",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(mjwj_answer2.getText().toString().trim())) {
+                    Toast.makeText(LESSON12.this,
+                            "Kamu melum menulis kesaksian mu",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 // write data base method
                 writeUserAnswerToDataBase(testimonyAnswer);
                 // save preferences
                 SavePreferences();
-                // toast
-                Toast.makeText(LESSON12.this,
-                        "Terimakasih, ayo lanjutkan pelajaran mu",
-                        Toast.LENGTH_SHORT).show();
                 // move to home page
-                startActivity(new Intent(getApplicationContext(), Home.class));
+                startActivity(new Intent(LESSON12.this, CertificateGenerator.class));
             }
         });
+
         LoadPreferences();
     }
 
