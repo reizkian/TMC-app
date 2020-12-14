@@ -79,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                 int year = calendar.get(Calendar.YEAR);
                 int month = calendar.get(Calendar.MONDAY);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
+                Log.w("date", "calendar: "+String.valueOf(year)+"/"+String.valueOf(month)+"/"+String.valueOf(day));
                 DatePickerDialog dialog = new DatePickerDialog(
                         RegisterActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
@@ -94,9 +95,16 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month +1;
-                Log.d(TAG, "onDateSet: dd/mm/yyy is" + dayOfMonth +"/"+ month +"/"+ year);
+                Log.w("date", "onDateSet: dd/mm/yyy is" + dayOfMonth +"/"+ month +"/"+ year);
                 String date = dayOfMonth +"/"+ month +"/"+ year;
                 dateBirthRegister.setText(date);
+                Calendar calendar = Calendar.getInstance();
+                // ages restriction
+                int ages = calendar.get(Calendar.YEAR) - year;
+                // minimum
+                if(ages<5){
+                    Toast.makeText(RegisterActivity.this, String.valueOf(ages)+" tahun, umur kamu belum cukup", Toast.LENGTH_SHORT).show();
+                }
             }
         };
 
@@ -197,7 +205,6 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     });
                 }
-
             }
         });
     }
