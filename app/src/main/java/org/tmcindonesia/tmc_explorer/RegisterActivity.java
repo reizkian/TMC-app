@@ -168,7 +168,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
                                 // FireStore Data Base
                                 userID = firebaseAuth.getCurrentUser().getUid();
-                                DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID);
+                                DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(username);
                                 Map<String, Object> user  = new HashMap<>();
                                 user.put("Name",username);
                                 user.put("Phone",phonenumber);

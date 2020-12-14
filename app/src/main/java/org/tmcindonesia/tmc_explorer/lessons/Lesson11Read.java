@@ -25,7 +25,7 @@ public class Lesson11Read extends AppCompatActivity {
         PDFView pdfView = findViewById(R.id.pdfView);
         // pdf-view method
         pdfView.fromAsset("explorer1_published.pdf")
-                .pages(82,83,84,85,86)
+                .pages(82,83,84,85,86,87)
                 .enableSwipe(true)
                 .enableDoubletap(true)
                 .defaultPage(0)
