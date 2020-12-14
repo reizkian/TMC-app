@@ -98,13 +98,6 @@ public class RegisterActivity extends AppCompatActivity {
                 Log.w("date", "onDateSet: dd/mm/yyy is" + dayOfMonth +"/"+ month +"/"+ year);
                 String date = dayOfMonth +"/"+ month +"/"+ year;
                 dateBirthRegister.setText(date);
-                Calendar calendar = Calendar.getInstance();
-                // ages restriction
-                int ages = calendar.get(Calendar.YEAR) - year;
-                // minimum
-                if(ages<5){
-                    Toast.makeText(RegisterActivity.this, String.valueOf(ages)+" tahun, umur kamu belum cukup", Toast.LENGTH_SHORT).show();
-                }
             }
         };
 
