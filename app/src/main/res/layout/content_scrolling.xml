@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Home"
+    tools:context="org.tmcindonesia.app.Home"
     android:fillViewport="true"
-    tools:showIn="@layout/activity_home">
+    tools:showIn="@layout/activity_app_home">
 
     <ListView
         android:layout_width="match_parent"
