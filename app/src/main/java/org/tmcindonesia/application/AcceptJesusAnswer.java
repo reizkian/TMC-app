@@ -1,16 +1,18 @@
-package org.tmcindonesia.app;
+package org.tmcindonesia.application;
 
-public class TestimonyAnswer {
+public class AcceptJesusAnswer {
     // variable for user answer container
     private int numberOfCorrectAnswer;
     private String userAnswerMJWJ1;
     private String userAnswerMJWJ2;
+    private String userAnswerMJWJ3;
 
     // constructor
-    public TestimonyAnswer(int numberOfCorrectAnswer, String userAnswerMJWJ1, String userAnswerMJWJ2) {
+    public AcceptJesusAnswer(int numberOfCorrectAnswer, String userAnswerMJWJ1, String userAnswerMJWJ2, String userAnswerMJWJ3) {
         this.numberOfCorrectAnswer = numberOfCorrectAnswer;
         this.userAnswerMJWJ1 = userAnswerMJWJ1;
         this.userAnswerMJWJ2 = userAnswerMJWJ2;
+        this.userAnswerMJWJ3 = userAnswerMJWJ3;
     }
 
     // to string method: put all variable into a single string
@@ -21,6 +23,7 @@ public class TestimonyAnswer {
         return "numberOfCorrectAnswer=" + numberOfCorrectAnswer +
                 ", userAnswerMJWJ1='" + userAnswerMJWJ1 + '\'' +
                 ", userAnswerMJWJ2='" + userAnswerMJWJ2 + '\'' +
+                ", userAnswerMJWJ3='" + userAnswerMJWJ3 + '\'' +
                 '}';
     }
 
@@ -37,6 +40,9 @@ public class TestimonyAnswer {
         return userAnswerMJWJ2;
     }
 
+    public String getUserAnswerMJWJ3() {
+        return userAnswerMJWJ3;
+    }
 
 
     // setter
@@ -51,6 +57,10 @@ public class TestimonyAnswer {
 
     public void setUserAnswerMJWJ2(String userAnswerMJWJ2) {
         this.userAnswerMJWJ2 = userAnswerMJWJ2;
+    }
+
+    public void setUserAnswerMJWJ3(String userAnswerMJWJ3) {
+        this.userAnswerMJWJ3 = userAnswerMJWJ3;
     }
 
 }

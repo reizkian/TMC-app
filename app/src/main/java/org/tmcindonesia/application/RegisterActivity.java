@@ -1,4 +1,4 @@
-package org.tmcindonesia.app;
+package org.tmcindonesia.application;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
-    public static final String TAG = "TAG";
+    public static final String TAG = "FireBase";
     EditText emailRegister, passwordRegister, getPasswordRegisterConfirm, userNameRegister, userPhoneRegister, dateBirthRegister, cityRegister, provinceRegister, institutionRegister;
     Button buttonRegister;
     FirebaseAuth firebaseAuth;
@@ -187,7 +187,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Log.d(TAG,"onFailure: "+ e.toString());
+                                        Log.d("FireBaseRegisterAttempt","onFailure: "+ e.toString());
                                     }
                                 });
                                 // go to HOME activity

@@ -20,9 +20,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.tmcindonesia.app.CertificateGenerator;
+import org.tmcindonesia.application.CertificateGenerator;
 import org.tmcindonesia.tmc_explorer1.R;
-import org.tmcindonesia.app.TestimonyAnswer;
+import org.tmcindonesia.application.TestimonyAnswer;
 
 import java.util.HashMap;
 import java.util.Map;

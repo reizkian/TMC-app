@@ -1,4 +1,4 @@
-package org.tmcindonesia.app;
+package org.tmcindonesia.application;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), Home.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            Log.w("FireBaseLoginAttempt", "email: "+email_login+", password: "+ password_login);
+                            Log.d("FireBaseLoginAttempt", task.getException().getMessage()+" email: "+email_login+", password: "+ password_login);
                         }
                     }
                 });

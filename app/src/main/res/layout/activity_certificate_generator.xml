@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.tmcindonesia.app.CertificateGenerator"
+    tools:context="org.tmcindonesia.application.CertificateGenerator"
     android:background="@drawable/lastpage">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -1,4 +1,4 @@
-package org.tmcindonesia.app;
+package org.tmcindonesia.application;
 
 import android.content.Context;
 import android.content.Intent;

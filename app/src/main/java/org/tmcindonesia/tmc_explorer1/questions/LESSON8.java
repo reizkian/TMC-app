@@ -20,8 +20,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.tmcindonesia.app.AcceptJesusAnswer;
-import org.tmcindonesia.app.Home;
+import org.tmcindonesia.application.AcceptJesusAnswer;
+import org.tmcindonesia.application.Home;
 import org.tmcindonesia.tmc_explorer1.R;
 
 import java.util.HashMap;

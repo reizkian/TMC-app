@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.tmcindonesia.app.RegisterActivity">
+    tools:context="org.tmcindonesia.application.RegisterActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout_RegisterContainer"

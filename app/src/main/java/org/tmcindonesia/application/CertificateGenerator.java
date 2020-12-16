@@ -1,4 +1,4 @@
-package org.tmcindonesia.app;
+package org.tmcindonesia.application;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.tmcindonesia.app.Home;
 import org.tmcindonesia.tmc_explorer1.R;
 
 
