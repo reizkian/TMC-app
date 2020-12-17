@@ -8,7 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.tmcindonesia.tmc_explorer1.R;
+import org.tmcindonesia.R;
+import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 
 
 public class CertificateGenerator extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class CertificateGenerator extends AppCompatActivity {
         fab_finished.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Home.class));
+                startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
             }
         });
     }

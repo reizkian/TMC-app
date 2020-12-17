@@ -26,7 +26,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.tmcindonesia.tmc_explorer1.R;
+import org.tmcindonesia.R;
+import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -65,7 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         // if user is authenticated then go to home page
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), Home.class));
+            startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
             finish();
         }
         // fire store instance
@@ -191,7 +192,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     }
                                 });
                                 // go to HOME activity
-                                startActivity(new Intent(getApplicationContext(), Home.class));
+                                startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
                             }else
                             {
                                 Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

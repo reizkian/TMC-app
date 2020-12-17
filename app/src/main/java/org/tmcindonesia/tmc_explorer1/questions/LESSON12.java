@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.application.CertificateGenerator;
-import org.tmcindonesia.tmc_explorer1.R;
+import org.tmcindonesia.R;
 import org.tmcindonesia.application.TestimonyAnswer;
 
 import java.util.HashMap;

@@ -9,7 +9,7 @@ import android.view.View;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.tmcindonesia.tmc_explorer1.R;
+import org.tmcindonesia.R;
 import org.tmcindonesia.tmc_explorer1.questions.LESSON7;
 
 public class Lesson7Read extends AppCompatActivity {

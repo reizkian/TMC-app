@@ -19,8 +19,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.tmcindonesia.application.Home;
-import org.tmcindonesia.tmc_explorer1.R;
+import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
+import org.tmcindonesia.R;
 import org.tmcindonesia.application.UserAnswer;
 
 import java.util.HashMap;
@@ -129,7 +129,7 @@ public class LESSON9 extends AppCompatActivity {
                         "Terimakasih, ayo lanjutkan pelajaran mu",
                         Toast.LENGTH_SHORT).show();
                 // move to home page
-                startActivity(new Intent(getApplicationContext(), Home.class));
+                startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
             }
         });
         LoadPreferences();

@@ -20,8 +20,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import org.tmcindonesia.application.Home;
-import org.tmcindonesia.tmc_explorer1.R;
+import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
+import org.tmcindonesia.R;
 import org.tmcindonesia.application.UserAnswer;
 
 import java.util.HashMap;
@@ -171,7 +171,7 @@ public class LESSON4 extends AppCompatActivity {
                         "Terimakasih, ayo lanjutkan pelajaran mu",
                         Toast.LENGTH_SHORT).show();
                 // move to home page
-                startActivity(new Intent(getApplicationContext(), Home.class));
+                startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
             }
         });
         LoadPreferences();
@@ -235,11 +235,11 @@ public class LESSON4 extends AppCompatActivity {
         // load user answer TREASURE HUNT
         UserAnswerTreasureHunt.setText(sharedPreferences.getString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString()));
         // load user answer MULTIPLE CHOICE
-        rgqp_question1.check(sharedPreferences.getInt(key_rb_question1,rgqp_question1.getCheckedRadioButtonId()));
-        rgqp_question2.check(sharedPreferences.getInt(key_rb_question2,rgqp_question2.getCheckedRadioButtonId()));
-        rgqp_question3.check(sharedPreferences.getInt(key_rb_question3,rgqp_question3.getCheckedRadioButtonId()));
-        rgqp_question4.check(sharedPreferences.getInt(key_rb_question4,rgqp_question4.getCheckedRadioButtonId()));
-        rgqp_question5.check(sharedPreferences.getInt(key_rb_question5,rgqp_question5.getCheckedRadioButtonId()));
+        rgqp_question1.check(sharedPreferences.getInt(key_rb_question1, rgqp_question1.getCheckedRadioButtonId()));
+        rgqp_question2.check(sharedPreferences.getInt(key_rb_question2, rgqp_question2.getCheckedRadioButtonId()));
+        rgqp_question3.check(sharedPreferences.getInt(key_rb_question3, rgqp_question3.getCheckedRadioButtonId()));
+        rgqp_question4.check(sharedPreferences.getInt(key_rb_question4, rgqp_question4.getCheckedRadioButtonId()));
+        rgqp_question5.check(sharedPreferences.getInt(key_rb_question5, rgqp_question5.getCheckedRadioButtonId()));
         // load user answer MY JOURNEY WITH JESUS
         mjwj_answer1.setText(sharedPreferences.getString(key_mjwj_answer1, mjwj_answer1.getText().toString()));
         mjwj_answer2.setText(sharedPreferences.getString(key_mjwj_answer2, mjwj_answer2.getText().toString()));

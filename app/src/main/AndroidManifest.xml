@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.tmcindonesia.tmc_explorer1">
+    package="org.tmcindonesia">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -38,7 +38,7 @@
         <activity android:name="org.tmcindonesia.tmc_explorer1.lessons.Lesson2Read" />
         <activity android:name="org.tmcindonesia.tmc_explorer1.lessons.Lesson1Read" />
         <activity
-            android:name="org.tmcindonesia.application.Home"
+            android:name="org.tmcindonesia.tmc_explorer1.HomeExplorer1"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.TMC_Explorer.NoActionBar" />
         <activity android:name="org.tmcindonesia.application.RegisterActivity" />
