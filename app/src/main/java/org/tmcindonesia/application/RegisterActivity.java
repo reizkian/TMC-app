@@ -1,8 +1,5 @@
 package org.tmcindonesia.application;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,6 +13,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,14 +35,33 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     public static final String TAG = "FireBase";
+    public String userName;
     EditText emailRegister, passwordRegister, getPasswordRegisterConfirm, userNameRegister, userPhoneRegister, dateBirthRegister, cityRegister, provinceRegister, institutionRegister;
     Button buttonRegister;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     ProgressBar progressBar;
     String userID;
+    UserData userData;
     DatePickerDialog.OnDateSetListener dateListener;
 
+    public class UserData{
+        public String userName;
+
+        public UserData(String userName) {
+            this.userName = userName;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +79,8 @@ public class RegisterActivity extends AppCompatActivity {
         institutionRegister = findViewById(R.id.editTextInstitutionRegister);
         buttonRegister = findViewById(R.id.buttonRegisterCreate);
         progressBar = findViewById(R.id.progressBar);
+
+
 
         // FIRE BASE
         // fire base authentication instance
@@ -118,6 +139,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String city = cityRegister.getText().toString().trim();
                 String province = provinceRegister.getText().toString().trim();
                 String institution = institutionRegister.getText().toString().trim();
+
+                userName = username;
 
                 // check if text box is empty
                 if (TextUtils.isEmpty(email)) {
@@ -202,5 +225,9 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public String getUserName(){
+        return userName;
     }
 }
