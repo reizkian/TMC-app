@@ -184,7 +184,7 @@ public class LESSON1 extends AppCompatActivity {
     // WRITE DATA TO FIRE STORE DATA BASE
     public void writeUserAnswerToDataBase(UserAnswer userAnswers) {
         // get the content
-        String className = this.getLocalClassName().toString();
+        String className = this.getClass().getSimpleName().toString();
         Map<String, Object> answers = new HashMap<>();
         answers.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
         answers.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());

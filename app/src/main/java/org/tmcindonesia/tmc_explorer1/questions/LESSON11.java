@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
@@ -30,6 +31,7 @@ public class LESSON11 extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
     String userID;
+    String userName;
     public static final String TAG = "TAG";
     // variable QUESTIONS PAGE
     private int correctAnswerQuestionsPage[] = {1, 0, 1, 0, 1};
@@ -150,10 +152,11 @@ public class LESSON11 extends AppCompatActivity {
         answers.put(getResources().getString(R.string.MJWJ1_question4), userAnswers.getUserAnswerMJWJ4());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
-        String userID = firebaseAuth.getCurrentUser().getUid();
+        FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
+        userID = userProfile.getUid();
+        userName = userProfile.getDisplayName();
         // actually write on cloud
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection("User Answer").document(className)
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
                 .set(answers)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

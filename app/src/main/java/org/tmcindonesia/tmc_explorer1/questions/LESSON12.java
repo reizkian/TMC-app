@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.application.CertificateGenerator;
@@ -31,6 +32,7 @@ public class LESSON12 extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
     String userID;
+    String userName;
     public static final String TAG = "TAG";
     // variable QUESTIONS PAGE
     private int correctAnswerQuestionsPage[] = {0, 1, 0, 0, 1};
@@ -146,17 +148,18 @@ public class LESSON12 extends AppCompatActivity {
     // WRITE DATA TO FIRE STORE DATA BASE
     public void writeUserAnswerToDataBase(TestimonyAnswer testimonyAnswer) {
         // get the content
-        String className = this.getLocalClassName().toString();
+        String className = this.getClass().getSimpleName().toString();
         Map<String, Object> answers = new HashMap<>();
         answers.put("Correct answer", testimonyAnswer.getNumberOfCorrectAnswer());
         answers.put("Keputusanku untuk hidup seperti Kristus", testimonyAnswer.getUserAnswerMJWJ1());
         answers.put("Kesaksian setelah mempelajari Explorer Satu", testimonyAnswer.getUserAnswerMJWJ2());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
-        String userID = firebaseAuth.getCurrentUser().getUid();
+        FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
+        userID = userProfile.getUid();
+        userName = userProfile.getDisplayName();
         // actually write on cloud
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection("User Answer").document(className)
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
                 .set(answers)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
