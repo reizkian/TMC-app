@@ -18,6 +18,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
@@ -32,6 +33,7 @@ public class LESSON1 extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
     String userID;
+    String userName;
     public static final String TAG = "TAG";
     // variable TREASURE HUNT
     private EditText UserAnswerTreasureHunt;
@@ -164,10 +166,8 @@ public class LESSON1 extends AppCompatActivity {
                         mjwj_answer3.getText().toString().trim(),
                         mjwj_answer4.getText().toString().trim()
                 );
-                RegisterActivity registerActivity = new RegisterActivity();
-                String userName = registerActivity.getUserName();
                 // write data base method
-                writeUserAnswerToDataBase(userAnswers,userName);
+                writeUserAnswerToDataBase(userAnswers);
                 // save preferences
                 SavePreferences();
                 // toast
@@ -182,7 +182,7 @@ public class LESSON1 extends AppCompatActivity {
     }
 
     // WRITE DATA TO FIRE STORE DATA BASE
-    public void writeUserAnswerToDataBase(UserAnswer userAnswers, String userName) {
+    public void writeUserAnswerToDataBase(UserAnswer userAnswers) {
         // get the content
         String className = this.getLocalClassName().toString();
         Map<String, Object> answers = new HashMap<>();
@@ -193,7 +193,9 @@ public class LESSON1 extends AppCompatActivity {
         answers.put(getResources().getString(R.string.MJWJ1_question4), userAnswers.getUserAnswerMJWJ4());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
-        Log.d("username",userName);
+        FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
+        userID = userProfile.getUid();
+        userName = userProfile.getDisplayName();
         // actually write on cloud
         firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
                 .set(answers)

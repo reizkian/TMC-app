@@ -23,8 +23,11 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
@@ -140,8 +143,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String province = provinceRegister.getText().toString().trim();
                 String institution = institutionRegister.getText().toString().trim();
 
-                userName = username;
-
                 // check if text box is empty
                 if (TextUtils.isEmpty(email)) {
                     emailRegister.setError("mohon masukan email anda");
@@ -192,6 +193,10 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(RegisterActivity.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
+                                // set user display name
+                                FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
+                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(username).build();
+                                userProfile.updateProfile(profileUpdates);
                                 // FireStore Data Base
                                 userID = firebaseAuth.getCurrentUser().getUid();
                                 DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(username);
@@ -225,9 +230,5 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public String getUserName(){
-        return userName;
     }
 }
