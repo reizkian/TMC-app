@@ -89,7 +89,7 @@ public class HomeExplorer1 extends AppCompatActivity {
 
         // Collapsing Toolbar
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_home);
+        setContentView(R.layout.activity_explorer1_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
@@ -121,7 +121,8 @@ public class HomeExplorer1 extends AppCompatActivity {
             public void onClick(View view) {
 
                 // open TMC Indonesia website
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/")));
+                // startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/")));
+                startActivity(new Intent(getApplicationContext(),TmcProfile.class));
             }
         });
 

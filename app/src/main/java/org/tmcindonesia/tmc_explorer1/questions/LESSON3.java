@@ -31,7 +31,6 @@ import java.util.Map;
 public class LESSON3 extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
-    String userID;
     String userName;
     public static final String TAG = "TAG";
     // variable TREASURE HUNT
@@ -193,7 +192,6 @@ public class LESSON3 extends AppCompatActivity {
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
         FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
-        userID = userProfile.getUid();
         userName = userProfile.getDisplayName();
         // actually write on cloud
         firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
