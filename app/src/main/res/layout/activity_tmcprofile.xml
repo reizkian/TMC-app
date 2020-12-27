@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tmc_explorer1.TmcProfile">
+    <ImageView
+        android:id="@+id/imageView_logotmc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/tmcnewlogo"
+        android:layout_marginTop="80dp"/>
+
+    <Button
+        android:id="@+id/button_websitetmc"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="website tmc"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/red_false_answer"
+        android:layout_below="@id/imageView_logotmc"
+        android:layout_marginTop="25dp"/>
+    <Button
+        android:id="@+id/button_privacypolicy"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="privacy policy"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/button_websitetmc"
+        android:backgroundTint="@color/red_false_answer"
+        android:layout_marginTop="25dp"/>
+    <Button
+        android:id="@+id/button_infoforparents"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="info for parents"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/button_privacypolicy"
+        android:backgroundTint="@color/red_false_answer"
+        android:layout_marginTop="25dp"/>
+</RelativeLayout>
