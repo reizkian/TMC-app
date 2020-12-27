@@ -47,31 +47,31 @@ public class Home extends AppCompatActivity {
 
     String mDescription[] =
             {"Bagian 1: Allah begitu hebat dan ajaib",
-                    "Bagian 2: Hanya ada satu Allah, namun tiga pribadi",
-                    "Allah adalah sang pencipta",
-                    "Seorang musuh membawa dosa ke dunia",
-                    "Dia yang menyelamatkan umat-Nya",
-                    "Dia duduk di sebelah kanan Allah Bapa",
-                    "Apa itu dosa?",
-                    "Bagaimana aku dapat diselamatkan",
-                    "Bagaimana kita tahu Tuhan Yesus akan datang kembali?",
-                    "Aku menerima kehidupan yang kekal",
-                    "Allah menjadikan aku baru",
-                    "Yesus Kristus anak-Nya"};
+            "Bagian 2: Hanya ada satu Allah, namun tiga pribadi",
+            "Allah adalah sang pencipta",
+            "Seorang musuh membawa dosa ke dunia",
+            "Dia yang menyelamatkan umat-Nya",
+            "Dia duduk di sebelah kanan Allah Bapa",
+            "Apa itu dosa?",
+            "Bagaimana aku dapat diselamatkan",
+            "Bagaimana kita tahu Tuhan Yesus akan datang kembali?",
+            "Aku menerima kehidupan yang kekal",
+            "Allah menjadikan aku baru",
+            "Yesus Kristus anak-Nya"};
 
     int images[] =
             {R.drawable.icon_satu,
-                    R.drawable.icon_dua,
-                    R.drawable.icon_tiga,
-                    R.drawable.icon_empat,
-                    R.drawable.icon_lima,
-                    R.drawable.icon_enam,
-                    R.drawable.icon_tujuh,
-                    R.drawable.icon_delapan,
-                    R.drawable.icon_sembilan,
-                    R.drawable.icon_sepuluh,
-                    R.drawable.icon_sebelas,
-                    R.drawable.icon_duabelas};
+            R.drawable.icon_dua,
+            R.drawable.icon_tiga,
+            R.drawable.icon_empat,
+            R.drawable.icon_lima,
+            R.drawable.icon_enam,
+            R.drawable.icon_tujuh,
+            R.drawable.icon_delapan,
+            R.drawable.icon_sembilan,
+            R.drawable.icon_sepuluh,
+            R.drawable.icon_sebelas,
+            R.drawable.icon_duabelas};
 
     String mLessonNumber[] = {
             "Pelajaran 1",
