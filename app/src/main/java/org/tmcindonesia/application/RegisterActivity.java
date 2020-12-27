@@ -27,7 +27,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.User;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
@@ -47,24 +46,6 @@ public class RegisterActivity extends AppCompatActivity {
     String userID;
     UserData userData;
     DatePickerDialog.OnDateSetListener dateListener;
-
-    public class UserData{
-        public String userName;
-
-        public UserData(String userName) {
-            this.userName = userName;
-        }
-
-        public String getUserName() {
-            return userName;
-        }
-
-        public void setUserName(String userName) {
-            this.userName = userName;
-        }
-
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -219,6 +200,15 @@ public class RegisterActivity extends AppCompatActivity {
                                         Log.d("FireBaseRegisterAttempt","onFailure: "+ e.toString());
                                     }
                                 });
+                                // write user data to local data base
+                                UserData userData = new UserData(username, email, datebirth, phonenumber, city, province, institution);
+                                DataBaseHandler dataBaseHandler = new DataBaseHandler(RegisterActivity.this);
+                                boolean statusDataBase = dataBaseHandler.addUser(username, email, datebirth, phonenumber, city, province, institution);
+                                if(statusDataBase){
+                                    Toast.makeText(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(getApplicationContext(), "Insertion Failed", Toast.LENGTH_SHORT).show();
+                                }
                                 // go to HOME activity
                                 startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
                             }else
