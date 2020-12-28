@@ -1,7 +1,10 @@
 package org.tmcindonesia.tmc_explorer1.questions;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +25,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.application.AcceptJesusAnswer;
+import org.tmcindonesia.application.DataBaseHandler;
+import org.tmcindonesia.application.UserData;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 import org.tmcindonesia.R;
 
@@ -186,8 +191,7 @@ public class LESSON8 extends AppCompatActivity {
         answers.put("Setelah belajar materi ini, Aku menerima Yesus sebagai Juru selamat pada tanggal", acceptJesusAnswer.getUserAnswerMJWJ3());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
-        FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
-        userName = userProfile.getDisplayName();
+        userName = getUserNameFromDataBase(this);
         // actually write on cloud
         firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
                 .set(answers)
@@ -244,5 +248,20 @@ public class LESSON8 extends AppCompatActivity {
     public void onBackPressed() {
         SavePreferences();
         super.onBackPressed();
+    }
+
+    public String getUserNameFromDataBase(Context c){
+        DataBaseHandler dataBaseHandler = new DataBaseHandler(c);
+        SQLiteDatabase database = dataBaseHandler.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM "+ UserData.UserDetails.TABLE_NAME,null);
+        cursor.moveToFirst();
+        if(cursor.getCount()>0){
+            cursor.moveToPosition(0);
+            String username = cursor.getString(1).toString().trim();
+            return username;
+        }
+        else {
+            return null;
+        }
     }
 }

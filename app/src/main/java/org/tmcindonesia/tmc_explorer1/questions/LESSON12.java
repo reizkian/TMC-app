@@ -1,7 +1,10 @@
 package org.tmcindonesia.tmc_explorer1.questions;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -23,7 +26,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.application.CertificateGenerator;
 import org.tmcindonesia.R;
+import org.tmcindonesia.application.DataBaseHandler;
 import org.tmcindonesia.application.TestimonyAnswer;
+import org.tmcindonesia.application.UserData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -153,8 +158,7 @@ public class LESSON12 extends AppCompatActivity {
         answers.put("Kesaksian setelah mempelajari Explorer Satu", testimonyAnswer.getUserAnswerMJWJ2());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
-        FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
-        userName = userProfile.getDisplayName();
+        userName = getUserNameFromDataBase(this);
         // actually write on cloud
         firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
                 .set(answers)
@@ -192,5 +196,20 @@ public class LESSON12 extends AppCompatActivity {
     public void onBackPressed() {
         SavePreferences();
         super.onBackPressed();
+    }
+
+    public String getUserNameFromDataBase(Context c){
+        DataBaseHandler dataBaseHandler = new DataBaseHandler(c);
+        SQLiteDatabase database = dataBaseHandler.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM "+ UserData.UserDetails.TABLE_NAME,null);
+        cursor.moveToFirst();
+        if(cursor.getCount()>0){
+            cursor.moveToPosition(0);
+            String username = cursor.getString(1).toString().trim();
+            return username;
+        }
+        else {
+            return null;
+        }
     }
 }
