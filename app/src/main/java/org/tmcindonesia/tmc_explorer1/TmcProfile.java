@@ -27,5 +27,12 @@ public class TmcProfile extends AppCompatActivity {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/")));
             }
         });
+
+        privacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.privacypolicies.com/live/3a96b097-2db7-4d6e-be14-7f2395073578")));
+            }
+        });
     }
 }

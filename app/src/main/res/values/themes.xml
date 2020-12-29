@@ -1,5 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <style name="Theme.TMC_app1" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#ec1b30</item>
+    </style>
+
+    <style name="Theme.TMC_app2" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#ffffff</item>
+        <item name="colorOnPrimary">#373a40</item>
+    </style>
+
     <style name="Theme.TMC_Explorer" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#fbba1e</item>
@@ -19,7 +28,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.TMC_Explorer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.TMC_Explorer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">#ffffff</item>
+        <item name="colorOnPrimary">#373a40</item>
+    </style>
+
     <style name="Theme.TMC_Explorer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="collapsingToolbarLayoutTitleColor" parent="@android:style/TextAppearance.Medium">

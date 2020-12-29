@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         // if user is authenticated then go to home page
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
+            startActivity(new Intent(getApplicationContext(), HomeApp.class));
             finish();
         }
         // fire store instance
@@ -210,7 +210,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Insertion Failed", Toast.LENGTH_SHORT).show();
                                 }
                                 // go to HOME activity
-                                startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
+                                startActivity(new Intent(getApplicationContext(), HomeApp.class));
                             }else
                             {
                                 Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

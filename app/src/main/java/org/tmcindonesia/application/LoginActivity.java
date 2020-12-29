@@ -49,14 +49,14 @@ public class LoginActivity extends AppCompatActivity {
         // if no internet, login is not necessary for user to use the App
         networkConnection = isInternetActive();
         if(!networkConnection){
-            startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
+            startActivity(new Intent(getApplicationContext(), HomeApp.class));
             finish();
         }
 
         // on create activity check if there is a user already login
         // if yes, then go to home page
         if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
+            startActivity(new Intent(getApplicationContext(), HomeApp.class));
             finish();
         }
 
@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in  Successfull",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
+                            startActivity(new Intent(getApplicationContext(), HomeApp.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             Log.d("FireBaseLoginAttempt", task.getException().getMessage()+" email: "+email_login+", password: "+ password_login);
