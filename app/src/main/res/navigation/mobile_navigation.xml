@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="org.tmcindonesia.application.HomeAppUI.home.HomeFragment"
+        android:name="org.tmcindonesia.application.HomeAppUI.Home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="org.tmcindonesia.application.HomeAppUI.gallery.GalleryFragment"
+        android:id="@+id/nav_privacy_policy"
+        android:name="org.tmcindonesia.application.HomeAppUI.PrivacyPolicy.PrivacyPolicyFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_policy" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="org.tmcindonesia.application.HomeAppUI.slideshow.SlideshowFragment"
+        android:id="@+id/nav_website"
+        android:name="org.tmcindonesia.application.HomeAppUI.Website.WebsiteFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_website" />
 </navigation>
