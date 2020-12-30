@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
+        <activity android:name=".tmc_explorer2.HomeExplorer2"></activity>
         <activity
             android:name=".application.HomeApp"
             android:label="@string/title_activity_home_app"
-            android:theme="@style/Theme.TMC_Explorer.NoActionBar"></activity>
+            android:theme="@style/Theme.TMC_Explorer.NoActionBar" />
         <activity android:name=".tmc_explorer1.TmcProfile" />
         <activity android:name=".application.CertificateGenerator" />
         <activity android:name=".tmc_explorer1.questions.LESSON12" />

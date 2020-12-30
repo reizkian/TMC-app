@@ -14,6 +14,8 @@ import com.google.android.material.card.MaterialCardView;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
+import org.tmcindonesia.tmc_explorer2.HomeExplorer2;
+
 
 public class HomeFragment extends Fragment {
 
@@ -26,12 +28,22 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         // card EXPLORER-1
-        MaterialCardView explorer1;
-        explorer1 = root.findViewById(R.id.card_explorer1);
-        explorer1.setOnClickListener(new View.OnClickListener() {
+        MaterialCardView cardExplorer1;
+        cardExplorer1 = root.findViewById(R.id.card_explorer1);
+        cardExplorer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),HomeExplorer1.class));
+            }
+        });
+
+        // card EXPLORER-2
+        MaterialCardView cardExplorer2;
+        cardExplorer2 = root.findViewById(R.id.card_explorer2);
+        cardExplorer2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),HomeExplorer2.class));
             }
         });
         return root;
