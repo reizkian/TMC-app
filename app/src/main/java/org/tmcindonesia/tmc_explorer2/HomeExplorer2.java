@@ -21,52 +21,52 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import org.tmcindonesia.R;
-import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
+
 
 public class HomeExplorer2 extends AppCompatActivity {
     //Variable for Button List
     ListView listView;
     String mTitle[] =
-            {"Seperti apakah Allah itu?",
-                    "Seperti apakah Allah itu?",
-                    "Darimana kita berasal?",
-                    "Siapakah musuh kita?",
-                    "Siapakah Juru Selamat yang di janjikan?",
-                    "Yesus hidup sekarang!",
-                    "Empat pertanyaan",
-                    "Aku menjadi anak Allah!",
-                    "Yesus akan datang kembali!",
-                    "Empat hal yang Allah ingin aku tahu",
-                    "Manusia baru dalam Kristus",
-                    "Karunia terbesar dari Allah"};
+            {"Yesus Kristus adalah Allah",
+                    "Yesus Kristus adalah Tuhan atas segalanya",
+                    "Allah di pihakku",
+                    "Aku berada dalam keluarga Allah",
+                    "Aku berada dalam Kristus",
+                    "KRISTUS hidup dalamku!",
+                    "Musuhku \"dunia\"",
+                    "Musuhku diriku sendiri!",
+                    "Musuhku setan",
+                    "Allah ingin memakai aku",
+                    "Kamu dapat menjadi penjala jiwa",
+                    "Yesus mengasihi aku!"};
 
     String mDescription[] =
-            {"Bagian 1: Allah begitu hebat dan ajaib",
-                    "Bagian 2: Hanya ada satu Allah, namun tiga pribadi",
-                    "Allah adalah sang pencipta",
-                    "Seorang musuh membawa dosa ke dunia",
-                    "Dia yang menyelamatkan umat-Nya",
-                    "Dia duduk di sebelah kanan Allah Bapa",
-                    "Apa itu dosa?",
-                    "Bagaimana aku dapat diselamatkan",
-                    "Bagaimana kita tahu Tuhan Yesus akan datang kembali?",
-                    "Aku menerima kehidupan yang kekal",
-                    "Allah menjadikan aku baru",
-                    "Yesus Kristus anak-Nya"};
+            {"Allah ingin supaya kita mengenal siapa Yesus",
+                    "Cerita yang paling berharga di dunia ini",
+                    "Allah adalah Bapaku yang di Surga",
+                    "Aku dilahirkan kembali",
+                    "Apa rencana Allah untuk kita?",
+                    "Menjadi anak Allah adalah hal yang paling luar biasa",
+                    "Alkitab menggunakan kata \"dunia\" untuk tiga hal",
+                    "Musuh di dalamku namanya \"kedagingan\"",
+                    "Musuh mengerikan yang ingin menghancurkan kita",
+                    "Apa yang harus kita lakukan bila kita ingin dipakai Allah?",
+                    "Mengapa begitu penting untuk memberitakan Yesus?",
+                    "Tuhan Yesus adalah pribadi yang luar biasa!"};
 
     int images[] =
-            {R.drawable.exp1_icon1,
-                    R.drawable.exp1_icon2,
-                    R.drawable.exp1_icon3,
-                    R.drawable.exp1_icon4,
-                    R.drawable.exp1_icon5,
-                    R.drawable.exp1_icon6,
-                    R.drawable.exp1_icon7,
-                    R.drawable.exp1_icon8,
-                    R.drawable.exp1_icon9,
-                    R.drawable.exp1_icon10,
-                    R.drawable.exp1_icon11,
-                    R.drawable.exp1_icon12};
+            {R.drawable.exp2_icon1,
+                    R.drawable.exp2_icon2,
+                    R.drawable.exp2_icon3,
+                    R.drawable.exp2_icon4,
+                    R.drawable.exp2_icon5,
+                    R.drawable.exp2_icon6,
+                    R.drawable.exp2_icon7,
+                    R.drawable.exp2_icon8,
+                    R.drawable.exp2_icon9,
+                    R.drawable.exp2_icon10,
+                    R.drawable.exp2_icon11,
+                    R.drawable.exp2_icon12};
 
     String mLessonNumber[] = {
             "Pelajaran 1",
@@ -134,40 +134,40 @@ public class HomeExplorer2 extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position ==  0) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson1Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson1Read.class));
                 }
                 if (position ==  1) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson2Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson2Read.class));
                 }
                 if (position ==  2) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson3Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson3Read.class));
                 }
                 if (position ==  3) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson4Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson4Read.class));
                 }
                 if (position ==  4) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson5Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson5Read.class));
                 }
                 if (position ==  5) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson6Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson6Read.class));
                 }
                 if (position ==  6) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson7Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson7Read.class));
                 }
                 if (position ==  7) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson8Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson8Read.class));
                 }
                 if (position ==  8) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson9Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson9Read.class));
                 }
                 if (position ==  9) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson10Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson10Read.class));
                 }
                 if (position ==  10) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson11Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson11Read.class));
                 }
                 if (position ==  11) {
-                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer1.lessons.Lesson12Read.class));
+                    startActivity(new Intent(getApplicationContext(), org.tmcindonesia.tmc_explorer2.lessons.Exp2Lesson12Read.class));
                 }
             }
         });
