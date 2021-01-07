@@ -454,10 +454,6 @@
     <string name="menu_slideshow">Website</string>
 
 
-
-
-
-
     <!--    ########################################### E X P L O R E R 2 #############################################-->
     <!--    ############################################# L E S S O N 1 ###############################################-->
     <!--    ============================================= -->
@@ -490,7 +486,6 @@
     <string name="EXPLORER2_MJWJ1_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
     <string name="EXPLORER2_MJWJ1_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
     <string name="EXPLORER2_MJWJ1_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
-
 
 
     <!--    ########################################### E X P L O R E R 2 #############################################-->
@@ -526,7 +521,6 @@
     <string name="EXPLORER2_MJWJ2_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
     <string name="EXPLORER2_MJWJ2_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
     <string name="EXPLORER2_MJWJ2_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
-
 
 
     <!--    ########################################### E X P L O R E R 2 #############################################-->
@@ -599,8 +593,6 @@
     <string name="EXPLORER2_MJWJ4_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
 
 
-
-
     <!--    ########################################### E X P L O R E R 2 #############################################-->
     <!--    ############################################# L E S S O N 5 ###############################################-->
     <!--    ============================================= -->
@@ -634,7 +626,6 @@
     <string name="EXPLORER2_MJWJ5_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
     <string name="EXPLORER2_MJWJ5_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
     <string name="EXPLORER2_MJWJ5_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
-
 
 
     <!--    ########################################### E X P L O R E R 2 #############################################-->
@@ -672,9 +663,6 @@
     <string name="EXPLORER2_MJWJ6_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
 
 
-
-
-
     <!--    ########################################### E X P L O R E R 2 #############################################-->
     <!--    ############################################# L E S S O N 7 ###############################################-->
     <!--    ============================================= -->
@@ -708,8 +696,6 @@
     <string name="EXPLORER2_MJWJ7_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
     <string name="EXPLORER2_MJWJ7_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
     <string name="EXPLORER2_MJWJ7_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
-
-
 
 
     <!--    ########################################### E X P L O R E R 2 #############################################-->
@@ -747,9 +733,6 @@
     <string name="EXPLORER2_MJWJ8_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
 
 
-
-
-
     <!--    ########################################### E X P L O R E R 2 #############################################-->
     <!--    ############################################# L E S S O N 9 ###############################################-->
     <!--    ============================================= -->
@@ -782,9 +765,6 @@
     <string name="EXPLORER2_MJWJ9_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>
     <string name="EXPLORER2_MJWJ9_question3">3. Apakah kamu memiliki keinginan khusus atau permintaan doa?</string>
     <string name="EXPLORER2_MJWJ9_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
-
-
-
 
 
     <!--    ########################################### E X P L O R E R 2 #############################################-->
@@ -821,8 +801,6 @@
     <string name="EXPLORER2_MJWJ10_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
 
 
-
-
     <!--    ########################################### E X P L O R E R 2 #############################################-->
     <!--    ############################################# L E S S O N 11 ##############################################-->
     <!--    ============================================= -->
@@ -857,8 +835,6 @@
     <string name="EXPLORER2_MJWJ11_question4">4. Kami mendorongmu untuk mengisi kolom di bawah ini dan memulai sebuah jurnal. Tuliskanlah doa, pujian, dan rasa syukurmu kepada Tuhan!</string>
 
 
-
-
     <!--    ########################################### E X P L O R E R 2 #############################################-->
     <!--    ############################################# L E S S O N 12 ##############################################-->
     <!--    ============================================= -->
@@ -885,7 +861,7 @@
     <string name="EXPLORER2_questionpage12_answer_5a">a. Sesuatu yang mungkin saja terjadi.</string>
     <string name="EXPLORER2_questionpage12_answer_5b">b. Sesuatu yang Allah katakan pasti terjadi.</string>
     <!--    =============================================================== -->
-    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N  11 -->
+    <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N  12 -->
     <!--    =============================================================== -->
     <string name="EXPLORER2_MJWJ12_question1">1. Hal terpenting apa yang kamu pelajari dari bab ini?</string>
     <string name="EXPLORER2_MJWJ12_question2">2. Adakah yang tidak kamu mengerti dalam bab ini? </string>

@@ -22,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import org.tmcindonesia.R;
+import org.tmcindonesia.application.RegisterPage.RegisterPageDate;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 
 public class LoginActivity extends AppCompatActivity {
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         RegisterPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+                startActivity(new Intent(getApplicationContext(), RegisterPageDate.class));
             }
         });
 

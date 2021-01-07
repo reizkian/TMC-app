@@ -1,7 +1,12 @@
 package org.tmcindonesia.application;
 
 import android.app.DatePickerDialog;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -30,6 +35,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
+import org.tmcindonesia.application.RegisterPage.RegisterPageDate;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -44,6 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     ProgressBar progressBar;
     String userID;
+    String keyUserName = "keyusername";
+    String keyUserBirthDate = "keyuserbirthdate";
     UserData userData;
     DatePickerDialog.OnDateSetListener dateListener;
 
@@ -64,7 +72,9 @@ public class RegisterActivity extends AppCompatActivity {
         buttonRegister = findViewById(R.id.buttonRegisterCreate);
         progressBar = findViewById(R.id.progressBar);
 
-
+        // get username & birth date from data base
+        userNameRegister.setText(getUserNameFromDataBase(this));
+        dateBirthRegister.setText(getUserBirthDateFromDataBase(this));
 
         // FIRE BASE
         // fire base authentication instance
@@ -202,9 +212,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 });
                                 // write user data to local data base
                                 UserData userData = new UserData(username, email, datebirth, phonenumber, city, province, institution);
-                                DataBaseHandler dataBaseHandler = new DataBaseHandler(RegisterActivity.this);
-                                boolean statusDataBase = dataBaseHandler.addUser(username, email, datebirth, phonenumber, city, province, institution);
-                                if(statusDataBase){
+                                boolean databaseUpdateStatus = updateEntryNameAndBirthDate(getApplicationContext(),username, email, datebirth, phonenumber, city, province, institution);
+                                if(databaseUpdateStatus){
                                     Toast.makeText(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_SHORT).show();
                                 }else{
                                     Toast.makeText(getApplicationContext(), "Insertion Failed", Toast.LENGTH_SHORT).show();
@@ -221,4 +230,66 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+    public String getUserNameFromDataBase(Context c){
+        DataBaseHandler dataBaseHandler = new DataBaseHandler(c);
+        SQLiteDatabase database = dataBaseHandler.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM "+ UserData.UserDetails.TABLE_NAME,null);
+        cursor.moveToFirst();
+        if(cursor.getCount()>0){
+            cursor.moveToPosition(0);
+            String username = cursor.getString(1).toString().trim();
+            return username;
+        }
+        else {
+            return null;
+        }
+    }
+
+    public String getUserBirthDateFromDataBase(Context c){
+        DataBaseHandler dataBaseHandler = new DataBaseHandler(c);
+        SQLiteDatabase database = dataBaseHandler.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM "+ UserData.UserDetails.TABLE_NAME,null);
+        cursor.moveToFirst();
+        if(cursor.getCount()>0){
+            cursor.moveToPosition(0);
+            String username = cursor.getString(3).toString().trim();
+            return username;
+        }
+        else {
+            return null;
+        }
+    }
+
+    public boolean updateEntryNameAndBirthDate(Context c,
+                                            String user_name,
+                                            String user_email,
+                                            String user_birthday,
+                                            String user_phone,
+                                            String user_city,
+                                            String user_province,
+                                            String user_institution){
+        // create instance
+        DataBaseHandler dataBaseHandler = new DataBaseHandler(c);
+        SQLiteDatabase database = dataBaseHandler.getWritableDatabase();
+        // put value
+        ContentValues values = new ContentValues();
+        values.put(UserData.UserDetails.COLUMN_USER_NAME, user_name);
+        values.put(UserData.UserDetails.COLUMN_USER_EMAIL, user_email);
+        values.put(UserData.UserDetails.COLUMN_USER_BIRTHDAY, user_birthday);
+        values.put(UserData.UserDetails.COLUMN_USER_PHONE, user_phone);
+        values.put(UserData.UserDetails.COLUMN_USER_CITY, user_city);
+        values.put(UserData.UserDetails.COLUMN_USER_PROVINCE, user_province);
+        values.put(UserData.UserDetails.COLUMN_USER_INSTITUTION, user_institution);
+        // update database
+        int updatedRow = database.update(UserData.UserDetails.TABLE_NAME,values,"_id = 1", null);
+        // close database connection
+        database.close();
+        if (updatedRow == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 }
