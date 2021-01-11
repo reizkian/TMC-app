@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -46,6 +47,16 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(),HomeExplorer2.class));
             }
         });
+
+        // card SEE AND DO
+        MaterialCardView cardSeeAndDo;
+        cardSeeAndDo = root.findViewById(R.id.card_seeanddo);
+        cardSeeAndDo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
         return root;
     }
 }

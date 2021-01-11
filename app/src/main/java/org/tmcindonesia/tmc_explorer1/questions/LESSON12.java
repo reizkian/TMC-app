@@ -20,15 +20,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.application.CertificateGenerator;
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.DataBaseHandler;
 import org.tmcindonesia.application.TestimonyAnswer;
-import org.tmcindonesia.application.UserData;
+import org.tmcindonesia.application.UserInput.UserData;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
-        <activity android:name=".application.RegisterPage.RegisterPageDate"></activity>
+        <activity android:name=".application.RegisterPage.RegisterPageParent"></activity>
+        <activity android:name=".application.RegisterPage.RegisterPageDate" />
         <activity android:name=".tmc_explorer2.HomeExplorer2" />
         <activity
             android:name=".application.HomeApp"
@@ -60,7 +61,7 @@
             android:name=".tmc_explorer1.HomeExplorer1"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.TMC_Explorer.NoActionBar" />
-        <activity android:name=".application.RegisterActivity" />
+        <activity android:name=".application.RegisterPage.RegisterActivity" />
         <activity android:name=".application.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

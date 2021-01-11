@@ -6,9 +6,7 @@ import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -21,9 +19,7 @@ import android.widget.Toast;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.DataBaseHandler;
-import org.tmcindonesia.application.RegisterActivity;
-import org.tmcindonesia.application.UserData;
-import org.tmcindonesia.tmc_explorer1.questions.LESSON1;
+import org.tmcindonesia.application.UserInput.UserData;
 
 import java.io.File;
 import java.util.Calendar;
@@ -92,6 +88,7 @@ public class RegisterPageDate extends AppCompatActivity {
 
                 // check user ages
                 if (currentYear-userYear<13){
+                    startActivity(new Intent(getApplicationContext(), RegisterPageParent.class));
                     Toast.makeText(getApplicationContext(), "umur kamu di bawah 13 tahun", Toast.LENGTH_SHORT).show();
                 }
                 else{

@@ -20,13 +20,11 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.application.AcceptJesusAnswer;
 import org.tmcindonesia.application.DataBaseHandler;
-import org.tmcindonesia.application.UserData;
+import org.tmcindonesia.application.UserInput.UserData;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 import org.tmcindonesia.R;
 

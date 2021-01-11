@@ -1,22 +1,24 @@
-package org.tmcindonesia.application;
+package org.tmcindonesia.application.RegisterPage;
 
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,8 +36,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
-import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
-import org.tmcindonesia.application.RegisterPage.RegisterPageDate;
+import org.tmcindonesia.application.DataBaseHandler;
+import org.tmcindonesia.application.HomeApp;
+import org.tmcindonesia.application.UserInput.UserData;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -49,7 +52,9 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseFirestore firebaseFirestore;
     ProgressBar progressBar;
+    CheckBox checkBoxPrivacyPolicy;
     String userID;
+    TextView hyperlink_PrivacyPolicy;
     String keyUserName = "keyusername";
     String keyUserBirthDate = "keyuserbirthdate";
     UserData userData;
@@ -69,8 +74,11 @@ public class RegisterActivity extends AppCompatActivity {
         cityRegister = findViewById(R.id.editTextCityRegister);
         provinceRegister = findViewById(R.id.editTextProvinceRegister);
         institutionRegister = findViewById(R.id.editTextInstitutionRegister);
+        checkBoxPrivacyPolicy = findViewById(R.id.konfirmasi_privacypolicy);
+        hyperlink_PrivacyPolicy = findViewById(R.id.hyperlink_privacypolicy);
         buttonRegister = findViewById(R.id.buttonRegisterCreate);
         progressBar = findViewById(R.id.progressBar);
+
 
         // get username & birth date from data base
         userNameRegister.setText(getUserNameFromDataBase(this));
@@ -118,6 +126,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
 
+        // privacy policy website
+        hyperlink_PrivacyPolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.privacypolicies.com/live/3a96b097-2db7-4d6e-be14-7f2395073578")));
+            }
+        });
 
         // REGISTER button clicked
         buttonRegister.setOnClickListener(new View.OnClickListener() {
@@ -133,6 +148,13 @@ public class RegisterActivity extends AppCompatActivity {
                 String city = cityRegister.getText().toString().trim();
                 String province = provinceRegister.getText().toString().trim();
                 String institution = institutionRegister.getText().toString().trim();
+
+                // PRIVACY POLICY CHECK BOX
+                boolean agreePrivacyPolicy = checkBoxPrivacyPolicy.isChecked();
+                if(!agreePrivacyPolicy){
+                    Toast.makeText(RegisterActivity.this, "Anda belum menyetujui privacy policy", Toast.LENGTH_SHORT).show();
+                }
+
 
                 // check if text box is empty
                 if (TextUtils.isEmpty(email)) {
@@ -168,6 +190,7 @@ public class RegisterActivity extends AppCompatActivity {
                     passwordRegister.setError("Password harus lebih dari 6 huruf");
                     return;
                 }
+
 
                 // REGISTER USER IN FIRE BASE
                 // handles user creation

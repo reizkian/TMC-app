@@ -3,7 +3,9 @@
     <string name="title_activity_home">TMC Indonesia</string>
     <string name="action_settings">Settings</string>
     <string name="daftar">Belum punya akun? <b>Daftar</b></string>
-
+    <string name="setuju_privacypolicy">Saya telah menyetujui <b>Privacy Policy</b>.</string>
+    <string name="setuju_infoparent">Saya telah menyetujui <b>Informasi Orang Tua</b>.</string>
+    <string name="setuju_guidance">Saya telah menyetujui bahwa anak saya akan menggunakan aplikasi ini dan akan <b>membimbing anak saya ketika menggunakan aplikasi ini.</b></string>
 
     <!--    ###########################################################################################################-->
     <!--    ############################################# L E S S O N 1 ###############################################-->

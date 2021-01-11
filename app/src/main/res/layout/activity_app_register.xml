@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.tmcindonesia.application.RegisterActivity">
+    tools:context="org.tmcindonesia.application.RegisterPage.RegisterActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout_RegisterContainer"
@@ -13,9 +13,10 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="850dp"
-            android:src="@drawable/backplate"
-            android:scaleType="fitXY"/>
+            android:layout_height="1200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/backplate_long" />
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="300dp"
@@ -28,130 +29,288 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/tmcnewlogo" />
 
-        <EditText
-            android:id="@+id/editTextEmailRegister"
-            android:layout_width="300dp"
+        <!-- EMAIL -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_email"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-30dp"
+            app:boxStrokeColor="#ec1b30"
             android:hint="Email"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/editTextPasswordRegister"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextEmailRegister"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
+            android:layout_below="@+id/imageView"
+            app:hintTextColor="#ec1b30"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmailRegister"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- PASSWORD -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_password"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#ec1b30"
             android:hint="Password"
-            android:inputType="textPassword"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/editTextConfirmPasswordRegister"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextPasswordRegister"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
-            android:hint="Ulangi Password"
-            android:inputType="textPassword"
-            android:textSize="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-        <EditText
-            android:id="@+id/editTextUserNameRegister"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextConfirmPasswordRegister"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
+            app:hintTextColor="#ec1b30"
+            android:layout_below="@id/TextInputLayout_email"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPasswordRegister"
+                android:layout_width="match_parent"
+                android:textSize="18dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- CONFRIM PASSWORD -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_confirmpassword"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#ec1b30"
+            android:hint="Ulangi password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_centerHorizontal="true"
+            app:hintTextColor="#ec1b30"
+            android:layout_below="@id/TextInputLayout_password"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextConfirmPasswordRegister"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <!-- USER NAME -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_username"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#ec1b30"
             android:hint="Nama Lengkap"
-            android:textSize="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/editTextUserPhone"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextUserNameRegister"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
+            app:hintTextColor="#ec1b30"
+            android:layout_below="@id/TextInputLayout_confirmpassword"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextUserNameRegister"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- PHONE NUMBER -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_phone"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#ec1b30"
             android:hint="Nomor Hand Phone"
-            android:inputType="number"
-            android:textSize="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/editTextDateBirth"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextUserPhone"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
-            android:cursorVisible="false"
+            app:hintTextColor="#ec1b30"
+            android:layout_below="@id/TextInputLayout_username"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextUserPhone"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- BIRTH DATE -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_birthDate"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#ec1b30"
+            android:hint="Tanggal lahir"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/TextInputLayout_phone"
             android:focusable="false"
-            android:hint="Tanggal lahir (tanggal/bulan/tahun)"
-            android:inputType="date"
-            android:textSize="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:hintTextColor="#ec1b30">
 
-        <EditText
-            android:id="@+id/editTextCityRegister"
-            android:layout_width="300dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextDateBirth"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:focusable="false"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- CITY -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_city"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextDateBirth"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
+            app:boxStrokeColor="#ec1b30"
             android:hint="Kota / Kabupaten"
-            android:textSize="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <EditText
-            android:id="@+id/editTextProvinceRegister"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextCityRegister"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
+            android:layout_below="@id/TextInputLayout_birthDate"
+            app:hintTextColor="#ec1b30"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCityRegister"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- PROVINCE -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_province"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#ec1b30"
             android:hint="Provinsi"
-            android:textSize="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-        <EditText
-            android:id="@+id/editTextInstitutionRegister"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextProvinceRegister"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@id/TextInputLayout_city"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
-            android:hint="Institusi (Sekolah / Gereja / STT)"
-            android:textSize="15dp"
+            app:hintTextColor="#ec1b30"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextProvinceRegister"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- INSTITUTION -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayout_institution"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="#ec1b30"
+            android:hint="Institutsi (Sekolah / Gereja / STT)"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@id/TextInputLayout_province"
+            android:layout_centerHorizontal="true"
+            app:hintTextColor="#ec1b30"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextInstitutionRegister"
+                android:layout_width="match_parent"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textCursorDrawable="@drawable/color_cursor"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/konfirmasi_privacypolicy"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/setuju_privacypolicy"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:textSize="15dp"-->
+<!--            android:layout_below="@id/TextInputLayout_institution"/>-->
+
+<!--        <CheckedTextView-->
+<!--            android:id="@+id/konfirmasi_privacypolicy"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/setuju_privacypolicy"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:textSize="15dp"-->
+<!--            android:layout_below="@id/TextInputLayout_institution"/>-->
+
+        <LinearLayout
+            android:id="@+id/layout_privacypolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/TextInputLayout_institution"
+            >
+            <TextView
+                android:id="@+id/hyperlink_privacypolicy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="-10dp"
+                android:textSize="15dp"
+                android:layout_below="@id/TextInputLayout_institution"
+                android:text="@string/setuju_privacypolicy" />
+            <CheckBox
+                android:id="@+id/konfirmasi_privacypolicy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="15dp"
+                android:layout_below="@id/TextInputLayout_institution"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/buttonRegisterCreate"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextInstitutionRegister"
+            android:layout_below="@+id/layout_privacypolicy"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:backgroundTint="#ec1b30"

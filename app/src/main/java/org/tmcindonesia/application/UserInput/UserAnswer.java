@@ -1,4 +1,4 @@
-package org.tmcindonesia.application;
+package org.tmcindonesia.application.UserInput;
 
 public class UserAnswer {
     // variable for user answer container

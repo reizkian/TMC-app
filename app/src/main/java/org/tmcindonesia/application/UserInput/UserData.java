@@ -1,4 +1,4 @@
-package org.tmcindonesia.application;
+package org.tmcindonesia.application.UserInput;
 
 import android.provider.BaseColumns;
 
@@ -21,7 +21,6 @@ public class UserData {
         public static final String COLUMN_USER_CITY = "city";
         public static final String COLUMN_USER_PROVINCE = "province";
         public static final String COLUMN_USER_INSTITUTION = "institution";
-
     }
 
     // constructor
