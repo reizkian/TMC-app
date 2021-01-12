@@ -59,10 +59,10 @@ public class RegisterPageParent extends AppCompatActivity {
     private String sNamaAnak, sTglLahir, sInstitusi;
     private String sNamaWali, sEmailWali, sPasswordWali, sConfirmPasswordWali, sNoHpWali, sKotaWali, sProvinsiWali, sHubunganWali;
     // FIRE BASE
-    FirebaseAuth firebaseAuth;
-    FirebaseFirestore firebaseFirestore;
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     String userID;
-    public static final String TAG = "FireBase";
+    public static final String TAG = "firebase";
 
 
     @Override
@@ -120,14 +120,59 @@ public class RegisterPageParent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getStringInput();
-                checkUserInputComplete();
                 createUserObject();
-                checkAgreement();
-                //writeUserDataToFireBase();
-                //writeUserDataToDataBase(getApplicationContext());
+
+                // Check User Input
+                if (TextUtils.isEmpty(sNamaAnak)){namaAnak.setError("masukan nama kamu"); return;}
+                if (TextUtils.isEmpty(sTglLahir)){tglLahirAnak.setError("masukan tanggal lahir kamu"); return;}
+                if (TextUtils.isEmpty(sInstitusi)){institusiAnak.setError("masukan sekolah atau gereja kamu"); return;}
+                if (TextUtils.isEmpty(sNamaWali)){namaWali.setError("masukan nama anda"); return;}
+                if(hubunganWali.getCheckedRadioButtonId() == -1 && TextUtils.isEmpty(hubunganWaliLainnya.getText().toString().trim())){
+                    hubunganWaliLainnya.setError("mohon masukan relasi/hubungan anda dengan anak");
+                }
+                if(!(hubunganWali.getCheckedRadioButtonId() == -1) && TextUtils.isEmpty(hubunganWaliLainnya.getText().toString().trim())){
+                    hubunganWaliLainnya.setError(null);
+                }
+                if (TextUtils.isEmpty(sEmailWali)){emailWali.setError("masukan email anda"); return;}
+                if (TextUtils.isEmpty(sPasswordWali)){passwordWali.setError("masukan password anda"); return;}
+                if (TextUtils.isEmpty(sConfirmPasswordWali)){confirmPasswordWali.setError("masukan password anda"); return;}
+                if (TextUtils.isEmpty(sNoHpWali)){noHPWali.setError("masukan nomer hand phone anda"); return;}
+                if (TextUtils.isEmpty(sKotaWali)){kotaWali.setError("masukan kota asal anda"); return;}
+                if (TextUtils.isEmpty(sProvinsiWali)){provinsiWali.setError("masukan provinsi asal anda"); return;}
+
+
+                // Check User Agreement
+                if(!(checkBoxPrivacyPolicy.isChecked())){
+                    Toast.makeText(RegisterPageParent.this, "Anda belum menyetujui Privacy Policy", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if(!(checkBoxInfoParent.isChecked())){
+                    Toast.makeText(RegisterPageParent.this, "Anda belum menyetujui Info Orang Tua", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                else if(!(checkBoxGuidance.isChecked())){
+                    Toast.makeText(RegisterPageParent.this, "Anda belum menyetujui untuk membimbing", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Write Data to Fire Base
+                if(!sPasswordWali.equals(sConfirmPasswordWali)) {
+                    // error message password cannot be confirmed
+                    passwordWali.setError("masukan password anda");
+                    confirmPasswordWali.setError("masukan konfirmasi password anda");
+                    Toast.makeText(RegisterPageParent.this, "ulangi password tidak sama", Toast.LENGTH_SHORT).show();
+                    return;
+                }else{
+                    writeUserDataToFireBase();
+                }
+
+                // Write Data to Data Base
+                writeUserDataToDataBase(getApplicationContext());
                 creatingUser.setVisibility(View.VISIBLE);
+
                 // go to HOME activity
-                // startActivity(new Intent(getApplicationContext(), HomeApp.class));
+                startActivity(new Intent(getApplicationContext(), HomeApp.class));
+                Toast.makeText(RegisterPageParent.this, "logged in", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -224,33 +269,9 @@ public class RegisterPageParent extends AppCompatActivity {
                     break;
             }
         }
-        if(radioButtonGetID == -1 && TextUtils.isEmpty(hubunganWaliLainnya.getText().toString().trim())){
-            hubunganWaliLainnya.setError("mohon masukan relasi/hubungan anda dengan anak");
-        }
     }
     private void createUserObject(){
         UserChildrenAndParentData userObject = new UserChildrenAndParentData(sNamaAnak, sTglLahir, sInstitusi, sNamaWali, sEmailWali, sHubunganWali, sNoHpWali, sKotaWali, sProvinsiWali);
-    }
-    private void checkUserInputComplete(){
-        // anak
-        if (TextUtils.isEmpty(sNamaAnak)){namaAnak.setError("masukan nama kamu"); return;}
-        if (TextUtils.isEmpty(sTglLahir)){tglLahirAnak.setError("masukan tanggal lahir kamu"); return;}
-        if (TextUtils.isEmpty(sInstitusi)){namaAnak.setError("masukan sekolah atau gereja kamu"); return;}
-        if (TextUtils.isEmpty(sNamaAnak)){namaAnak.setError("masukan nama kamu"); return;}
-        // orang tua
-        if (TextUtils.isEmpty(sNamaWali)){namaWali.setError("masukan nama anda"); return;}
-        if (TextUtils.isEmpty(sEmailWali)){emailWali.setError("masukan email anda"); return;}
-        if (TextUtils.isEmpty(sPasswordWali)){passwordWali.setError("masukan password anda"); return;}
-        if (TextUtils.isEmpty(sConfirmPasswordWali)){confirmPasswordWali.setError("masukan password anda"); return;}
-        if (TextUtils.isEmpty(sNoHpWali)){noHPWali.setError("masukan password anda"); return;}
-        if (TextUtils.isEmpty(sKotaWali)){kotaWali.setError("masukan password anda"); return;}
-        if (TextUtils.isEmpty(sProvinsiWali)){provinsiWali.setError("masukan password anda"); return;}
-        if(!sPasswordWali.equals(sConfirmPasswordWali)) {
-            // error message password cannot be confirmed
-            Toast.makeText(RegisterPageParent.this, "ulangi password tidak sama", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
     }
     private void writeUserDataToFireBase(){
         firebaseAuth.createUserWithEmailAndPassword(sEmailWali,sPasswordWali).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -259,7 +280,7 @@ public class RegisterPageParent extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(RegisterPageParent.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
                     userID = firebaseAuth.getCurrentUser().getUid();
-                    DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(sNamaWali);
+                    DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(sNamaAnak);
                     Map<String, Object> user  = new HashMap<>();
                     user.put("Children Name", sNamaAnak);
                     user.put("Children Birth Date", sTglLahir);
@@ -293,20 +314,6 @@ public class RegisterPageParent extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(getApplicationContext(), "Insertion Failed", Toast.LENGTH_SHORT).show();
-            return;
-        }
-    }
-    private void checkAgreement(){
-        if(!(checkBoxPrivacyPolicy.isChecked())){
-            Toast.makeText(RegisterPageParent.this, "Anda belum menyetujui Privacy Policy", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        else if(!(checkBoxInfoParent.isChecked())){
-            Toast.makeText(RegisterPageParent.this, "Anda belum menyetujui Info Orang Tua", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        else if(!(checkBoxGuidance.isChecked())){
-            Toast.makeText(RegisterPageParent.this, "Anda belum menyetujui untuk membimbing", Toast.LENGTH_SHORT).show();
             return;
         }
     }
