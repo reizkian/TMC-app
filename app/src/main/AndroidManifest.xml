@@ -12,7 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
-        <activity android:name=".application.RegisterPage.RegisterPageParent"></activity>
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson12Question"></activity>
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson11Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson10Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson9Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson8Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson7Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson6Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson5Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson4Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson3Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson2Question" />
+        <activity android:name=".tmc_explorer2.questions.Exp2Lesson1Question" />
+        <activity android:name=".application.RegisterPage.RegisterPageParent" />
         <activity android:name=".application.RegisterPage.RegisterPageDate" />
         <activity android:name=".tmc_explorer2.HomeExplorer2" />
         <activity

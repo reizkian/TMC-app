@@ -11,6 +11,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.tmc_explorer1.questions.LESSON1;
+import org.tmcindonesia.tmc_explorer2.questions.Exp2Lesson12Question;
+import org.tmcindonesia.tmc_explorer2.questions.Exp2Lesson5Question;
 
 public class Exp2Lesson12Read extends AppCompatActivity {
     FloatingActionButton fab_goToQuestion;
@@ -45,7 +47,7 @@ public class Exp2Lesson12Read extends AppCompatActivity {
         fab_goToQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LESSON1.class));
+                startActivity(new Intent(getApplicationContext(), Exp2Lesson12Question.class));
             }
         });
 

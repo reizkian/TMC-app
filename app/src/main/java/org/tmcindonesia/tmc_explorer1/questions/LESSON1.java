@@ -181,7 +181,6 @@ public class LESSON1 extends AppCompatActivity {
             }
         });
         LoadPreferences();
-        Toast.makeText(this,getUserNameFromDataBase(this),Toast.LENGTH_SHORT).show();
     }
 
     // WRITE DATA TO FIRE STORE DATA BASE

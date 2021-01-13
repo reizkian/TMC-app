@@ -466,7 +466,7 @@
     <string name="EXPLORER2_questionpage1_answer_1a">a. Adalah Anak Allah dan Dia selalu ada.</string>
     <string name="EXPLORER2_questionpage1_answer_1b">b. Memulai hidup-Nya ketika Dia lahir di Betlehem.</string>
     <!--    question page 2-->
-    <string name="EXPLORER2_questionpage1_question2">2. Nama Yesus disebut "Imanuel". Kata "Imanuel" berarti: </string>
+    <string name="EXPLORER2_questionpage1_question2">2. Nama Yesus disebut Imanuel. Kata Imanuel berarti: </string>
     <string name="EXPLORER2_questionpage1_answer_2a">a. Allah di Surga.</string>
     <string name="EXPLORER2_questionpage1_answer_2b">b. Allah beserta kita.</string>
     <!--    question page 3-->
@@ -601,7 +601,7 @@
     <!--    Q U E S T I O N    P A G E    L E S S O N   5 -->
     <!--    ============================================= -->
     <!--    question page 1-->
-    <string name="EXPLORER2_questionpage5_question1">1. 1.	Rencana luar biasa Allah bagi kita adalah:</string>
+    <string name="EXPLORER2_questionpage5_question1">1. Rencana luar biasa Allah bagi kita adalah:</string>
     <string name="EXPLORER2_questionpage5_answer_1a">a.	Untuk membuat kita seperti Yesus.</string>
     <string name="EXPLORER2_questionpage5_answer_1b">b.	Untuk membuat kita menjadi seseorang yang lebih baik.</string>
     <!--    question page 2-->
