@@ -10,9 +10,7 @@ import com.github.barteksc.pdfviewer.PDFView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.tmcindonesia.R;
-import org.tmcindonesia.tmc_explorer1.questions.LESSON1;
-import org.tmcindonesia.tmc_explorer2.questions.Exp2Lesson10Question;
-import org.tmcindonesia.tmc_explorer2.questions.Exp2Lesson5Question;
+import org.tmcindonesia.tmc_explorer2.questions.LESSON10;
 
 public class Exp2Lesson9Read extends AppCompatActivity {
     FloatingActionButton fab_goToQuestion;
@@ -47,7 +45,7 @@ public class Exp2Lesson9Read extends AppCompatActivity {
         fab_goToQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Exp2Lesson10Question.class));
+                startActivity(new Intent(getApplicationContext(), LESSON10.class));
             }
         });
 

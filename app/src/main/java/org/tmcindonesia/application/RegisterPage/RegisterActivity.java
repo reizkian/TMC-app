@@ -213,7 +213,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 userProfile.updateProfile(profileUpdates);
                                 // FireStore Data Base
                                 userID = firebaseAuth.getCurrentUser().getUid();
-                                DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(username);
+                                DocumentReference documentReference = firebaseFirestore.collection("USER PERSONAL DATA").document(userID);
                                 Map<String, Object> user  = new HashMap<>();
                                 user.put("Name",username);
                                 user.put("Phone",phonenumber);

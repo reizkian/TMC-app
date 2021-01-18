@@ -1,4 +1,13 @@
-package org.tmcindonesia.tmc_explorer1.questions;
+package org.tmcindonesia.tmc_explorer2.questions;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.tmcindonesia.R;
+import org.tmcindonesia.application.DataBaseHandler;
+import org.tmcindonesia.application.UserInput.UserAnswer;
+import org.tmcindonesia.application.UserInput.UserData;
+import org.tmcindonesia.tmc_explorer2.HomeExplorer2;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,21 +23,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import org.tmcindonesia.R;
-import org.tmcindonesia.application.DataBaseHandler;
-import org.tmcindonesia.application.LoginActivity;
-import org.tmcindonesia.application.UserInput.UserAnswer;
-import org.tmcindonesia.application.UserInput.UserData;
-import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,12 +36,8 @@ public class LESSON1 extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     String userName;
     public static final String TAG = "TAG";
-    // variable TREASURE HUNT
-    private EditText UserAnswerTreasureHunt;
-    private Button checkAnswerTreasureHunt;
-    private static final String keyUserAnswerTreasureHunt = "keyUserAnswerTreasureHunt";
     // variable QUESTIONS PAGE
-    private int correctAnswerQuestionsPage[] = {1, 0, 1, 0, 0};
+    private int correctAnswerQuestionsPage[] = {0, 1, 1, 1, 1};
     private RadioGroup rgqp_question1, rgqp_question2, rgqp_question3, rgqp_question4, rgqp_question5;
     private RadioButton rb_question1, rb_question2, rb_question3, rb_question4, rb_question5;
     private static final String key_rb_question1 = "key_rb_question1";
@@ -63,41 +57,11 @@ public class LESSON1 extends AppCompatActivity {
     private static final String key_mjwj_answer3 = "key_mjwj_answer3";
     private static final String key_mjwj_answer4 = "key_mjwj_answer4";
 
-    // CREATE VIEW
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_explorer1_question1);
-
-        // *******************************TREASURE HUNT**********************************
-        // get layout id
-        UserAnswerTreasureHunt = (EditText) findViewById(R.id.editText_AnswerTreasureHunt);
-        checkAnswerTreasureHunt = (Button) findViewById(R.id.button_CheckAnswer_TreasureHunt);
-        // True Answer for Treasure Hunt Question
-        String trueAnswerTreasureHunt = "LOVE GOD WITH ALL YOUR HEART";
-        // OK button clicked TREASURE HUNT
-        checkAnswerTreasureHunt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // take user input as answer
-                String userInputAnswer = UserAnswerTreasureHunt.getText().toString().trim().toUpperCase();
-
-                // compare to true answer
-                if (userInputAnswer.equals(trueAnswerTreasureHunt.trim())) {
-                    // change button color to green
-                    checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(LESSON1.this, R.color.green_true_answer));
-                    // notify correct answer
-                    Toast.makeText(LESSON1.this, "Jawaban Kamu Benar!", Toast.LENGTH_SHORT).show();
-                }
-                if (!userInputAnswer.equals(trueAnswerTreasureHunt.trim())) {
-                    // change button color to red
-                    checkAnswerTreasureHunt.setBackgroundColor(ContextCompat.getColor(LESSON1.this, R.color.red_false_answer));
-                    // notify wrong answer
-                    Toast.makeText(LESSON1.this, "Jawaban Kamu Salah, ayo coba lagi", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+        setContentView(R.layout.activity_explorer2_question1);
 
         // *******************************QUESTIONS PAGE*********************************
         // get layout ID radio group
@@ -134,7 +98,6 @@ public class LESSON1 extends AppCompatActivity {
                 //toast
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, rb_index_array);
             }
-
             // getNumberOfCorrectAnswer
             public void checkAnswerQuestionsPage(int[] listOfCorrectAnswer, int[] listOfUserAnswer) {
                 for (int index = 0; index < listOfCorrectAnswer.length; index++) {
@@ -178,7 +141,7 @@ public class LESSON1 extends AppCompatActivity {
                         "Terimakasih, ayo lanjutkan pelajaran mu",
                         Toast.LENGTH_SHORT).show();
                 // move to home page
-                startActivity(new Intent(getApplicationContext(), HomeExplorer1.class));
+                startActivity(new Intent(getApplicationContext(), HomeExplorer2.class));
             }
         });
         LoadPreferences();
@@ -197,9 +160,8 @@ public class LESSON1 extends AppCompatActivity {
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
         userName = getUserNameFromDataBase(this);
-        Toast.makeText(LESSON1.this, userName, Toast.LENGTH_SHORT).show();
         // actually write on cloud
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
+        firebaseFirestore.collection("TMC EXPLORER TWO USER").document(userName).collection("User Answer").document(className)
                 .set(answers)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -219,8 +181,6 @@ public class LESSON1 extends AppCompatActivity {
     private void SavePreferences() {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        // save user answer TREASURE HUNT
-        editor.putString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString());
         // save user answer MULTIPLE CHOICE
         editor.putInt(key_rb_question1, rgqp_question1.getCheckedRadioButtonId());
         editor.putInt(key_rb_question2, rgqp_question2.getCheckedRadioButtonId());
@@ -238,8 +198,6 @@ public class LESSON1 extends AppCompatActivity {
     private void LoadPreferences() {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         // set text just like when the user leave it (back pressed)
-        // load user answer TREASURE HUNT
-        UserAnswerTreasureHunt.setText(sharedPreferences.getString(keyUserAnswerTreasureHunt, UserAnswerTreasureHunt.getText().toString()));
         // load user answer MULTIPLE CHOICE
         rgqp_question1.check(sharedPreferences.getInt(key_rb_question1,rgqp_question1.getCheckedRadioButtonId()));
         rgqp_question2.check(sharedPreferences.getInt(key_rb_question2,rgqp_question2.getCheckedRadioButtonId()));

@@ -30,6 +30,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -280,7 +282,12 @@ public class RegisterPageParent extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(RegisterPageParent.this, "daftar berhasil", Toast.LENGTH_SHORT).show();
                     userID = firebaseAuth.getCurrentUser().getUid();
-                    DocumentReference documentReference = firebaseFirestore.collection("TMC EXPLORER ONE USER").document(sNamaAnak);
+                    // set user display name
+                    FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(sNamaAnak).build();
+                    userProfile.updateProfile(profileUpdates);
+                    // write to fire store
+                    DocumentReference documentReference = firebaseFirestore.collection("USER PERSONAL DATA").document(userID);
                     Map<String, Object> user  = new HashMap<>();
                     user.put("Children Name", sNamaAnak);
                     user.put("Children Birth Date", sTglLahir);

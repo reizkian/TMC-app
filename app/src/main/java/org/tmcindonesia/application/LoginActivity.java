@@ -20,9 +20,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.RegisterPage.RegisterPageDate;
+import org.tmcindonesia.application.RegisterPage.RegisterPageParent;
+import org.tmcindonesia.application.UserInput.UserData;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 
 public class LoginActivity extends AppCompatActivity {
@@ -30,7 +33,9 @@ public class LoginActivity extends AppCompatActivity {
     TextView RegisterPage;
     EditText EmailLogin, PasswordLogin;
     FirebaseAuth firebaseAuth;
+    String username;
     ProgressBar progressBarLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,9 @@ public class LoginActivity extends AppCompatActivity {
         // if yes, then go to home page
         if (firebaseAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), HomeApp.class));
+            // set user display name from firebase authentication
+            username = firebaseAuth.getCurrentUser().getDisplayName();
+            writeEntryName(LoginActivity.this,username);
             finish();
         }
 
@@ -84,6 +92,10 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Logged in  Successfull",Toast.LENGTH_SHORT).show();
+                            // set user display name from firebase authentication
+                            username = firebaseAuth.getCurrentUser().getDisplayName();
+                            writeEntryName(LoginActivity.this,username);
+                            Toast.makeText(LoginActivity.this, username, Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(), HomeApp.class));
                         }else{
                             Toast.makeText(LoginActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -111,5 +123,14 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
+    public void writeEntryName(Context c, String userName) {
+        UserData userData = new UserData(userName, null, null, null, null, null, null);
+        DataBaseHandler dataBaseHandler = new DataBaseHandler(c);
+        boolean statusDataBase = dataBaseHandler.addUser(userName, null, null, null, null, null, null);
+        if (statusDataBase) {
+            Toast.makeText(getApplicationContext(), "Inserted Successfully", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Insertion Failed", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
