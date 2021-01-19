@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,10 +37,18 @@ public class LESSON9 extends AppCompatActivity {
     public static final String TAG = "TAG";
     // variable QUESTIONS PAGE
     private int correctAnswerQuestionsPage[] = {1, 0, 0, 1, 1};
+    private String questions_ayojawab[];
+    private String answers_ayojawab[];
+    private TextView textView_quesion1, textView_quesion2, textView_quesion3, textView_quesion4, textView_quesion5;
     private RadioGroup rgqp_question1, rgqp_question2, rgqp_question3, rgqp_question4, rgqp_question5;
     private RadioButton rb_question1, rb_question2, rb_question3, rb_question4, rb_question5;
     private Button getCheckAnswerQuestionsPage;
     private int numberOfCorrectAnswer = 0;
+    private static final String key_rb_question1 = "key_rb_question1";
+    private static final String key_rb_question2 = "key_rb_question2";
+    private static final String key_rb_question3 = "key_rb_question3";
+    private static final String key_rb_question4 = "key_rb_question4";
+    private static final String key_rb_question5 = "key_rb_question5";
     // variable MY JOURNEY WITH JESUS
     private EditText mjwj_answer1, mjwj_answer2, mjwj_answer3, mjwj_answer4;
     private String AnswersMJWJ[] = {};
@@ -62,6 +71,12 @@ public class LESSON9 extends AppCompatActivity {
         rgqp_question3 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage9_MultipleChoiceQuestion3);
         rgqp_question4 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage9_MultipleChoiceQuestion4);
         rgqp_question5 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage9_MultipleChoiceQuestion5);
+        // get layout ID text view question
+        textView_quesion1 = (TextView) findViewById(R.id.textView_QuestionPage9_MultipleChoiceQuestion1);
+        textView_quesion2 = (TextView) findViewById(R.id.textView_QuestionPage9_MultipleChoiceQuestion2);
+        textView_quesion3 = (TextView) findViewById(R.id.textView_QuestionPage9_MultipleChoiceQuestion3);
+        textView_quesion4 = (TextView) findViewById(R.id.textView_QuestionPage9_MultipleChoiceQuestion4);
+        textView_quesion5 = (TextView) findViewById(R.id.textView_QuestionPage9_MultipleChoiceQuestion5);
         // OK button clicked QUESTION PAGE
         getCheckAnswerQuestionsPage = findViewById(R.id.button_CheckAnswer_QuestionsPage);
         getCheckAnswerQuestionsPage.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +108,8 @@ public class LESSON9 extends AppCompatActivity {
 
             // getNumberOfCorrectAnswer
             public void checkAnswerQuestionsPage(int[] listOfCorrectAnswer, int[] listOfUserAnswer) {
+                // reset number
+                numberOfCorrectAnswer = 0;
                 for (int index = 0; index < listOfCorrectAnswer.length; index++) {
                     if (listOfCorrectAnswer[index] == listOfUserAnswer[index]) {
                         numberOfCorrectAnswer++;
@@ -121,7 +138,12 @@ public class LESSON9 extends AppCompatActivity {
                         mjwj_answer1.getText().toString().trim(),
                         mjwj_answer2.getText().toString().trim(),
                         mjwj_answer3.getText().toString().trim(),
-                        mjwj_answer4.getText().toString().trim()
+                        mjwj_answer4.getText().toString().trim(),
+                        answers_ayojawab[0],
+                        answers_ayojawab[1],
+                        answers_ayojawab[2],
+                        answers_ayojawab[3],
+                        answers_ayojawab[4]
                 );
                 // write data base method
                 writeUserAnswerToDataBase(userAnswers);
@@ -182,6 +204,14 @@ public class LESSON9 extends AppCompatActivity {
 
     private void LoadPreferences() {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        // reset number
+        numberOfCorrectAnswer = 0;
+        // load user answer MULTIPLE CHOICE
+        rgqp_question1.check(sharedPreferences.getInt(key_rb_question1,rgqp_question1.getCheckedRadioButtonId()));
+        rgqp_question2.check(sharedPreferences.getInt(key_rb_question2,rgqp_question2.getCheckedRadioButtonId()));
+        rgqp_question3.check(sharedPreferences.getInt(key_rb_question3,rgqp_question3.getCheckedRadioButtonId()));
+        rgqp_question4.check(sharedPreferences.getInt(key_rb_question4,rgqp_question4.getCheckedRadioButtonId()));
+        rgqp_question5.check(sharedPreferences.getInt(key_rb_question5,rgqp_question5.getCheckedRadioButtonId()));
         // set text just like when the user leave it (back pressed)
         mjwj_answer1.setText(sharedPreferences.getString(key_mjwj_answer1, mjwj_answer1.getText().toString()));
         mjwj_answer2.setText(sharedPreferences.getString(key_mjwj_answer2, mjwj_answer2.getText().toString()));
