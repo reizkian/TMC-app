@@ -537,7 +537,7 @@
     <!--    question page 2-->
     <string name="EXPLORER2_questionpage3_question2">2. Sekali aku berada dalam keluarga Allah?</string>
     <string name="EXPLORER2_questionpage3_answer_2a">a. Aku akan selalu berada dalam keluarga-Nya</string>
-    <string name="EXPLORER2_questionpage3_answer_2b">b. Aku hanya berada dalam keluarga-Nya samapi aku berbuat dosa.</string>
+    <string name="EXPLORER2_questionpage3_answer_2b">b. Aku hanya berada dalam keluarga-Nya sampai aku berbuat dosa.</string>
     <!--    question page 3-->
     <string name="EXPLORER2_questionpage3_question3">3. Ketika aku berbuat dosa setelah aku diselamatkan:</string>
     <string name="EXPLORER2_questionpage3_answer_3a">a. Aku datang kepada Tuhan dan mengakui bahwa aku bedosa terhadap-Nya.</string>
@@ -578,7 +578,7 @@
     <string name="EXPLORER2_questionpage4_answer_3a">a. Kepala keluarga yang lebih baik dari keluarga Adam.</string>
     <string name="EXPLORER2_questionpage4_answer_3b">b. kepala dari keluarga yang disebut "anak-anak Allah".</string>
     <!--    question page 4-->
-    <string name="EXPLORER2_questionpage4_question4">4. bagai mana kita bisa masuk kedalam keluarga Allah </string>
+    <string name="EXPLORER2_questionpage4_question4">4. Bagaimana kita bisa masuk kedalam keluarga Allah </string>
     <string name="EXPLORER2_questionpage4_answer_4a">a. Kita harus selalu berbuat baik.</string>
     <string name="EXPLORER2_questionpage4_answer_4b">b. Kita harus "dilahirkan kembali" ke dalam keluarga Allah.</string>
     <!--    question page 5-->
@@ -609,16 +609,16 @@
     <string name="EXPLORER2_questionpage5_answer_2a">a.	Hamba-Nya.</string>
     <string name="EXPLORER2_questionpage5_answer_2b">b.	Anak-anak-Nya.</string>
     <!--    question page 3-->
-    <string name="EXPLORER2_questionpage5_question3">3.	Allah memulai pekerjaan-Nya dalam membuatku seperti Anak-Nya:</string>
+    <string name="EXPLORER2_questionpage5_question3">3.	Allah memulai pekerjaan-Nya dengan menjadikan ku anak-Nya:</string>
     <string name="EXPLORER2_questionpage5_answer_3a">a.	Dengan memberitahu aku untuk mencoba menjadi seperti Yesus.</string>
     <string name="EXPLORER2_questionpage5_answer_3b">b.	Dengan menempatkan aku dalam Kristus.</string>
     <!--    question page 4-->
     <string name="EXPLORER2_questionpage5_question4">4.	Karena aku telah memercayai Kristus sebagai Juruselamatku, maka:</string>
     <string name="EXPLORER2_questionpage5_answer_4a">a.	Aku adalah seseorang yang jauh lebih baik dari sebelumnya.</string>
-    <string name="EXPLORER2_questionpage5_answer_4b">b.	Aku adalah pribadi yang baru.</string>
+    <string name="EXPLORER2_questionpage5_answer_4b">b.	Aku adalah manusia baru didalam Kristus.</string>
     <!--    question page 5-->
     <string name="EXPLORER2_questionpage5_question5">5.	Karena aku di dalam Kristus:</string>
-    <string name="EXPLORER2_questionpage5_answer_5a">a. Allah mengasihi dan menerima aku seperti Dia mengasihi dan menerima</string>
+    <string name="EXPLORER2_questionpage5_answer_5a">a. Allah mengasihi dan menerima aku seperti Dia mengasihi dan menerima Kristus</string>
     <string name="EXPLORER2_questionpage5_answer_5b">b. Allah mengasihi dan menerima aku selama aku menyenangkan-Nya.</string>
 
     <!--    =============================================================== -->
@@ -706,25 +706,25 @@
     <!--    Q U E S T I O N    P A G E    L E S S O N   8 -->
     <!--    ============================================= -->
     <!--    question page 1-->
-    <string name="EXPLORER2_questionpage8_question1">1. Diselamatkan berarti</string>
-    <string name="EXPLORER2_questionpage8_answer_1a">a. Allah mengampuni dosa-dosaku dan menjadikanku anak-Nya.</string>
-    <string name="EXPLORER2_questionpage8_answer_1b">b. Aku adalah orang yang taat beragama.</string>
+    <string name="EXPLORER2_questionpage8_question1">1. Meskipun aku telah diselamatkan dan Kristus hidup di dalamku:</string>
+    <string name="EXPLORER2_questionpage8_answer_1a">a. DIRI SENDIRI masih ada di dalam ku, tetapi ia tidak akan berusaka untuk berkuasa lagi.</string>
+    <string name="EXPLORER2_questionpage8_answer_1b">b. DIRI SENDIRI masih ada di dalamku, dan ia ingin terus menguasai hidupku.</string>
     <!--    question page 2-->
-    <string name="EXPLORER2_questionpage8_question2">2. Aku dapat diselamatkan</string>
-    <string name="EXPLORER2_questionpage8_answer_2a">a. Dengan melakukan banyak perbuatan baik.</string>
-    <string name="EXPLORER2_questionpage8_answer_2b">b. Dengan percaya bahwa Yesus adalah Juru Selamatku.</string>
+    <string name="EXPLORER2_questionpage8_question2">2. Karakter utama DIRI SENDIRI adalah:</string>
+    <string name="EXPLORER2_questionpage8_answer_2a">a. Memberontak melawan Allah.</string>
+    <string name="EXPLORER2_questionpage8_answer_2b">b. Memberontak melawan orang-orang lain.</string>
     <!--    question page 3-->
-    <string name="EXPLORER2_questionpage8_question3">3. Anak-anak</string>
-    <string name="EXPLORER2_questionpage8_answer_3a">a. Dapat percaya kepada Yesus dan menerima-Nya sebagai Juru Selamat mereka.</string>
-    <string name="EXPLORER2_questionpage8_answer_3b">b. Harus menunggu sampai mereka dewasa untuk bisa diselamatkan.</string>
+    <string name="EXPLORER2_questionpage8_question3">3. Allah turut campur tangan pada DIRI SENDIRI</string>
+    <string name="EXPLORER2_questionpage8_answer_3a">a. Dengan membuat diri sendiri lebih baik.</string>
+    <string name="EXPLORER2_questionpage8_answer_3b">b. Dengan menempatkan aku di dalam Kristus di atas kayu salib.</string>
     <!--    question page 4-->
-    <string name="EXPLORER2_questionpage8_question4">4. Aku menerima Yesus sebagai Juru Selamatku</string>
-    <string name="EXPLORER2_questionpage8_answer_4a">a. Dengan berusaha keras menjadi orang baik.</string>
-    <string name="EXPLORER2_questionpage8_answer_4b">b. Dengan percaya bahwa Ia mati untuk menebus hidupku yang berdosa dan meminta-Nya masuk ke dalam hatiku.</string>
+    <string name="EXPLORER2_questionpage8_question4">4. Allah "\"menyalibkan"\" aku bersama Kristus:</string>
+    <string name="EXPLORER2_questionpage8_answer_4a">a. Sehingga aku menjadi pribadi yang lebih baik.</string>
+    <string name="EXPLORER2_questionpage8_answer_4b">b. Sehingga aku tidak lagi dikuasai oleh diri sendiri.</string>
     <!--    question page 5-->
-    <string name="EXPLORER2_questionpage8_question5">5. Alkitab berkata bahwa</string>
-    <string name="EXPLORER2_questionpage8_answer_5a">a. Aku tidak bisa benar-benar tahu apakah aku diselamatkan.</string>
-    <string name="EXPLORER2_questionpage8_answer_5b">b. Jika aku memiliki Yesus di hatiku, aku punya kehidupan yang kekal.</string>
+    <string name="EXPLORER2_questionpage8_question5">5. Saat aku memilih Kristus menjadi Raja dalam hidupku:</string>
+    <string name="EXPLORER2_questionpage8_answer_5a">a. Aku harus berkata "\"tidak"\" pada DIRI SENDIRI dan "\"ya"\" kepada Tuhan Yesus.</string>
+    <string name="EXPLORER2_questionpage8_answer_5b">b. Aku tidak perlu lagi khawatir tentang DIRI SENDIRI</string>
 
     <!--    =============================================================== -->
     <!--    M Y    J O U R N E Y    W I T H    J E S U S    L E S S O N   8 -->
@@ -749,7 +749,7 @@
     <string name="EXPLORER2_questionpage9_answer_2a">a.	Dengan menipu mereka.</string>
     <string name="EXPLORER2_questionpage9_answer_2b">b.	Dengan membuat mereka melakukan hal-hal yang buruk.</string>
     <!--    question page 3-->
-    <string name="EXPLORER2_questionpage9_question3">3.	Setan mencobai kita:</string>
+    <string name="EXPLORER2_questionpage9_question3">3.	Setan tidak lagi berusaha menipu kita:</string>
     <string name="EXPLORER2_questionpage9_answer_3a">a.	Pada titik kelemahan kita.</string>
     <string name="EXPLORER2_questionpage9_answer_3b">b.	Pada titik kekuatan kita.</string>
     <!--    question page 4-->
@@ -819,7 +819,7 @@
     <!--    question page 3-->
     <string name="EXPLORER2_questionpage11_question3">3. Langkah pertama dalam membawa seseorang kepada Kristus adalah</string>
     <string name="EXPLORER2_questionpage11_answer_3a">a. Memberitahukan kepadanya bahwa dia harus menjaga seluruh perintah Allah.</string>
-    <string name="EXPLORER2_questionpage11_answer_3b">b. Menunjukkan kepadanya dari firman Allah bahwa dia berdosa.</string>
+    <string name="EXPLORER2_questionpage11_answer_3b">b. Menunjukkan kepadanya dari firman Allah bahwa dia pendosa.</string>
     <!--    question page 4-->
     <string name="EXPLORER2_questionpage11_question4">4. Allah menunjukkan kasih-Nya kepada kita dengan</string>
     <string name="EXPLORER2_questionpage11_answer_4a">a. Memberikan Anak-Nya untuk mati demi hidup kita yang berdosa.</string>

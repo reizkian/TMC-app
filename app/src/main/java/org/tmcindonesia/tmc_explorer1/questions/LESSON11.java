@@ -183,10 +183,10 @@ public class LESSON11 extends AppCompatActivity {
         Map<String, Object> answers_qp = new HashMap<>();
         answers_qp.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
         answers_qp.put(questions_ayojawab[0],userAnswers.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[1],userAnswers.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[2],userAnswers.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[3],userAnswers.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[4],userAnswers.getUserAnswerAyoJawab1());
+        answers_qp.put(questions_ayojawab[1],userAnswers.getUserAnswerAyoJawab2());
+        answers_qp.put(questions_ayojawab[2],userAnswers.getUserAnswerAyoJawab3());
+        answers_qp.put(questions_ayojawab[3],userAnswers.getUserAnswerAyoJawab4());
+        answers_qp.put(questions_ayojawab[4],userAnswers.getUserAnswerAyoJawab5());
         // my journey with Jesus answers
         Map<String, Object> answers_mjwj = new HashMap<>();
         answers_mjwj.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());

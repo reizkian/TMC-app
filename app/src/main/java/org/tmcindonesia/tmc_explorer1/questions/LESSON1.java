@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,6 +30,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.DataBaseHandler;
+import org.tmcindonesia.application.HomeApp;
 import org.tmcindonesia.application.LoginActivity;
 import org.tmcindonesia.application.UserInput.UserAnswer;
 import org.tmcindonesia.application.UserInput.UserData;
@@ -105,17 +110,17 @@ public class LESSON1 extends AppCompatActivity {
 
         // *******************************QUESTIONS PAGE*********************************
         // get layout ID radio group
-        rgqp_question1 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage7_MultipleChoiceQuestion1);
-        rgqp_question2 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage7_MultipleChoiceQuestion2);
-        rgqp_question3 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage7_MultipleChoiceQuestion3);
-        rgqp_question4 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage7_MultipleChoiceQuestion4);
-        rgqp_question5 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage7_MultipleChoiceQuestion5);
+        rgqp_question1 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage1_MultipleChoiceQuestion1);
+        rgqp_question2 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage1_MultipleChoiceQuestion2);
+        rgqp_question3 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage1_MultipleChoiceQuestion3);
+        rgqp_question4 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage1_MultipleChoiceQuestion4);
+        rgqp_question5 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage1_MultipleChoiceQuestion5);
         // get layout ID text view question
-        textView_quesion1 = (TextView) findViewById(R.id.textView_QuestionPage7_MultipleChoiceQuestion1);
-        textView_quesion2 = (TextView) findViewById(R.id.textView_QuestionPage7_MultipleChoiceQuestion2);
-        textView_quesion3 = (TextView) findViewById(R.id.textView_QuestionPage7_MultipleChoiceQuestion3);
-        textView_quesion4 = (TextView) findViewById(R.id.textView_QuestionPage7_MultipleChoiceQuestion4);
-        textView_quesion5 = (TextView) findViewById(R.id.textView_QuestionPage7_MultipleChoiceQuestion5);
+        textView_quesion1 = (TextView) findViewById(R.id.textView_QuestionPage1_MultipleChoiceQuestion1);
+        textView_quesion2 = (TextView) findViewById(R.id.textView_QuestionPage1_MultipleChoiceQuestion2);
+        textView_quesion3 = (TextView) findViewById(R.id.textView_QuestionPage1_MultipleChoiceQuestion3);
+        textView_quesion4 = (TextView) findViewById(R.id.textView_QuestionPage1_MultipleChoiceQuestion4);
+        textView_quesion5 = (TextView) findViewById(R.id.textView_QuestionPage1_MultipleChoiceQuestion5);
         // OK button clicked QUESTION PAGE
         getCheckAnswerQuestionsPage = findViewById(R.id.button_CheckAnswer_QuestionsPage);
         getCheckAnswerQuestionsPage.setOnClickListener(new View.OnClickListener() {
@@ -175,10 +180,10 @@ public class LESSON1 extends AppCompatActivity {
 
         // ***************************MY JOURNEY WITH JESUS*******************************
         // get layout ID
-        mjwj_answer1 = (EditText) findViewById(R.id.editText_QuestionPage7_MJWJAnswer1);
-        mjwj_answer2 = (EditText) findViewById(R.id.editText_QuestionPage7_MJWJAnswer2);
-        mjwj_answer3 = (EditText) findViewById(R.id.editText_QuestionPage7_MJWJAnswer3);
-        mjwj_answer4 = (EditText) findViewById(R.id.editText_QuestionPage7_MJWJAnswer4);
+        mjwj_answer1 = (EditText) findViewById(R.id.editText_QuestionPage1_MJWJAnswer1);
+        mjwj_answer2 = (EditText) findViewById(R.id.editText_QuestionPage1_MJWJAnswer2);
+        mjwj_answer3 = (EditText) findViewById(R.id.editText_QuestionPage1_MJWJAnswer3);
+        mjwj_answer4 = (EditText) findViewById(R.id.editText_QuestionPage1_MJWJAnswer4);
         getAnswerMJWJ = (Button) findViewById(R.id.button_CheckAnswer_MJWJ);
         // Ok button clicked MY JOURNEY WITH JESUS
         getAnswerMJWJ.setOnClickListener(new View.OnClickListener() {
@@ -220,10 +225,10 @@ public class LESSON1 extends AppCompatActivity {
         Map<String, Object> answers_qp = new HashMap<>();
         answers_qp.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
         answers_qp.put(questions_ayojawab[0],userAnswers.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[1],userAnswers.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[2],userAnswers.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[3],userAnswers.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[4],userAnswers.getUserAnswerAyoJawab1());
+        answers_qp.put(questions_ayojawab[1],userAnswers.getUserAnswerAyoJawab2());
+        answers_qp.put(questions_ayojawab[2],userAnswers.getUserAnswerAyoJawab3());
+        answers_qp.put(questions_ayojawab[3],userAnswers.getUserAnswerAyoJawab4());
+        answers_qp.put(questions_ayojawab[4],userAnswers.getUserAnswerAyoJawab5());
         // my journey with Jesus answers
         Map<String, Object> answers_mjwj = new HashMap<>();
         answers_mjwj.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());

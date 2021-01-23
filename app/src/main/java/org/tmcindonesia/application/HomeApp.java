@@ -1,14 +1,25 @@
 package org.tmcindonesia.application;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -23,12 +34,13 @@ import androidx.appcompat.widget.Toolbar;
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.HomeAppUI.Home.HomeFragment;
 import org.tmcindonesia.application.HomeAppUI.PrivacyPolicy.PrivacyPolicyFragment;
+import org.tmcindonesia.tmc_explorer1.questions.LESSON1;
 
 
 public class HomeApp extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
     private AppBarConfiguration mAppBarConfiguration;
     public DrawerLayout drawer;
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +86,44 @@ public class HomeApp extends AppCompatActivity implements NavigationView.OnNavig
             // close navigation drawer
             drawer.closeDrawer(GravityCompat.START);
         }
+        if (id == R.id.nav_logout){
+            AlertDialog.Builder builder = new AlertDialog.Builder(HomeApp.this, R.style.AlertDialogTheme);
+            View view = LayoutInflater.from(HomeApp.this).inflate(
+                    R.layout.activity_app_logout_dialog, (ConstraintLayout) findViewById(R.id.dialogContainer_logout)
+            );
+
+            builder.setView(view);
+            ((TextView) view.findViewById(R.id.textView_titleDialog)).setText("LOGOUT");
+            ((TextView) view.findViewById(R.id.textView_message)).setText("Apakah kamu yakin ingin keluar dari aplikasi?");
+            ((Button) view.findViewById(R.id.logout_yes)).setText("YA");
+            ((Button) view.findViewById(R.id.logout_no)).setText("TIDAK");
+
+            final AlertDialog alertDialog = builder.create();
+
+            view.findViewById(R.id.logout_yes).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                    firebaseAuth = FirebaseAuth.getInstance();
+                    firebaseAuth.signOut();
+                    startActivity(new Intent(HomeApp.this, LoginActivity.class));
+                }
+            });
+            view.findViewById(R.id.logout_no).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                    drawer.closeDrawer(GravityCompat.START);
+                }
+            });
+
+            if(alertDialog.getWindow() != null){
+                alertDialog.getWindow().setBackgroundDrawable((new ColorDrawable(0)));
+            }
+            alertDialog.show();
+        }
         return true;
+
     }
 
     public void loadFragment(Fragment fragment) {
@@ -83,11 +132,21 @@ public class HomeApp extends AppCompatActivity implements NavigationView.OnNavig
         transaction.commit();
     }
 
+    private void logoutYes(){
+
+    }
+
+    private void logoutNo(){
+
+    }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.home_app, menu);
-        return true;
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logout:
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -105,4 +164,5 @@ public class HomeApp extends AppCompatActivity implements NavigationView.OnNavig
             super.onBackPressed();
         }
     }
+
 }

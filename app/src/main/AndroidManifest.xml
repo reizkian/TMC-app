@@ -24,8 +24,8 @@
         <activity android:name=".tmc_explorer2.questions.LESSON3" />
         <activity android:name=".tmc_explorer2.questions.LESSON2" />
         <activity android:name=".tmc_explorer2.questions.LESSON1" />
-        <activity android:name=".application.RegisterPage.RegisterPageParent" />
-        <activity android:name=".application.RegisterPage.RegisterPageDate" />
+        <activity android:name=".application.RegisterPage.RegisterPageParent" android:theme="@style/Theme.TMC_LoginRegister" />
+        <activity android:name=".application.RegisterPage.RegisterPageDate" android:theme="@style/Theme.TMC_LoginRegister" />
         <activity android:name=".tmc_explorer2.HomeExplorer2" />
         <activity
             android:name=".application.HomeApp"
@@ -73,8 +73,8 @@
             android:name=".tmc_explorer1.HomeExplorer1"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.TMC_Explorer.NoActionBar" />
-        <activity android:name=".application.RegisterPage.RegisterActivity" />
-        <activity android:name=".application.LoginActivity">
+        <activity android:name=".application.RegisterPage.RegisterActivity" android:theme="@style/Theme.TMC_LoginRegister"/>
+        <activity android:name=".application.LoginActivity" android:theme="@style/Theme.TMC_LoginRegister">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

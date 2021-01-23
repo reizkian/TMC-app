@@ -149,10 +149,10 @@ public class RegisterActivity extends AppCompatActivity {
                 String province = provinceRegister.getText().toString().trim();
                 String institution = institutionRegister.getText().toString().trim();
 
-                // PRIVACY POLICY CHECK BOX
-                boolean agreePrivacyPolicy = checkBoxPrivacyPolicy.isChecked();
-                if(!agreePrivacyPolicy){
-                    Toast.makeText(RegisterActivity.this, "Anda belum menyetujui privacy policy", Toast.LENGTH_SHORT).show();
+                // Check User Agreement
+                if(!(checkBoxPrivacyPolicy.isChecked())){
+                    Toast.makeText(RegisterActivity.this, "Anda belum menyetujui Privacy Policy", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
 

@@ -102,7 +102,24 @@ public class LESSON9 extends AppCompatActivity {
                 int rb_index_question4 = rgqp_question4.indexOfChild(rb_question4);
                 int rb_index_question5 = rgqp_question5.indexOfChild(rb_question5);
                 int rb_index_array[] = {rb_index_question1, rb_index_question2, rb_index_question3, rb_index_question4, rb_index_question5};
-                //toast
+                // get string from questions text view layout
+                questions_ayojawab = new String[]{
+                        textView_quesion1.getText().toString().trim(),
+                        textView_quesion2.getText().toString().trim(),
+                        textView_quesion3.getText().toString().trim(),
+                        textView_quesion4.getText().toString().trim(),
+                        textView_quesion5.getText().toString().trim()
+                };
+                answers_ayojawab= new String[]{
+                        rb_question1.getText().toString().trim(),
+                        rb_question2.getText().toString().trim(),
+                        rb_question3.getText().toString().trim(),
+                        rb_question4.getText().toString().trim(),
+                        rb_question5.getText().toString().trim(),
+                };
+                Toast.makeText(LESSON9.this,
+                        answers_ayojawab[4],
+                        Toast.LENGTH_SHORT).show();
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, rb_index_array);
             }
 
@@ -160,23 +177,43 @@ public class LESSON9 extends AppCompatActivity {
         LoadPreferences();
     }
 
-
     // WRITE DATA TO FIRE STORE DATA BASE
     public void writeUserAnswerToDataBase(UserAnswer userAnswers) {
         // get the content
         String className = this.getClass().getSimpleName().toString();
-        Map<String, Object> answers = new HashMap<>();
-        answers.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
-        answers.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());
-        answers.put(getResources().getString(R.string.MJWJ1_question2), userAnswers.getUserAnswerMJWJ2());
-        answers.put(getResources().getString(R.string.MJWJ1_question3), userAnswers.getUserAnswerMJWJ3());
-        answers.put(getResources().getString(R.string.MJWJ1_question4), userAnswers.getUserAnswerMJWJ4());
+        // question page answers
+        Map<String, Object> answers_qp = new HashMap<>();
+        answers_qp.put("Correct answer", userAnswers.getNumberOfCorrectAnswer());
+        answers_qp.put(questions_ayojawab[0],userAnswers.getUserAnswerAyoJawab1());
+        answers_qp.put(questions_ayojawab[1],userAnswers.getUserAnswerAyoJawab2());
+        answers_qp.put(questions_ayojawab[2],userAnswers.getUserAnswerAyoJawab3());
+        answers_qp.put(questions_ayojawab[3],userAnswers.getUserAnswerAyoJawab4());
+        answers_qp.put(questions_ayojawab[4],userAnswers.getUserAnswerAyoJawab5());
+        // my journey with Jesus answers
+        Map<String, Object> answers_mjwj = new HashMap<>();
+        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question1), userAnswers.getUserAnswerMJWJ1());
+        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question2), userAnswers.getUserAnswerMJWJ2());
+        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question3), userAnswers.getUserAnswerMJWJ3());
+        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question4), userAnswers.getUserAnswerMJWJ4());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
         userName = getUserNameFromDataBase(this);
-        // actually write on cloud
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
-                .set(answers)
+        // write on Fire Base
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("Questions Page")
+                .set(answers_qp)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "successfully written!");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Error writing document", e);
+            }
+        });
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("My Journey With Jesus")
+                .set(answers_mjwj)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -195,6 +232,13 @@ public class LESSON9 extends AppCompatActivity {
     private void SavePreferences() {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
+        // save user answer MULTIPLE CHOICE
+        editor.putInt(key_rb_question1, rgqp_question1.getCheckedRadioButtonId());
+        editor.putInt(key_rb_question2, rgqp_question2.getCheckedRadioButtonId());
+        editor.putInt(key_rb_question3, rgqp_question3.getCheckedRadioButtonId());
+        editor.putInt(key_rb_question4, rgqp_question4.getCheckedRadioButtonId());
+        editor.putInt(key_rb_question5, rgqp_question5.getCheckedRadioButtonId());
+        // save user answer MY JOURNEY WITH JESUS
         editor.putString(key_mjwj_answer1, mjwj_answer1.getText().toString());
         editor.putString(key_mjwj_answer2, mjwj_answer2.getText().toString());
         editor.putString(key_mjwj_answer3, mjwj_answer3.getText().toString());

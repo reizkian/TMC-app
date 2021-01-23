@@ -215,10 +215,10 @@ public class LESSON8 extends AppCompatActivity {
         Map<String, Object> answers_qp = new HashMap<>();
         answers_qp.put("Correct answer", acceptJesusAnswer.getNumberOfCorrectAnswer());
         answers_qp.put(questions_ayojawab[0],acceptJesusAnswer.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[1],acceptJesusAnswer.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[2],acceptJesusAnswer.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[3],acceptJesusAnswer.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[4],acceptJesusAnswer.getUserAnswerAyoJawab1());
+        answers_qp.put(questions_ayojawab[1],acceptJesusAnswer.getUserAnswerAyoJawab2());
+        answers_qp.put(questions_ayojawab[2],acceptJesusAnswer.getUserAnswerAyoJawab3());
+        answers_qp.put(questions_ayojawab[3],acceptJesusAnswer.getUserAnswerAyoJawab4());
+        answers_qp.put(questions_ayojawab[4],acceptJesusAnswer.getUserAnswerAyoJawab5());
         // my journey with Jesus answers
         Map<String, Object> answers_mjwj = new HashMap<>();
         answers_mjwj.put("Correct answer", acceptJesusAnswer.getNumberOfCorrectAnswer());
@@ -228,7 +228,20 @@ public class LESSON8 extends AppCompatActivity {
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
         userName = getUserNameFromDataBase(this);
-        // actually write on cloud
+        // write on Fire Base
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("Questions Page")
+                .set(answers_qp)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "successfully written!");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Error writing document", e);
+            }
+        });
         firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("My Journey With Jesus")
                 .set(answers_mjwj)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -243,7 +256,6 @@ public class LESSON8 extends AppCompatActivity {
                         Log.w(TAG, "Error writing document", e);
                     }
                 });
-
     }
 
     // SAVE PREFERENCE WHEN BACK BACK PRESSED and ACTIVITY GET DESTROYED

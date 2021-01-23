@@ -21,6 +21,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import org.tmcindonesia.R;
+import org.tmcindonesia.application.HomeApp;
 
 
 public class HomeExplorer2 extends AppCompatActivity {
@@ -207,5 +208,11 @@ public class HomeExplorer2 extends AppCompatActivity {
             myLessonNumber.setText(rLessonNumber[position]);
             return row;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), HomeApp.class));
+        super.onBackPressed();
     }
 }

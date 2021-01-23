@@ -34,24 +34,27 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Explorer One"
+                        android:text="Explorer Satu"
                         android:textAppearance="?attr/textAppearanceHeadline6"
-                        />
+                        android:textSize="@dimen/lesson_title_fontsize" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="0dp"
                         android:text="untuk anak usia 9 - 19 tahun"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/lesson_age_fontsize"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="5dp"
                         android:text="Teman-teman terkasih, Pernahkah kamu merasa heran tentang seperti apakah Allah itu?"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/lesson_description_fontsize"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -73,7 +76,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="170dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/card_explorer2"/>
+                    android:src="@drawable/card_explorer2"
+                    />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -84,24 +88,27 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Explorer Two"
+                        android:text="Explorer Dua"
                         android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="@dimen/lesson_title_fontsize"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="0dp"
                         android:text="untuk anak usia 9 - 19 tahun"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/lesson_age_fontsize"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="5dp"
                         android:text="Allah ingin supaya kita mengenal siapa Yesus dan apa yang telah dilakukan-Nya bagi kita"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/lesson_description_fontsize"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -135,27 +142,29 @@
                         android:layout_height="wrap_content"
                         android:text="See and Do"
                         android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="@dimen/lesson_title_fontsize"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="0dp"
                         android:text="untuk anak usia 4 - 6 tahun"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/lesson_age_fontsize"
                         />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text=""
+                        android:layout_marginTop="5dp"
+                        android:text="Mengapa Allah menciptakan manusia? dan siapa yang paling istimewa dari semua ciptaan Allah?"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/lesson_description_fontsize"
                         />
                 </LinearLayout>
             </LinearLayout>
-
         </com.google.android.material.card.MaterialCardView>
-
     </RelativeLayout>
+
 </androidx.core.widget.NestedScrollView>

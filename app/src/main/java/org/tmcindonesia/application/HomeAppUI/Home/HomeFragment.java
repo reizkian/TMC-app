@@ -1,6 +1,7 @@
 package org.tmcindonesia.application.HomeAppUI.Home;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.card.MaterialCardView;
 
 import org.tmcindonesia.R;
+import org.tmcindonesia.application.LoginActivity;
 import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 import org.tmcindonesia.tmc_explorer2.HomeExplorer2;
 
@@ -27,6 +29,7 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
 
         // card EXPLORER-1
         MaterialCardView cardExplorer1;
@@ -54,10 +57,9 @@ public class HomeFragment extends Fragment {
         cardSeeAndDo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getActivity().getBaseContext(), "Materi \"Se and Do\" sedang dalam tahap pengembangan", Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
         return root;
     }

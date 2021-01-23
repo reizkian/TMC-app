@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
     String username;
     ProgressBar progressBarLogin;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +48,6 @@ public class LoginActivity extends AppCompatActivity {
         RegisterPage = findViewById(R.id.buttonRegister);
         firebaseAuth = FirebaseAuth.getInstance();
         progressBarLogin = findViewById(R.id.progressBarLogin);
-
-
         // NETWORK CHECK
         // if no internet, login is not necessary for user to use the App
         networkConnection = isInternetActive();
@@ -66,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
             // set user display name from firebase authentication
             username = firebaseAuth.getCurrentUser().getDisplayName();
             writeEntryName(LoginActivity.this,username);
+            Toast.makeText(getApplicationContext(), username, Toast.LENGTH_SHORT).show();
             finish();
         }
 

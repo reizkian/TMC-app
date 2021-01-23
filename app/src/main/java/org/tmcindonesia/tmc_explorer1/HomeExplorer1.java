@@ -21,6 +21,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import org.tmcindonesia.R;
+import org.tmcindonesia.application.HomeApp;
 
 public class HomeExplorer1 extends AppCompatActivity {
     //Variable for Button List
@@ -207,4 +208,10 @@ public class HomeExplorer1 extends AppCompatActivity {
                 return row;
             }
         }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), HomeApp.class));
+        super.onBackPressed();
+    }
 }
