@@ -102,20 +102,24 @@ public class LESSON12 extends AppCompatActivity {
                 int rb_index_question5 = rgqp_question5.indexOfChild(rb_question5);
                 int rb_index_array[] = {rb_index_question1, rb_index_question2, rb_index_question3, rb_index_question4, rb_index_question5};
                 // get string from questions text view layout
-                questions_ayojawab = new String[]{
-                        textView_quesion1.getText().toString().trim(),
-                        textView_quesion2.getText().toString().trim(),
-                        textView_quesion3.getText().toString().trim(),
-                        textView_quesion4.getText().toString().trim(),
-                        textView_quesion5.getText().toString().trim()
-                };
-                answers_ayojawab= new String[]{
-                        rb_question1.getText().toString().trim(),
-                        rb_question2.getText().toString().trim(),
-                        rb_question3.getText().toString().trim(),
-                        rb_question4.getText().toString().trim(),
-                        rb_question5.getText().toString().trim(),
-                };
+                try{
+                    questions_ayojawab = new String[]{
+                            textView_quesion1.getText().toString().trim(),
+                            textView_quesion2.getText().toString().trim(),
+                            textView_quesion3.getText().toString().trim(),
+                            textView_quesion4.getText().toString().trim(),
+                            textView_quesion5.getText().toString().trim()
+                    };
+                    answers_ayojawab= new String[]{
+                            rb_question1.getText().toString().trim(),
+                            rb_question2.getText().toString().trim(),
+                            rb_question3.getText().toString().trim(),
+                            rb_question4.getText().toString().trim(),
+                            rb_question5.getText().toString().trim(),
+                    };
+                }catch(Exception e){
+                    return;
+                }
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, rb_index_array);
             }
 
@@ -143,17 +147,23 @@ public class LESSON12 extends AppCompatActivity {
         getAnswerMJWJ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // create instance
-                TestimonyAnswer testimonyAnswer = new TestimonyAnswer(
-                        numberOfCorrectAnswer,
-                        mjwj_answer1.getText().toString().trim(),
-                        mjwj_answer2.getText().toString().trim(),
-                        answers_ayojawab[0],
-                        answers_ayojawab[1],
-                        answers_ayojawab[2],
-                        answers_ayojawab[3],
-                        answers_ayojawab[4]
-                );
+                try{
+                    // create instance
+                    TestimonyAnswer testimonyAnswer = new TestimonyAnswer(
+                            numberOfCorrectAnswer,
+                            mjwj_answer1.getText().toString().trim(),
+                            mjwj_answer2.getText().toString().trim(),
+                            answers_ayojawab[0],
+                            answers_ayojawab[1],
+                            answers_ayojawab[2],
+                            answers_ayojawab[3],
+                            answers_ayojawab[4]
+                    );
+                    // write data base method
+                    writeUserAnswerToDataBase(testimonyAnswer);
+                }catch (Exception e){
+                    return;
+                }
                 // check if text box is empty
                 if (TextUtils.isEmpty(mjwj_answer1.getText().toString().trim())) {
                     Toast.makeText(LESSON12.this,
@@ -167,8 +177,6 @@ public class LESSON12 extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-                // write data base method
-                writeUserAnswerToDataBase(testimonyAnswer);
                 // save preferences
                 SavePreferences();
                 // move to home page

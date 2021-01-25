@@ -138,20 +138,24 @@ public class LESSON6 extends AppCompatActivity {
                 int rb_index_question5 = rgqp_question5.indexOfChild(rb_question5);
                 int rb_index_array[] = {rb_index_question1, rb_index_question2, rb_index_question3, rb_index_question4, rb_index_question5};
                 // get string from questions text view layout
-                questions_ayojawab = new String[]{
-                        textView_quesion1.getText().toString().trim(),
-                        textView_quesion2.getText().toString().trim(),
-                        textView_quesion3.getText().toString().trim(),
-                        textView_quesion4.getText().toString().trim(),
-                        textView_quesion5.getText().toString().trim()
-                };
-                answers_ayojawab= new String[]{
-                        rb_question1.getText().toString().trim(),
-                        rb_question2.getText().toString().trim(),
-                        rb_question3.getText().toString().trim(),
-                        rb_question4.getText().toString().trim(),
-                        rb_question5.getText().toString().trim(),
-                };
+                try{
+                    questions_ayojawab = new String[]{
+                            textView_quesion1.getText().toString().trim(),
+                            textView_quesion2.getText().toString().trim(),
+                            textView_quesion3.getText().toString().trim(),
+                            textView_quesion4.getText().toString().trim(),
+                            textView_quesion5.getText().toString().trim()
+                    };
+                    answers_ayojawab= new String[]{
+                            rb_question1.getText().toString().trim(),
+                            rb_question2.getText().toString().trim(),
+                            rb_question3.getText().toString().trim(),
+                            rb_question4.getText().toString().trim(),
+                            rb_question5.getText().toString().trim(),
+                    };
+                }catch(Exception e){
+                    return;
+                }
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, rb_index_array);
             }
 
@@ -182,20 +186,23 @@ public class LESSON6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // create instance
-                UserAnswer userAnswers = new UserAnswer(
-                        numberOfCorrectAnswer,
-                        mjwj_answer1.getText().toString().trim(),
-                        mjwj_answer2.getText().toString().trim(),
-                        mjwj_answer3.getText().toString().trim(),
-                        mjwj_answer4.getText().toString().trim(),
-                        answers_ayojawab[0],
-                        answers_ayojawab[1],
-                        answers_ayojawab[2],
-                        answers_ayojawab[3],
-                        answers_ayojawab[4]
-                );
-                // write data base method
-                writeUserAnswerToDataBase(userAnswers);
+                try{
+                    UserAnswer userAnswers = new UserAnswer(
+                            numberOfCorrectAnswer,
+                            mjwj_answer1.getText().toString().trim(),
+                            mjwj_answer2.getText().toString().trim(),
+                            mjwj_answer3.getText().toString().trim(),
+                            mjwj_answer4.getText().toString().trim(),
+                            answers_ayojawab[0],
+                            answers_ayojawab[1],
+                            answers_ayojawab[2],
+                            answers_ayojawab[3],
+                            answers_ayojawab[4]);
+                    // write data base method
+                    writeUserAnswerToDataBase(userAnswers);
+                }catch (Exception e){
+                    return;
+                }
                 // save preferences
                 SavePreferences();
                 // toast
