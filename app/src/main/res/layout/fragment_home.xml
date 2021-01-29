@@ -61,7 +61,6 @@
         </com.google.android.material.card.MaterialCardView>
 
 
-
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_explorer2"
             android:layout_width="wrap_content"
@@ -140,7 +139,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="See and Do"
+                        android:text="Lihat dan Lakukan"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textSize="@dimen/lesson_title_fontsize"
                         />
