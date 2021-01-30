@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="org.tmcindonesia.tmc_explorer1.org.tmcindonesia.app.Home">
     <item
-        android:id="@+id/logout"
+        android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="logout"
+        android:title="@string/action_settings"
         app:showAsAction="never" />
 </menu>

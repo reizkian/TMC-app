@@ -28,10 +28,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:layout_marginTop="24dp"
+                android:padding="10dp"
+                android:layout_marginTop="15dp"
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="parallax"
-                app:srcCompat="@drawable/exp1_top"
+                app:srcCompat="@drawable/explorer_top"
                 android:contentDescription="TODO" />
 
             <androidx.appcompat.widget.Toolbar
@@ -44,21 +45,21 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/activity_explorer1_home_content_scrolling" />
+    <include layout="@layout/content_scrolling" />
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="@dimen/fab_margin"-->
-<!--        app:layout_anchor="@id/app_bar"-->
-<!--        app:layout_anchorGravity="bottom|end"-->
-<!--        app:borderWidth="0dp"-->
-<!--        android:tint="@color/white"-->
-<!--        app:backgroundTint="@color/white"-->
-<!--        app:srcCompat="@drawable/tmc1"-->
-<!--        app:maxImageSize="50dp"-->
-<!--        app:tint="@android:color/transparent"-->
-<!--        />-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:borderWidth="0dp"
+        android:tint="@color/white"
+        app:backgroundTint="@color/white"
+        app:srcCompat="@drawable/tmc1"
+        app:maxImageSize="50dp"
+        app:tint="@android:color/transparent"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
