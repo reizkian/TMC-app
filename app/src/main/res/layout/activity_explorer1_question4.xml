@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-65dp"
-            app:srcCompat="@drawable/exp1_swatch"/>
+            app:srcCompat="@drawable/swatch"/>
 
         <ImageView
             android:id="@+id/imageView_berburuharta"
@@ -33,7 +33,7 @@
             android:layout_marginTop="-72dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            app:srcCompat="@drawable/exp1_treasurehunt_4" />
+            app:srcCompat="@drawable/treasurehunt_4" />
 
         <EditText
             android:id="@+id/editText_AnswerTreasureHunt"
@@ -46,7 +46,7 @@
             android:textSize="25dp"
             tools:layout_editor_absoluteX="16dp"
             android:gravity="center"
-            android:background="@drawable/exp1_paper_box"
+            android:background="@drawable/paper_box"
             android:layout_below="@+id/imageView_treasurehunt_4"/>
         <Button
             android:id="@+id/button_CheckAnswer_TreasureHunt"
@@ -267,7 +267,7 @@
                 android:paddingTop="40dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:src="@drawable/exp1_mjwj"
+                android:src="@drawable/mjwj"
                 />
             <!-- My Journey With Jesus Question 1 -->
             <RelativeLayout

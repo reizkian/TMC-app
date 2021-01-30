@@ -2,6 +2,7 @@ package org.tmcindonesia.tmc_explorer1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,9 +20,9 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.tmcindonesia.R;
-import org.tmcindonesia.application.HomeApp;
 
 public class HomeExplorer1 extends AppCompatActivity {
     //Variable for Button List
@@ -42,31 +43,31 @@ public class HomeExplorer1 extends AppCompatActivity {
 
     String mDescription[] =
             {"Bagian 1: Allah begitu hebat dan ajaib",
-            "Bagian 2: Hanya ada satu Allah, namun tiga pribadi",
-            "Allah adalah sang pencipta",
-            "Seorang musuh membawa dosa ke dunia",
-            "Dia yang menyelamatkan umat-Nya",
-            "Dia duduk di sebelah kanan Allah Bapa",
-            "Apa itu dosa?",
-            "Bagaimana aku dapat diselamatkan",
-            "Bagaimana kita tahu Tuhan Yesus akan datang kembali?",
-            "Aku menerima kehidupan yang kekal",
-            "Allah menjadikan aku baru",
-            "Yesus Kristus anak-Nya"};
+                    "Bagian 2: Hanya ada satu Allah, namun tiga pribadi",
+                    "Allah adalah sang pencipta",
+                    "Seorang musuh membawa dosa ke dunia",
+                    "Dia yang menyelamatkan umat-Nya",
+                    "Dia duduk di sebelah kanan Allah Bapa",
+                    "Apa itu dosa?",
+                    "Bagaimana aku dapat diselamatkan",
+                    "Bagaimana kita tahu Tuhan Yesus akan datang kembali?",
+                    "Aku menerima kehidupan yang kekal",
+                    "Allah menjadikan aku baru",
+                    "Yesus Kristus anak-Nya"};
 
     int images[] =
-            {R.drawable.exp1_icon1,
-            R.drawable.exp1_icon2,
-            R.drawable.exp1_icon3,
-            R.drawable.exp1_icon4,
-            R.drawable.exp1_icon5,
-            R.drawable.exp1_icon6,
-            R.drawable.exp1_icon7,
-            R.drawable.exp1_icon8,
-            R.drawable.exp1_icon9,
-            R.drawable.exp1_icon10,
-            R.drawable.exp1_icon11,
-            R.drawable.exp1_icon12};
+            {R.drawable.icon_satu,
+                    R.drawable.icon_dua,
+                    R.drawable.icon_tiga,
+                    R.drawable.icon_empat,
+                    R.drawable.icon_lima,
+                    R.drawable.icon_enam,
+                    R.drawable.icon_tujuh,
+                    R.drawable.icon_delapan,
+                    R.drawable.icon_sembilan,
+                    R.drawable.icon_sepuluh,
+                    R.drawable.icon_sebelas,
+                    R.drawable.icon_duabelas};
 
     String mLessonNumber[] = {
             "Pelajaran 1",
@@ -114,16 +115,16 @@ public class HomeExplorer1 extends AppCompatActivity {
         });
 
         // Floating Button
-//        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
-//        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                // open TMC Indonesia website
-//                // startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/")));
-//                startActivity(new Intent(getApplicationContext(),TmcProfile.class));
-//            }
-//        });
+        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // open TMC Indonesia website
+                // startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/")));
+                startActivity(new Intent(getApplicationContext(),TmcProfile.class));
+            }
+        });
 
         // List View Button
         listView = findViewById(R.id.listView);
@@ -208,10 +209,4 @@ public class HomeExplorer1 extends AppCompatActivity {
                 return row;
             }
         }
-
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), HomeApp.class));
-        super.onBackPressed();
-    }
 }

@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-65dp"
-            app:srcCompat="@drawable/exp1_swatch"/>
+            app:srcCompat="@drawable/swatch"/>
 
         <!--    ============================================= -->
         <!--    Q U E S T I O N    P A G E    L E S S O N   1 -->
@@ -225,7 +225,7 @@
                 android:paddingTop="40dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:src="@drawable/exp1_mjwj"
+                android:src="@drawable/mjwj"
                 />
             <!-- My Journey With Jesus Question 1 -->
             <RelativeLayout
