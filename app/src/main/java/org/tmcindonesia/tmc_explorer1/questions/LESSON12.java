@@ -1,7 +1,10 @@
 package org.tmcindonesia.tmc_explorer1.questions;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -10,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -17,13 +21,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.application.CertificateGenerator;
 import org.tmcindonesia.R;
-import org.tmcindonesia.application.TestimonyAnswer;
+import org.tmcindonesia.application.DataBaseHandler;
+import org.tmcindonesia.application.UserInput.TestimonyAnswer;
+import org.tmcindonesia.application.UserInput.UserData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,10 +38,18 @@ public class LESSON12 extends AppCompatActivity {
     public static final String TAG = "TAG";
     // variable QUESTIONS PAGE
     private int correctAnswerQuestionsPage[] = {0, 1, 0, 0, 1};
+    private String questions_ayojawab[];
+    private String answers_ayojawab[];
+    private TextView textView_quesion1, textView_quesion2, textView_quesion3, textView_quesion4, textView_quesion5;
     private RadioGroup rgqp_question1, rgqp_question2, rgqp_question3, rgqp_question4, rgqp_question5;
     private RadioButton rb_question1, rb_question2, rb_question3, rb_question4, rb_question5;
     private Button getCheckAnswerQuestionsPage;
     private int numberOfCorrectAnswer = 0;
+    private static final String key_rb_question1 = "key_rb_question1";
+    private static final String key_rb_question2 = "key_rb_question2";
+    private static final String key_rb_question3 = "key_rb_question3";
+    private static final String key_rb_question4 = "key_rb_question4";
+    private static final String key_rb_question5 = "key_rb_question5";
     // variable MY JOURNEY WITH JESUS
     private EditText mjwj_answer1, mjwj_answer2;
     private String AnswersMJWJ[] = {};
@@ -58,6 +70,12 @@ public class LESSON12 extends AppCompatActivity {
         rgqp_question3 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage12_MultipleChoiceQuestion3);
         rgqp_question4 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage12_MultipleChoiceQuestion4);
         rgqp_question5 = (RadioGroup) findViewById(R.id.radioGroup_QuestionPage12_MultipleChoiceQuestion5);
+        // get layout ID text view question
+        textView_quesion1 = (TextView) findViewById(R.id.textView_QuestionPage12_MultipleChoiceQuestion1);
+        textView_quesion2 = (TextView) findViewById(R.id.textView_QuestionPage12_MultipleChoiceQuestion2);
+        textView_quesion3 = (TextView) findViewById(R.id.textView_QuestionPage12_MultipleChoiceQuestion3);
+        textView_quesion4 = (TextView) findViewById(R.id.textView_QuestionPage12_MultipleChoiceQuestion4);
+        textView_quesion5 = (TextView) findViewById(R.id.textView_QuestionPage12_MultipleChoiceQuestion5);
         // OK button clicked QUESTION PAGE
         getCheckAnswerQuestionsPage = findViewById(R.id.button_CheckAnswer_QuestionsPage);
         getCheckAnswerQuestionsPage.setOnClickListener(new View.OnClickListener() {
@@ -83,12 +101,32 @@ public class LESSON12 extends AppCompatActivity {
                 int rb_index_question4 = rgqp_question4.indexOfChild(rb_question4);
                 int rb_index_question5 = rgqp_question5.indexOfChild(rb_question5);
                 int rb_index_array[] = {rb_index_question1, rb_index_question2, rb_index_question3, rb_index_question4, rb_index_question5};
-                //toast
+                // get string from questions text view layout
+                try{
+                    questions_ayojawab = new String[]{
+                            textView_quesion1.getText().toString().trim(),
+                            textView_quesion2.getText().toString().trim(),
+                            textView_quesion3.getText().toString().trim(),
+                            textView_quesion4.getText().toString().trim(),
+                            textView_quesion5.getText().toString().trim()
+                    };
+                    answers_ayojawab= new String[]{
+                            rb_question1.getText().toString().trim(),
+                            rb_question2.getText().toString().trim(),
+                            rb_question3.getText().toString().trim(),
+                            rb_question4.getText().toString().trim(),
+                            rb_question5.getText().toString().trim(),
+                    };
+                }catch(Exception e){
+                    return;
+                }
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, rb_index_array);
             }
 
             // getNumberOfCorrectAnswer
             public void checkAnswerQuestionsPage(int[] listOfCorrectAnswer, int[] listOfUserAnswer) {
+                // reset number
+                numberOfCorrectAnswer = 0;
                 for (int index = 0; index < listOfCorrectAnswer.length; index++) {
                     if (listOfCorrectAnswer[index] == listOfUserAnswer[index]) {
                         numberOfCorrectAnswer++;
@@ -97,8 +135,6 @@ public class LESSON12 extends AppCompatActivity {
                 Toast.makeText(LESSON12.this,
                         String.valueOf(numberOfCorrectAnswer) + " soal kamu jawab dengan benar",
                         Toast.LENGTH_SHORT).show();
-                // reset number
-                numberOfCorrectAnswer = 0;
             }
         });
 
@@ -111,12 +147,23 @@ public class LESSON12 extends AppCompatActivity {
         getAnswerMJWJ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // create instance
-                TestimonyAnswer testimonyAnswer = new TestimonyAnswer(
-                        numberOfCorrectAnswer,
-                        mjwj_answer1.getText().toString().trim(),
-                        mjwj_answer2.getText().toString().trim()
-                );
+                try{
+                    // create instance
+                    TestimonyAnswer testimonyAnswer = new TestimonyAnswer(
+                            numberOfCorrectAnswer,
+                            mjwj_answer1.getText().toString().trim(),
+                            mjwj_answer2.getText().toString().trim(),
+                            answers_ayojawab[0],
+                            answers_ayojawab[1],
+                            answers_ayojawab[2],
+                            answers_ayojawab[3],
+                            answers_ayojawab[4]
+                    );
+                    // write data base method
+                    writeUserAnswerToDataBase(testimonyAnswer);
+                }catch (Exception e){
+                    return;
+                }
                 // check if text box is empty
                 if (TextUtils.isEmpty(mjwj_answer1.getText().toString().trim())) {
                     Toast.makeText(LESSON12.this,
@@ -130,8 +177,6 @@ public class LESSON12 extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-                // write data base method
-                writeUserAnswerToDataBase(testimonyAnswer);
                 // save preferences
                 SavePreferences();
                 // move to home page
@@ -147,17 +192,37 @@ public class LESSON12 extends AppCompatActivity {
     public void writeUserAnswerToDataBase(TestimonyAnswer testimonyAnswer) {
         // get the content
         String className = this.getClass().getSimpleName().toString();
-        Map<String, Object> answers = new HashMap<>();
-        answers.put("Correct answer", testimonyAnswer.getNumberOfCorrectAnswer());
-        answers.put("Keputusanku untuk hidup seperti Kristus", testimonyAnswer.getUserAnswerMJWJ1());
-        answers.put("Kesaksian setelah mempelajari Explorer Satu", testimonyAnswer.getUserAnswerMJWJ2());
+        // question page answers
+        Map<String, Object> answers_qp = new HashMap<>();
+        answers_qp.put("Correct answer", testimonyAnswer.getNumberOfCorrectAnswer());
+        answers_qp.put(questions_ayojawab[0],testimonyAnswer.getUserAnswerAyoJawab1());
+        answers_qp.put(questions_ayojawab[1],testimonyAnswer.getUserAnswerAyoJawab2());
+        answers_qp.put(questions_ayojawab[2],testimonyAnswer.getUserAnswerAyoJawab3());
+        answers_qp.put(questions_ayojawab[3],testimonyAnswer.getUserAnswerAyoJawab4());
+        answers_qp.put(questions_ayojawab[4],testimonyAnswer.getUserAnswerAyoJawab5());
+        // my journey with Jesus answers
+        Map<String, Object> answers_mjwj = new HashMap<>();
+        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question1), testimonyAnswer.getUserAnswerMJWJ1());
+        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question2), testimonyAnswer.getUserAnswerMJWJ2());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
-        FirebaseUser userProfile = FirebaseAuth.getInstance().getCurrentUser();
-        userName = userProfile.getDisplayName();
-        // actually write on cloud
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection("User Answer").document(className)
-                .set(answers)
+        userName = getUserNameFromDataBase(this);
+        // write on Fire Base
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("Questions Page")
+                .set(answers_qp)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "successfully written!");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Error writing document", e);
+            }
+        });
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("My Journey With Jesus")
+                .set(answers_mjwj)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -183,6 +248,14 @@ public class LESSON12 extends AppCompatActivity {
 
     private void LoadPreferences() {
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        // reset number
+        numberOfCorrectAnswer = 0;
+        // load user answer MULTIPLE CHOICE
+        rgqp_question1.check(sharedPreferences.getInt(key_rb_question1,rgqp_question1.getCheckedRadioButtonId()));
+        rgqp_question2.check(sharedPreferences.getInt(key_rb_question2,rgqp_question2.getCheckedRadioButtonId()));
+        rgqp_question3.check(sharedPreferences.getInt(key_rb_question3,rgqp_question3.getCheckedRadioButtonId()));
+        rgqp_question4.check(sharedPreferences.getInt(key_rb_question4,rgqp_question4.getCheckedRadioButtonId()));
+        rgqp_question5.check(sharedPreferences.getInt(key_rb_question5,rgqp_question5.getCheckedRadioButtonId()));
         // set text just like when the user leave it (back pressed)
         mjwj_answer1.setText(sharedPreferences.getString(key_mjwj_answer1, mjwj_answer1.getText().toString()));
         mjwj_answer2.setText(sharedPreferences.getString(key_mjwj_answer2, mjwj_answer2.getText().toString()));
@@ -192,5 +265,20 @@ public class LESSON12 extends AppCompatActivity {
     public void onBackPressed() {
         SavePreferences();
         super.onBackPressed();
+    }
+
+    public String getUserNameFromDataBase(Context c){
+        DataBaseHandler dataBaseHandler = new DataBaseHandler(c);
+        SQLiteDatabase database = dataBaseHandler.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM "+ UserData.UserDetails.TABLE_NAME,null);
+        cursor.moveToFirst();
+        if(cursor.getCount()>0){
+            cursor.moveToPosition(0);
+            String username = cursor.getString(1).toString().trim();
+            return username;
+        }
+        else {
+            return null;
+        }
     }
 }

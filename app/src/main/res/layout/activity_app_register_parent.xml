@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".application.RegisterPage.RegisterPageParent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_RegisterContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2000dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/backplate_long_ex" />
+
+         <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/tmcnewlogo" />
+
+        <TextView
+            android:id="@+id/textView_data_anak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DATA ANAK"
+            android:textSize="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageView"
+            android:textColor="#6ba99c"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/container_data_anak"
+            android:layout_below="@id/textView_data_anak">
+
+            <!-- NAMA ANAK -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_nama_anak"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Nama Anak"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_nama_anak"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- TANGGAL LAHIR ANAK -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_tgllahir_anak"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Tanggal lahir anak"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                android:layout_below="@id/TextInputLayout_nama_anak"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_tgllahir_anak"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:focusable="false"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- INSTITUSI ANAK -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_institusi_anak"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Sekolah / Gereja"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                android:layout_below="@id/TextInputLayout_tgllahir_anak"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_institusi_anak"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView_data_wali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DATA WALI"
+            android:textSize="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:layout_below="@id/container_data_anak"
+            android:textColor="#6ba99c"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/container_data_wali"
+            android:layout_below="@id/textView_data_wali">
+
+            <!-- NAMA WALI -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_nama_wali"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Nama Wali"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_nama_wali"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- HUBUNGAN DENGAN ANAK -->
+            <RelativeLayout
+                android:id="@+id/rl_hubungan_wali"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/TextInputLayout_nama_wali">
+                <TextView
+                    android:id="@+id/tv_hubungan_wali"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hubungan dengan anak"
+                    android:justificationMode="inter_word"
+                    android:textSize="20sp" />
+                <RadioGroup
+                    android:id="@+id/rg_hubungan_wali"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/tv_hubungan_wali">
+                    <RadioButton
+                        android:id="@+id/orangtua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Orang tua" />
+                    <RadioButton
+                        android:id="@+id/kakak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kakak kandung"  />
+                    <RadioButton
+                        android:id="@+id/guru"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Guru sekolah"  />
+                    <RadioButton
+                        android:id="@+id/gurusm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Guru sekolah minggu"  />
+                </RadioGroup>
+                <EditText
+                    android:id="@+id/lainnya"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="lainnya"
+                    android:layout_below="@id/rg_hubungan_wali"/>
+            </RelativeLayout>
+
+            <!-- EMAIL WALI -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_email_wali"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Email wali"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                android:layout_below="@id/rl_hubungan_wali"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_email_wali"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- PASSWORD WALI-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_password_wali"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                android:layout_below="@id/TextInputLayout_email_wali"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPasswordRegister"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- CONFRIM PASSWORD WALI -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_confirmpassword_wali"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Ulangi password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                android:layout_below="@id/TextInputLayout_password_wali"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextConfirmPasswordRegister"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- PHONE NUMBER WALI-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_phone_wali"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Nomor Hand Phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                android:layout_below="@id/TextInputLayout_confirmpassword_wali"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextUserPhone"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- CITY WALI-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_city_wali"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Kota / Kabupaten"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/TextInputLayout_phone_wali"
+                app:hintTextColor="#ec1b30"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextCityRegister"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- PROVINCE WALI-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout_province_wali"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="#ec1b30"
+                android:hint="Provinsi"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_below="@id/TextInputLayout_city_wali"
+                android:layout_centerHorizontal="true"
+                app:hintTextColor="#ec1b30"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextProvinceRegister"
+                    android:layout_width="match_parent"
+                    android:textSize="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textCursorDrawable="@drawable/color_cursor"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- AGREEMENT-->
+            <RelativeLayout
+                android:id="@+id/layout_agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="45dp"
+                android:layout_below="@id/TextInputLayout_province_wali">
+                <!-- privacy policy-->
+                <RelativeLayout
+                    android:id="@+id/layout_privacypolicy_rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+                    <LinearLayout
+                        android:id="@+id/layout_privacypolicy_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        >
+                        <LinearLayout
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/hyperlink_privacypolicy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="15dp"
+                            android:layout_below="@id/TextInputLayout_institution"
+                            android:text="@string/setuju_privacypolicy" />
+                        </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/konfirmasi_privacypolicy"
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="15dp"
+                            android:layout_below="@id/TextInputLayout_institution"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- info for parent -->
+                <RelativeLayout
+                    android:id="@+id/layout_infoparent_rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_privacypolicy_rl"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp">
+                    <LinearLayout
+                        android:id="@+id/layout_infoparent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        >
+                         <LinearLayout
+                             android:layout_width="270dp"
+                             android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/hyperlink_infoparent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="15dp"
+                                android:layout_below="@id/TextInputLayout_institution"
+                                android:text="@string/setuju_infoparent" />
+                         </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/konfirmasi_infoparent"
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="15dp"
+                            android:layout_below="@id/TextInputLayout_institution"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!-- guidance -->
+                <RelativeLayout
+                    android:id="@+id/layout_guidance_rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_infoparent_rl"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp">
+                    <LinearLayout
+                        android:id="@+id/layout_guidance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        >
+                        <LinearLayout
+                            android:layout_width="270dp"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/hyperlink_guidance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="15dp"
+                                android:layout_below="@id/TextInputLayout_institution"
+                                android:text="@string/setuju_guidance"
+                                android:justificationMode="inter_word"/>
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/konfirmasi_guidance"
+                            android:layout_width="30dp"
+                            android:layout_height="25dp"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="15dp"
+                            android:layout_below="@id/TextInputLayout_institution"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <Button
+                android:id="@+id/buttonRegisterCreate"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_agreement"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="55dp"
+                android:backgroundTint="#ec1b30"
+                android:text="DAFTAR"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/buttonRegisterCreate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="20dp"
+                android:indeterminateDrawable="@drawable/progress"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
