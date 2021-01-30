@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-65dp"
-        app:srcCompat="@drawable/swatch" />
+        app:srcCompat="@drawable/exp1_swatch" />
 
     <!--    ============================================= -->
     <!--    Q U E S T I O N    P A G E    L E S S O N   1 -->
@@ -245,7 +245,7 @@
             android:id="@+id/keputusanku"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/keputusanku" />
+            android:src="@drawable/exp1_keputusanku" />
 
         <TextView
             android:id="@+id/textView_QuestionPage12_keputusanku"
@@ -298,7 +298,7 @@
             android:id="@+id/congratulation"
             android:layout_width="wrap_content"
             android:layout_height="310dp"
-            android:src="@drawable/jesusthronecongrats"
+            android:src="@drawable/exp1_jesusthronecongrats"
             android:layout_below="@id/relativeLayout_QuestionPage12_MJWJContainer"
             android:layout_marginTop="0dp"
             android:scaleType="fitXY"/>

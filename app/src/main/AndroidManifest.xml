@@ -12,7 +12,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
-        <activity android:name=".tmc_explorer1.TmcProfile"></activity>
+        <activity android:name=".tmc_explorer2.questions.LESSON12"></activity>
+        <activity android:name=".tmc_explorer2.questions.LESSON11" />
+        <activity android:name=".tmc_explorer2.questions.LESSON10" />
+        <activity android:name=".tmc_explorer2.questions.LESSON9" />
+        <activity android:name=".tmc_explorer2.questions.LESSON8" />
+        <activity android:name=".tmc_explorer2.questions.LESSON7" />
+        <activity android:name=".tmc_explorer2.questions.LESSON6" />
+        <activity android:name=".tmc_explorer2.questions.LESSON5" />
+        <activity android:name=".tmc_explorer2.questions.LESSON4" />
+        <activity android:name=".tmc_explorer2.questions.LESSON3" />
+        <activity android:name=".tmc_explorer2.questions.LESSON2" />
+        <activity android:name=".tmc_explorer2.questions.LESSON1" />
+        <activity android:name=".application.RegisterPage.RegisterPageParent" android:theme="@style/Theme.TMC_LoginRegister" />
+        <activity android:name=".application.RegisterPage.RegisterPageDate" android:theme="@style/Theme.TMC_LoginRegister" />
+        <activity android:name=".tmc_explorer2.HomeExplorer2" />
+        <activity
+            android:name=".application.HomeApp"
+            android:label="@string/title_activity_home_app"
+            android:theme="@style/Theme.TMC_Explorer.NoActionBar" />
+        <activity android:name=".tmc_explorer1.TmcProfile" />
         <activity android:name=".application.CertificateGenerator" />
         <activity android:name=".tmc_explorer1.questions.LESSON12" />
         <activity android:name=".tmc_explorer1.questions.LESSON11" />
@@ -38,12 +57,24 @@
         <activity android:name=".tmc_explorer1.lessons.Lesson3Read" />
         <activity android:name=".tmc_explorer1.lessons.Lesson2Read" />
         <activity android:name=".tmc_explorer1.lessons.Lesson1Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson1Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson2Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson3Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson4Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson5Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson6Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson7Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson8Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson9Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson10Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson11Read" />
+        <activity android:name=".tmc_explorer2.lessons.Exp2Lesson12Read" />
         <activity
             android:name=".tmc_explorer1.HomeExplorer1"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.TMC_Explorer.NoActionBar" />
-        <activity android:name=".application.RegisterActivity" />
-        <activity android:name=".application.LoginActivity">
+        <activity android:name=".application.RegisterPage.RegisterActivity" android:theme="@style/Theme.TMC_LoginRegister"/>
+        <activity android:name=".application.LoginActivity" android:theme="@style/Theme.TMC_LoginRegister">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
