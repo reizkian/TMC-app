@@ -29,8 +29,8 @@ public class PrivacyPolicyFragment extends Fragment {
         // WebView Privacy Policy
         WebView webViewPrivacyPolicy = root.findViewById(R.id.webview_privacy_policy);
         webViewPrivacyPolicy.setWebViewClient(new WebViewClient());
-        webViewPrivacyPolicy.loadUrl("https://www.privacypolicies.com/live/3a96b097-2db7-4d6e-be14-7f2395073578");
-
+        // webViewPrivacyPolicy.loadUrl("https://www.privacypolicies.com/live/3a96b097-2db7-4d6e-be14-7f2395073578");
+        webViewPrivacyPolicy.loadUrl("https://www.tmcindonesia.org/index.php/privacy");
         return root;
     }
 }

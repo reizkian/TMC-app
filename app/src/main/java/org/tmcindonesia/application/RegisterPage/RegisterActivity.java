@@ -130,7 +130,8 @@ public class RegisterActivity extends AppCompatActivity {
         hyperlink_PrivacyPolicy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.privacypolicies.com/live/3a96b097-2db7-4d6e-be14-7f2395073578")));
+                // startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.privacypolicies.com/live/3a96b097-2db7-4d6e-be14-7f2395073578")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/index.php/privacy")));
             }
         });
 

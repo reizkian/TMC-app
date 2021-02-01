@@ -80,11 +80,10 @@ public class HomeApp extends AppCompatActivity implements NavigationView.OnNavig
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/")));
         }
         if (id == R.id.nav_privacy_policy) {
-            // load fragment
-            loadFragment(new PrivacyPolicyFragment());
-            getSupportActionBar().setTitle("Privacy Policy");
-            // close navigation drawer
-            drawer.closeDrawer(GravityCompat.START);
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/index.php/privacy")));
+        }
+        if(id == R.id.nav_parental_info){
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tmcindonesia.org/index.php/privacy/parental")));
         }
         if (id == R.id.nav_logout){
             AlertDialog.Builder builder = new AlertDialog.Builder(HomeApp.this, R.style.AlertDialogTheme);

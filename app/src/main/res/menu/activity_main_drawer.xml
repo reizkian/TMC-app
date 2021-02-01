@@ -16,6 +16,11 @@
             android:id="@+id/nav_privacy_policy"
             android:icon="@drawable/ic_menu_policy"
             android:title="Privacy Policy"/>
+
+        <item
+            android:id="@+id/nav_parental_info"
+            android:icon="@drawable/ic_parental"
+            android:title="Parental Info"/>
     </group>
 
     <group android:checkableBehavior="single">
