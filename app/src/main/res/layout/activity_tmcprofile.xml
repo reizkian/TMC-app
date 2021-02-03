@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tmc_explorer1.TmcProfile">
+    tools:context=".tmc_Explorer1.TmcProfile">
     <ImageView
         android:id="@+id/imageView_logotmc"
         android:layout_width="wrap_content"

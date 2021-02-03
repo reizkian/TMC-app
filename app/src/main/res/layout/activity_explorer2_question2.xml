@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tmc_explorer2.questions.LESSON2">
+    tools:context=".tmc_Explorer2.questions.LESSON2">
     <RelativeLayout
         android:id="@+id/relativeLayout_ScrollContainer"
         android:layout_width="match_parent"

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.tmcindonesia.R;
-import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
+import org.tmcindonesia.tmc_Explorer1.HomeExplorer1;
 
 
 public class CertificateGenerator extends AppCompatActivity {

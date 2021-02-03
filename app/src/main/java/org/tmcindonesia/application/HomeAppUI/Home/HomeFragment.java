@@ -1,7 +1,6 @@
 package org.tmcindonesia.application.HomeAppUI.Home;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +14,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.card.MaterialCardView;
 
 import org.tmcindonesia.R;
-import org.tmcindonesia.application.LoginActivity;
-import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
-import org.tmcindonesia.tmc_explorer2.HomeExplorer2;
+import org.tmcindonesia.tmc_Explorer1.HomeExplorer1;
+import org.tmcindonesia.tmc_Explorer2.HomeExplorer2;
+import org.tmcindonesia.tmc_SeeAandDo.lessons.SDLesson1Read;
 
 
 public class HomeFragment extends Fragment {
@@ -58,6 +57,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity().getBaseContext(), "Materi \"Se and Do\" sedang dalam tahap pengembangan", Toast.LENGTH_SHORT).show();
+                //startActivity(new Intent(getActivity(), SDLesson1Read.class));
             }
         });
 

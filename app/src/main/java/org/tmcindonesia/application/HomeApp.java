@@ -6,16 +6,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -33,8 +29,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.HomeAppUI.Home.HomeFragment;
-import org.tmcindonesia.application.HomeAppUI.PrivacyPolicy.PrivacyPolicyFragment;
-import org.tmcindonesia.tmc_explorer1.questions.LESSON1;
 
 
 public class HomeApp extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{

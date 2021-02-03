@@ -20,13 +20,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.RegisterPage.RegisterPageDate;
-import org.tmcindonesia.application.RegisterPage.RegisterPageParent;
 import org.tmcindonesia.application.UserInput.UserData;
-import org.tmcindonesia.tmc_explorer1.HomeExplorer1;
 
 public class LoginActivity extends AppCompatActivity {
     Button LoginPage;
