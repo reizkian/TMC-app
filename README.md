@@ -69,6 +69,8 @@ The content directory contains java classes to render PDF file and handling user
 
 ![filestructure-app](./documentation/pictures/filestructure-app.png)
 
+### Resources
+
 **Under the directory 'app/res/'** there are several directory used for rendering the user interface.
 
 The drawable directory contains all the images resources for icon and component available in png format or other vector image format.
