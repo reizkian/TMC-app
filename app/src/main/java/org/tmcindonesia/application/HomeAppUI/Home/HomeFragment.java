@@ -14,9 +14,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.card.MaterialCardView;
 
 import org.tmcindonesia.R;
-import org.tmcindonesia.tmc_Explorer1.HomeExplorer1;
-import org.tmcindonesia.tmc_Explorer2.HomeExplorer2;
-import org.tmcindonesia.tmc_SeeAandDo.lessons.SDLesson1Read;
+import org.tmcindonesia.content.tmc_Explorer1.HomeExplorer1;
+import org.tmcindonesia.content.tmc_Explorer2.HomeExplorer2;
 
 
 public class HomeFragment extends Fragment {
