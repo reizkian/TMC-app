@@ -12,7 +12,7 @@ TMC lessons are true to the Word of God, and written at a level children can und
 
 ![Screenshot](./documentation/pictures/ss_swatches.png)
 
-_Note: This is a repo for building Android Mobile Application. This repo is in **active development**_
+_Note: This repo still in **active development**_
 | Technology Stack |
 | ------------------------------------------------ |
 | [Java](https://www.oracle.com/java/technologies) |
