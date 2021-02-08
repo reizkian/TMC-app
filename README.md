@@ -1,4 +1,4 @@
-# **The Mail Box Club - Indoneisa App**
+# **The Mail Box Club - Indonesia App**
 
 **About The Mail Box Club:** In 1965, George & Laura Eager began [The Mailbox Club](https://mailboxclub.org/history/) as a follow-up ministry to children reached through his assembly programs in rural schools in the Southeast. This wonderful school ministry spanned over 50 years touching the lives of over 1.3 million children and youth! But God had bigger plans and the ministry spread across the country as others saw the value of discipling children and young people through Bible correspondence courses.
 
@@ -21,7 +21,7 @@ _Note: This repo still in **active development**_
 
 ## Development
 
-This is a standard android mobile application developed using [android studio IDE.](developer.android.com/studio) Clone this repo to get the source code and open it using android studio IDE. To get the design resource please open [google drive DataIT TMC Indonesia.](https://drive.google.com/drive/folders/1G-ZICkL-PWgN5b7FrpcNB74Orf2INj6T?usp=sharing)
+This is a standard android mobile application developed using [android studio IDE.](https://developer.android.com/studio) Clone this repo to get the source code and open it using android studio IDE. To get the design resource please open [google drive DataIT TMC Indonesia.](https://drive.google.com/drive/folders/1G-ZICkL-PWgN5b7FrpcNB74Orf2INj6T?usp=sharing)
 
 run the following command in terminal to clone git repository
 
