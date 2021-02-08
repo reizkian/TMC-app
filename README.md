@@ -21,7 +21,7 @@ _Note: This is a repo for building Android Mobile Application. This repo is in *
 
 ## Development
 
-This is a standard android mobile application developed using [android studio IDE.](developer.android.com/studio) Clone this repo to get the source code and open it using android studio IDE. To get the design resource please open [google drive DataIT TMC Indonesia.](https://drive.google.com/drive/folders/1G-ZICkL-PWgN5b7FrpcNB74Orf2INj6T?usp=sharing)
+This is a standard android mobile application developed using [android studio IDE.](https://developer.android.com/studio) Clone this repo to get the source code and open it using android studio IDE. To get the design resource please open [google drive DataIT TMC Indonesia.](https://drive.google.com/drive/folders/1G-ZICkL-PWgN5b7FrpcNB74Orf2INj6T?usp=sharing)
 
 run the following command in terminal to clone git repository
 
