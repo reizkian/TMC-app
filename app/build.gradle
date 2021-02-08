@@ -7,7 +7,7 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
     defaultConfig {
-        applicationId "org.tmcindonesia.tmc_explorer"
+        applicationId "org.tmcindonesia"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 2

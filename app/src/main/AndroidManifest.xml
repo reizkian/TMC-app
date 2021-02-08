@@ -38,7 +38,7 @@
         <activity android:name=".content.tmc_Explorer1.questions.LESSON7" />
         <activity android:name=".content.tmc_Explorer1.questions.LESSON6" />
         <activity android:name=".content.tmc_Explorer1.questions.LESSON5" />
-        <activity android:name=".content.tmc_Explorer1.questions.LESSON4" />content
+        <activity android:name=".content.tmc_Explorer1.questions.LESSON4" />
         <activity android:name=".content.tmc_Explorer1.questions.LESSON3" />
         <activity android:name=".content.tmc_Explorer1.questions.LESSON2" />
         <activity android:name=".content.tmc_Explorer1.questions.LESSON1" />
