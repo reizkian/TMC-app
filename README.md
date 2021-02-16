@@ -15,9 +15,8 @@ TMC lessons are true to the Word of God, and written at a level children can und
 _Note: This repo still in **active development**_
 | Technology Stack |
 | ------------------------------------------------ |
-| [Java](https://www.oracle.com/java/technologies) |
-| [SQLite](https://www.sqlite.org/index.html) |
 | [Firebase](https://firebase.google.com/) |
+| [SQLite](https://www.sqlite.org/index.html) |
 
 ## Development
 
