@@ -127,7 +127,7 @@ public class HomeExplorer2 extends AppCompatActivity {
 //        });
 
         // List View Button
-        listView = findViewById(R.id.listView);
+        listView = findViewById(R.id.listView_exp2);
         // now create an adapter class
         HomeExplorer2.MyAdapter adapter = new HomeExplorer2.MyAdapter(this, mTitle, mDescription, images, mLessonNumber);
         listView.setAdapter(adapter);

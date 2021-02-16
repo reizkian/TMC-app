@@ -16,6 +16,7 @@ import com.google.android.material.card.MaterialCardView;
 import org.tmcindonesia.R;
 import org.tmcindonesia.content.tmc_Explorer1.HomeExplorer1;
 import org.tmcindonesia.content.tmc_Explorer2.HomeExplorer2;
+import org.tmcindonesia.content.tmc_SeeAndDo.HomeSeeAndDo1;
 
 
 public class HomeFragment extends Fragment {
@@ -28,6 +29,16 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        // card SEE AND DO-1
+        MaterialCardView cardSeeAndDo;
+        cardSeeAndDo = root.findViewById(R.id.card_seeanddo1);
+        cardSeeAndDo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getActivity().getBaseContext(), "Materi \"Se and Do\" sedang dalam tahap pengembangan", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), HomeSeeAndDo1.class));
+            }
+        });
 
         // card EXPLORER-1
         MaterialCardView cardExplorer1;
@@ -46,17 +57,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),HomeExplorer2.class));
-            }
-        });
-
-        // card SEE AND DO
-        MaterialCardView cardSeeAndDo;
-        cardSeeAndDo = root.findViewById(R.id.card_seeanddo);
-        cardSeeAndDo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity().getBaseContext(), "Materi \"Se and Do\" sedang dalam tahap pengembangan", Toast.LENGTH_SHORT).show();
-                //startActivity(new Intent(getActivity(), SDLesson1Read.class));
             }
         });
 
