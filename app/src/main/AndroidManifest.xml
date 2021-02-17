@@ -12,8 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
-        <activity android:name=".content.tmc_SeeAndDo.HomeSeeAndDo1"></activity>
-        <activity android:name=".content.tmc_SeeAandDo.lessons.SDLesson1Read" />
+
+        <activity android:name=".content.tmc_SeeAndDo2.HomeSeeAndDo2" />
+        <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson7Read" />
+        <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson6Read" />
+        <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson5Read" />
+        <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson4Read" />
+        <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson3Read" />
+        <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson2Read" />
+        <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson1Read" />
+        <activity android:name=".content.tmc_SeeAndDo1.HomeSeeAndDo1" />
+        <activity android:name=".content.tmc_SeeAndDo1.lessons.SD1Lesson7Read" />
+        <activity android:name=".content.tmc_SeeAndDo1.lessons.SD1Lesson6Read" />
+        <activity android:name=".content.tmc_SeeAndDo1.lessons.SD1Lesson5Read" />
+        <activity android:name=".content.tmc_SeeAndDo1.lessons.SD1Lesson4Read" />
+        <activity android:name=".content.tmc_SeeAndDo1.lessons.SD1Lesson3Read" />
+        <activity android:name=".content.tmc_SeeAndDo1.lessons.SD1Lesson2Read" />
+        <activity android:name=".content.tmc_SeeAndDo1.lessons.SD1Lesson1Read" />
         <activity android:name=".content.tmc_Explorer2.questions.LESSON12" />
         <activity android:name=".content.tmc_Explorer2.questions.LESSON11" />
         <activity android:name=".content.tmc_Explorer2.questions.LESSON10" />

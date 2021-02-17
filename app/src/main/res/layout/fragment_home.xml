@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+<!--        SEE AND DO 1-->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_seeanddo1"
             android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="170dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/card_seeanddo"/>
+                    android:src="@drawable/card_seeanddo1"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -61,12 +61,65 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!--        SEE AND DO 2-->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_seeanddo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_below="@id/card_seeanddo1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/card_seeanddo2a"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Title, secondary and supporting text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lihat dan Lakukan 2"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="@dimen/lesson_title_fontsize"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:text="untuk anak usia 4 - 6 tahun"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/lesson_age_fontsize"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Yesus adalah Juru Selamat kita, dan tinggal di dalam hati kita"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="@dimen/lesson_description_fontsize"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+<!--        EXPLORERS 1-->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_explorer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_below="@id/card_seeanddo1">
+            android:layout_below="@id/card_seeanddo2">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,7 +165,7 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
+<!--        EXPLORER 2-->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_explorer2"
             android:layout_width="wrap_content"
