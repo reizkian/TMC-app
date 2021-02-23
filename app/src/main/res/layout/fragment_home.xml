@@ -76,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="170dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/card_seeanddo2a"/>
+                    android:src="@drawable/card_seeanddo"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
