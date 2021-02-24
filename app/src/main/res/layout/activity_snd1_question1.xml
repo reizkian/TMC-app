@@ -19,7 +19,7 @@
             app:srcCompat="@drawable/ayo_jawab_sd1" />
 
         <RelativeLayout
-            android:id="@+id/relativeLayout_quetionContainer"
+            android:id="@+id/relativeLayout_questionContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/title_ayojawab"
@@ -36,8 +36,7 @@
                     android:id="@+id/textView_question1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1. Darimanakah kayu berasa?"
-                    android:justificationMode="inter_word"
+                    android:text="1. Darimanakah kayu berasal?"
                     android:textSize="20sp"
                     />
                     <RadioGroup
@@ -46,45 +45,26 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_below="@+id/textView_question1">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
                             <RadioButton
                                 android:id="@+id/radioButton_question1_answer_1a"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="18dp"
-                                android:text="rumput"
+                                android:layout_marginTop="10dp"
+                                android:text="rumput "
+                                android:drawableRight="@drawable/xml_grass"
                                 />
-                            <ImageView
-                                android:layout_width="170dp"
-                                android:layout_height="60dp"
-                                android:src="@drawable/sdqp_grass"
-                                android:layout_marginLeft="15dp"
-                                />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="20dp">
                             <RadioButton
-                                android:id="@+id/radioButton_sd1_question1_answer_2a"
+                                android:id="@+id/radioButton_question1_answer_1b"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="40dp"
-                                android:text="pohon"/>
-                            <ImageView
-                                android:layout_width="120dp"
-                                android:layout_height="120dp"
-                                android:src="@drawable/sdqp_tree"
+                                android:layout_marginTop="10dp"
+                                android:text="pohon"
+                                android:drawableRight="@drawable/xml_tree"
                                 />
-                        </LinearLayout>
                     </RadioGroup>
             </RelativeLayout>
 
-            <!--question1-->
+            <!--question2-->
             <RelativeLayout
                 android:id="@+id/relativeLayout_questionContainer2"
                 android:layout_width="match_parent"
@@ -96,7 +76,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="2. Segala sesuatu diciptakan oleh?"
-                    android:justificationMode="inter_word"
                     android:textSize="20sp"
                     />
                 <RadioGroup
@@ -105,43 +84,109 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_below="@+id/textView_question2">
-                    <LinearLayout
+                    <RadioButton
+                        android:id="@+id/radioButton_question2_answer_2a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <RadioButton
-                            android:id="@+id/radioButton_question2_answer_1a"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="18dp"
-                            />
-                        <ImageView
-                            android:layout_width="170dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/sdqp_Tuhan"
-                            android:layout_marginLeft="15dp"
-                            />
-                    </LinearLayout>
-                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:text="Tuhan "
+                        android:drawableRight="@drawable/xml_tuhan"/>
+                    <RadioButton
+                        android:id="@+id/radioButton_question2_answer_2b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="20dp">
-                        <RadioButton
-                            android:id="@+id/radioButton_question2_answer_2a"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="40dp"
-                            android:text="manusia"/>
-                        <ImageView
-                            android:layout_width="120dp"
-                            android:layout_height="100dp"
-                            android:src="@drawable/sdqp_family"
-                            android:layout_marginLeft="10dp"
-                            />
-                    </LinearLayout>
+                        android:layout_marginTop="10dp"
+                        android:text="manusia"
+                        android:drawableRight="@drawable/xml_family"/>
+                </RadioGroup>
+            </RelativeLayout>
+
+            <!--question3-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer"
+                android:layout_below="@+id/relativeLayout_questionContainer2">
+                <TextView
+                    android:id="@+id/textView_question3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. Menurutmu siapa yang paling dikasihi oleh Allah?"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/radioGroup_question3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView_question3">
+                    <RadioButton
+                        android:id="@+id/radioButton_question3_answer_3a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Manusia "
+                        android:drawableRight="@drawable/xml_family"
+                        />
+                    <RadioButton
+                        android:id="@+id/radioButton_question3_answer_3b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Bunga"
+                        android:drawableRight="@drawable/xml_flower"/>
+                </RadioGroup>
+            </RelativeLayout>
+
+            <!--question4-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer"
+                android:layout_below="@+id/relativeLayout_questionContainer3">
+                <TextView
+                    android:id="@+id/textView_question4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. Apakah Allah mengasihi mu?"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/radioGroup_question4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView_question4">
+                    <RadioButton
+                        android:id="@+id/radioButton_question4_answer_4a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="YA"
+                        />
+                    <RadioButton
+                        android:id="@+id/radioButton_question4_answer_4b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="TIDAK"/>
                 </RadioGroup>
             </RelativeLayout>
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_CheckAnswer_QuestionsPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ok"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#fbe087"
+            android:textColor="#000000"
+            android:layout_below="@+id/relativeLayout_questionContainer" />
+
     </RelativeLayout>
 </ScrollView>
