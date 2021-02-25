@@ -1,8 +1,14 @@
 package org.tmcindonesia.content.tmc_SeeAndDo1.questions;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -10,17 +16,29 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import org.tmcindonesia.R;
-import org.tmcindonesia.content.tmc_Explorer2.questions.LESSON1;
+import org.tmcindonesia.application.DataBaseHandler;
+import org.tmcindonesia.application.UserInput.UserData;
+
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
-public class SD1Question1 extends AppCompatActivity {
+public class LESSON1 extends AppCompatActivity {
+    FirebaseFirestore firebaseFirestore;
+    FirebaseAuth firebaseAuth;
     private int correctAnswerQuestionsPage[] = {1, 0, 0, 0};
     private int numberOfCorrectAnswer;
     private TextView question1, question2, question3, question4;
     private RadioGroup radioGroup1, radioGroup2, radioGroup3, radioGroup4;
     private Button okButton;
+    public static final String TAG = "TAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +107,15 @@ public class SD1Question1 extends AppCompatActivity {
                         questionText4,
                 };
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, radioButtonIndexes);
+                writeUserAnswerToDataBase(questionTexts, answerTexts, numberOfCorrectAnswer);
             }
         });
+        LoadPreferences();
     }
 
-    // getNumberOfCorrectAnswer
+
+
+    // get Number Of Correct Answer
     private void checkAnswerQuestionsPage(int[] listOfCorrectAnswer, int[] listOfUserAnswer) {
         // reset number
         numberOfCorrectAnswer = 0;
@@ -105,5 +127,95 @@ public class SD1Question1 extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),
                 String.valueOf(numberOfCorrectAnswer) + " soal kamu jawab dengan benar",
                 Toast.LENGTH_SHORT).show();
+    }
+
+    /** SAVE REFERENCES **/
+    /**the methods bellow are for saving user input and load it again
+    when this page is loaded on screen **/
+
+    private static final String keys[] = {
+            "key_question1",
+            "key_question2",
+            "key_question3",
+            "key_question4"
+    };
+    // back press override save reference
+    @Override
+    public void onBackPressed() {
+        SavePreferences();
+        super.onBackPressed();
+    }
+    // save references
+    private void SavePreferences() {
+        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        // save user answers multiple choices
+        editor.putInt(keys[0], radioGroup1.getCheckedRadioButtonId());
+        editor.putInt(keys[1], radioGroup2.getCheckedRadioButtonId());
+        editor.putInt(keys[2], radioGroup3.getCheckedRadioButtonId());
+        editor.putInt(keys[3], radioGroup4.getCheckedRadioButtonId());
+        editor.commit();
+    }
+    // load references
+    private void LoadPreferences(){
+        SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
+        // reset correct number counter
+        numberOfCorrectAnswer = 0;
+        // load user answers multiple choices
+        radioGroup1.check(sharedPreferences.getInt(keys[0],radioGroup1.getCheckedRadioButtonId()));
+        radioGroup2.check(sharedPreferences.getInt(keys[1],radioGroup1.getCheckedRadioButtonId()));
+        radioGroup3.check(sharedPreferences.getInt(keys[2],radioGroup1.getCheckedRadioButtonId()));
+        radioGroup4.check(sharedPreferences.getInt(keys[3],radioGroup1.getCheckedRadioButtonId()));
+    }
+
+    /** WRITE TO DATABASE - FIREBASE **/
+    /** the methods bellow are for saving user input to
+     remote and local data base **/
+    // get User Name
+    private String getUserNameFromDataBase(Context c){
+        DataBaseHandler dataBaseHandler = new DataBaseHandler(c);
+        SQLiteDatabase database = dataBaseHandler.getReadableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM "+ UserData.UserDetails.TABLE_NAME,null);
+        cursor.moveToFirst();
+        if(cursor.getCount()>0){
+            cursor.moveToPosition(0);
+            String username = cursor.getString(1).toString().trim();
+            return username;
+        }
+        else {
+            return null;
+        }
+    }
+    private void writeUserAnswerToDataBase(String[] textQuestions, String[] textAnswers, int correctAnswer){
+        // get class name
+        String className = this.getClass().getSimpleName().toString();
+        // put question and answer to HashMap
+        Map<String, Object> answers = new HashMap<>();
+        answers.put("Correct answers", correctAnswer);
+        answers.put(textQuestions[0], textAnswers[0]);
+        answers.put(textQuestions[1], textAnswers[1]);
+        answers.put(textQuestions[2], textAnswers[2]);
+        answers.put(textQuestions[3], textAnswers[3]);
+        // instantiate firebase object
+        firebaseFirestore = firebaseFirestore.getInstance();
+        String userName = getUserNameFromDataBase(this);
+        // write data to fireStore
+        firebaseFirestore
+                .collection("TMC SEE and DO ONE USER")
+                .document(userName)
+                .collection(className)
+                .document("Questions Page")
+                .set(answers)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "successfully written!");
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Error writing document", e);
+            }
+        });
     }
 }

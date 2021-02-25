@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMC_Explorer">
-        <activity android:name=".content.tmc_SeeAndDo1.questions.SD1Question1"></activity>
+        <activity android:name=".content.tmc_SeeAndDo1.questions.LESSON1"></activity>
         <activity android:name=".content.tmc_SeeAndDo2.HomeSeeAndDo2" />
         <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson7Read" />
         <activity android:name=".content.tmc_SeeAndDo2.lessons.SD2Lesson6Read" />

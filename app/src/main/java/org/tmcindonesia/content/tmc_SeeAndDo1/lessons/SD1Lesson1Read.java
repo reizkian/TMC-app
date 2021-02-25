@@ -10,8 +10,7 @@ import com.github.barteksc.pdfviewer.PDFView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.tmcindonesia.R;
-import org.tmcindonesia.application.HomeApp;
-import org.tmcindonesia.content.tmc_SeeAndDo1.questions.SD1Question1;
+import org.tmcindonesia.content.tmc_SeeAndDo1.questions.LESSON1;
 
 public class SD1Lesson1Read extends AppCompatActivity {
 
@@ -46,7 +45,7 @@ public class SD1Lesson1Read extends AppCompatActivity {
         fab_goToQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SD1Question1.class));
+                startActivity(new Intent(getApplicationContext(), LESSON1.class));
             }
         });
     }
