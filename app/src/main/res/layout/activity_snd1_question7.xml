@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".content.tmc_SeeAndDo1.questions.LESSON3">
+    <RelativeLayout
+        android:id="@+id/relativeLayout_ScrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    QUESTION CONTAINER-->
+        <ImageView
+            android:id="@+id/title_ayojawab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-80dp"
+            app:srcCompat="@drawable/ayo_jawab_sd1" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_questionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_ayojawab"
+            android:layout_marginTop="-90dp"
+            >
+            <!--question1-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer">
+                <TextView
+                    android:id="@+id/textView_question1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Pilihlah hal-hal yang akan ada di dalam Surga?"
+                    android:textSize="20sp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_question1"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_alkitab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@drawable/xml_alkitab" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox_jesus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/checkbox_alkitab"
+                            android:drawableRight="@drawable/xml_jesus" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox_tomb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/checkbox_jesus"
+                            android:drawableRight="@drawable/xml_tomb" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox_angels"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/checkbox_tomb"
+                            android:drawableRight="@drawable/xml_angels" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_meds"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableRight="@drawable/xml_meds" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox_sun"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/checkbox_meds"
+                            android:drawableRight="@drawable/xml_sun" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox_moon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/checkbox_sun"
+                            android:drawableRight="@drawable/xml_moon" />
+
+                        <CheckBox
+                            android:id="@+id/checkbox_dosa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/checkbox_moon"
+                            android:layout_marginTop="15dp"
+                            android:drawableRight="@drawable/xml_dosa" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!--question2-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer"
+                android:layout_below="@+id/relativeLayout_questionContainer1">
+                <TextView
+                    android:id="@+id/textView_question2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. Hal apa yang paling luar biasa di dalam surga?"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/radioGroup_question2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView_question2">
+                    <RadioButton
+                        android:id="@+id/radioButton_question2_answer_2a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Yesus akan berada disana"
+                        android:drawableRight="@drawable/xml_jesus"/>
+                    <RadioButton
+                        android:id="@+id/radioButton_question2_answer_2b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Aku akan memiliki banyak mainan"
+                        android:drawableRight="@drawable/xml_toys"/>
+                </RadioGroup>
+            </RelativeLayout>
+        </RelativeLayout>
+        <Button
+            android:id="@+id/button_CheckAnswer_QuestionsPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ok"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#fbe087"
+            android:textColor="#000000"
+            android:layout_below="@+id/relativeLayout_questionContainer" />
+    </RelativeLayout>
+</ScrollView>

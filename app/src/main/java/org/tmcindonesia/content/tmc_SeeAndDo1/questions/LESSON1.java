@@ -156,6 +156,7 @@ public class LESSON1 extends AppCompatActivity {
         editor.putInt(keys[3], radioGroup4.getCheckedRadioButtonId());
         editor.commit();
     }
+
     // load references
     private void LoadPreferences(){
         SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
@@ -163,9 +164,9 @@ public class LESSON1 extends AppCompatActivity {
         numberOfCorrectAnswer = 0;
         // load user answers multiple choices
         radioGroup1.check(sharedPreferences.getInt(keys[0],radioGroup1.getCheckedRadioButtonId()));
-        radioGroup2.check(sharedPreferences.getInt(keys[1],radioGroup1.getCheckedRadioButtonId()));
-        radioGroup3.check(sharedPreferences.getInt(keys[2],radioGroup1.getCheckedRadioButtonId()));
-        radioGroup4.check(sharedPreferences.getInt(keys[3],radioGroup1.getCheckedRadioButtonId()));
+        radioGroup2.check(sharedPreferences.getInt(keys[1],radioGroup2.getCheckedRadioButtonId()));
+        radioGroup3.check(sharedPreferences.getInt(keys[2],radioGroup3.getCheckedRadioButtonId()));
+        radioGroup4.check(sharedPreferences.getInt(keys[3],radioGroup4.getCheckedRadioButtonId()));
     }
 
     /** WRITE TO DATABASE - FIREBASE **/

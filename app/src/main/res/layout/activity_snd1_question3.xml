@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".content.tmc_SeeAndDo1.questions.LESSON3">
+    <RelativeLayout
+        android:id="@+id/relativeLayout_ScrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    QUESTION CONTAINER-->
+        <ImageView
+            android:id="@+id/title_ayojawab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-80dp"
+            app:srcCompat="@drawable/ayo_jawab_sd1" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout_questionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_ayojawab"
+            android:layout_marginTop="-90dp"
+            >
+            <!--question1-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer">
+                <TextView
+                    android:id="@+id/textView_question1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Dimanakah Yohanes 3:16 dapat ditemukan?"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/radioGroup_question1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView_question1">
+                    <RadioButton
+                        android:id="@+id/radioButton_question1_answer_1a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Buku dongeng "
+                        android:drawableRight="@drawable/xml_dongeng"
+                        />
+                    <RadioButton
+                        android:id="@+id/radioButton_question1_answer_1b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Alkitab "
+                        android:drawableRight="@drawable/xml_alkitab"
+                        />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <!--question2-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer"
+                android:layout_below="@+id/relativeLayout_questionContainer1">
+                <TextView
+                    android:id="@+id/textView_question2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2. Manakah yang paling Tuhan kasihi?"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/radioGroup_question2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView_question2">
+                    <RadioButton
+                        android:id="@+id/radioButton_question2_answer_2a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Manusia "
+                        android:drawableRight="@drawable/xml_family"/>
+                    <RadioButton
+                        android:id="@+id/radioButton_question2_answer_2b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Pohon"
+                        android:drawableRight="@drawable/xml_tree"/>
+                </RadioGroup>
+            </RelativeLayout>
+
+            <!--question3-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer"
+                android:layout_below="@+id/relativeLayout_questionContainer2">
+                <TextView
+                    android:id="@+id/textView_question3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3. Apakah yang ada di dalam hati Adam dan Hawa setelah mereka tidak taat dengan Tuhan?"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/radioGroup_question3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView_question3">
+                    <RadioButton
+                        android:id="@+id/radioButton_question3_answer_3a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Tuhan "
+                        android:drawableRight="@drawable/xml_tuhan"
+                        />
+                    <RadioButton
+                        android:id="@+id/radioButton_question3_answer_3b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Dosa "
+                        android:drawableRight="@drawable/xml_dosa"/>
+                </RadioGroup>
+            </RelativeLayout>
+
+            <!--question4-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer"
+                android:layout_below="@+id/relativeLayout_questionContainer3">
+                <TextView
+                    android:id="@+id/textView_question4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4. Apakah semua orang dapat percaya Yesus?"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/radioGroup_question4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView_question4">
+                    <RadioButton
+                        android:id="@+id/radioButton_question4_answer_4a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="TIDAK"
+                        />
+                    <RadioButton
+                        android:id="@+id/radioButton_question4_answer_4b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="YA"
+                        />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <!--question5-->
+            <RelativeLayout
+                android:id="@+id/relativeLayout_questionContainer5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/MultipleChoiceContainer"
+                android:layout_below="@+id/relativeLayout_questionContainer4">
+                <TextView
+                    android:id="@+id/textView_question5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5. Jika kamu percaya Yesus sebagai Juru Selamat, apakah yang akan kamu peroleh?"
+                    android:textSize="20sp"
+                    />
+                <RadioGroup
+                    android:id="@+id/radioGroup_question5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_below="@+id/textView_question5">
+                    <RadioButton
+                        android:id="@+id/radioButton_question5_answer_5a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Hidup kekal di dalam Surga"
+                        />
+                    <RadioButton
+                        android:id="@+id/radioButton_question5_answer_5b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Banyak mainan dan baju baru"
+                        />
+                </RadioGroup>
+            </RelativeLayout>
+        </RelativeLayout>
+        <Button
+            android:id="@+id/button_CheckAnswer_QuestionsPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ok"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#fbe087"
+            android:textColor="#000000"
+            android:layout_below="@+id/relativeLayout_questionContainer" />
+    </RelativeLayout>
+</ScrollView>
