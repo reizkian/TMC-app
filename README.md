@@ -8,6 +8,8 @@ TMC lessons are true to the Word of God, and written at a level children can und
 
 **About The App:** online learning platform where children can access the ebooks and write their story about their journey with Jesus.
 
+**click the icon below to download the app**
+
 <a href="https://play.google.com/store/apps/details?id=org.tmcindonesia.tmc_explorer" target="_blank"><img src="./documentation/pictures/google-play.svg" alt="Google Play Button" width="180"></a>
 
 ![Screenshot](./documentation/pictures/ss_swatches.png)
