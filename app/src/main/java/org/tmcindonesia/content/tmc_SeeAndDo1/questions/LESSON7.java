@@ -178,7 +178,7 @@ public class LESSON7 extends AppCompatActivity {
         checkBoxSun.setChecked(sharedPreferences.getBoolean(keys[5],checkBoxSun.isChecked()));
         checkBoxMoon.setChecked(sharedPreferences.getBoolean(keys[6],checkBoxMoon.isChecked()));
         checkBoxDosa.setChecked(sharedPreferences.getBoolean(keys[7],checkBoxDosa.isChecked()));
-        radioGroup2.check(sharedPreferences.getInt(keys[1],radioGroup2.getCheckedRadioButtonId()));
+        radioGroup2.check(sharedPreferences.getInt(keys[8],radioGroup2.getCheckedRadioButtonId()));
     }
 
     /** WRITE TO DATABASE - FIREBASE **/
