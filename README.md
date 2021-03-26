@@ -86,7 +86,7 @@ _TMC-app/app/src/main/res_
 
 _TMC-app/app/src/main/res/drawable_
 
-![drawable-dir](documentation/pictures/drawable_dir.png)
+![drawable-dir](documentation/pictures/drawable_dark_dir.png)
 
 # Code Documentation
 
