@@ -80,7 +80,13 @@ The layout directory contains XML files which specifying "where to render" for a
 
 The value directory contains XML files which specify special parameters used in layout XML files.
 
+_TMC-app/app/src/main/res_
+
 ![filestructure-res](./documentation/pictures/filestructure-res.png)
+
+_TMC-app/app/src/main/res/drawable_
+
+![drawable-dir](documentation/pictures/drawable_dir.png)
 
 # Code Documentation
 
