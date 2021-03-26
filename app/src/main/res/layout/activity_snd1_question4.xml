@@ -186,7 +186,7 @@
                     android:id="@+id/textView_question5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="5. Apa yang harus aku lakukan agar aku diampuni untuk menjadi anak Tuhan?"
+                    android:text="5. Apa yang harus aku lakukan agar aku diampuni untuk menjadi anak Allah?"
                     android:textSize="20sp"
                     />
                 <RadioGroup
@@ -213,6 +213,14 @@
                         />
                 </RadioGroup>
             </RelativeLayout>
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bible_verse_sd1_4"
+                android:layout_marginVertical="30dp"
+                android:layout_below="@+id/relativeLayout_questionContainer5"/>
         </RelativeLayout>
         <Button
             android:id="@+id/button_CheckAnswer_QuestionsPage"

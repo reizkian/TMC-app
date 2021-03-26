@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.DataBaseHandler;
 import org.tmcindonesia.application.UserInput.UserData;
+import org.tmcindonesia.content.tmc_SeeAndDo1.HomeSeeAndDo1;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -116,6 +118,7 @@ public class LESSON4 extends AppCompatActivity {
                 };
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, radioButtonIndexes);
                 writeUserAnswerToDataBase(questionTexts, answerTexts, numberOfCorrectAnswer);
+                startActivity(new Intent(getApplicationContext(), HomeSeeAndDo1.class));
             }
         });
         LoadPreferences();

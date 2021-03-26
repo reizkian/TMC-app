@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -25,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.DataBaseHandler;
 import org.tmcindonesia.application.UserInput.UserData;
+import org.tmcindonesia.content.tmc_SeeAndDo1.HomeSeeAndDo1;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +38,7 @@ public class LESSON7 extends AppCompatActivity {
     private int correctAnswerQuestionsPage[] = {1,1,0,1,0,0,0,0,0};
     private int numberOfCorrectAnswer;
     private TextView question1, question2;
+    private EditText accJesusDate;
     private RadioGroup radioGroup2;
     private Button okButton;
     private CheckBox checkBoxAlkitab, checkBoxJesus, checkBoxTomb, checkBoxAngels;
@@ -63,6 +67,9 @@ public class LESSON7 extends AppCompatActivity {
         // radioGroup
         radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup_question2);
 
+        // editText accept Jesus date
+        accJesusDate = (EditText) findViewById(R.id.editText_DateAcceptedJesus);
+
         //okButton
         okButton = (Button) findViewById(R.id.button_CheckAnswer_QuestionsPage);
         okButton.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +80,8 @@ public class LESSON7 extends AppCompatActivity {
                 String questionText2 = question2.getText().toString().trim();
                 String questionTexts[] = {
                         questionText1,
-                        questionText2
+                        questionText2,
+                        "Accept Jesus Date: "
                 };
                 // get the ID of checked button for a radio group
                 int radioButtonChecked2 = radioGroup2.getCheckedRadioButtonId();
@@ -102,11 +110,13 @@ public class LESSON7 extends AppCompatActivity {
                         checkBoxSun.isChecked()? "Matahari":"-",
                         checkBoxMoon.isChecked()? "Bulan":"-",
                         checkBoxDosa.isChecked()? "Dosa":"-",
-                        answerTextQuestion2
+                        answerTextQuestion2,
+                        accJesusDate.getText().toString().trim()
                 };
                 // check answer
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, indexAnswers);
                 writeUserAnswerToDataBase(questionTexts, textAnswers, numberOfCorrectAnswer);
+                startActivity(new Intent(getApplicationContext(), HomeSeeAndDo1.class));
             }
         });
         LoadPreferences();
@@ -139,7 +149,8 @@ public class LESSON7 extends AppCompatActivity {
             "key_box6",
             "key_box7",
             "key_box8",
-            "key_question2"
+            "key_question2",
+            "key_accJesus"
     };
     // back press override save reference
     @Override
@@ -161,6 +172,7 @@ public class LESSON7 extends AppCompatActivity {
         editor.putBoolean(keys[6], checkBoxMoon.isChecked());
         editor.putBoolean(keys[7], checkBoxDosa.isChecked());
         editor.putInt(keys[8], radioGroup2.getCheckedRadioButtonId());
+        editor.putString(keys[9], accJesusDate.getText().toString().trim());
         editor.commit();
     }
 
@@ -179,6 +191,7 @@ public class LESSON7 extends AppCompatActivity {
         checkBoxMoon.setChecked(sharedPreferences.getBoolean(keys[6],checkBoxMoon.isChecked()));
         checkBoxDosa.setChecked(sharedPreferences.getBoolean(keys[7],checkBoxDosa.isChecked()));
         radioGroup2.check(sharedPreferences.getInt(keys[8],radioGroup2.getCheckedRadioButtonId()));
+        accJesusDate.setText(sharedPreferences.getString(keys[9], accJesusDate.getText().toString().trim()));
     }
 
     /** WRITE TO DATABASE - FIREBASE **/
@@ -216,6 +229,7 @@ public class LESSON7 extends AppCompatActivity {
                 textAnswers[7];
         answers.put(textQuestions[0], compoundAnswerQuestion1);
         answers.put(textQuestions[1], textAnswers[8]);
+        answers.put(textQuestions[2], textAnswers[9]);
         // instantiate firebase object
         firebaseFirestore = firebaseFirestore.getInstance();
         String userName = getUserNameFromDataBase(this);

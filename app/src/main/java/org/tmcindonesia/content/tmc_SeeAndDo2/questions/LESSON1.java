@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,6 +25,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.tmcindonesia.R;
 import org.tmcindonesia.application.DataBaseHandler;
 import org.tmcindonesia.application.UserInput.UserData;
+import org.tmcindonesia.content.tmc_SeeAndDo1.HomeSeeAndDo1;
+import org.tmcindonesia.content.tmc_SeeAndDo2.HomeSeeAndDo2;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +34,7 @@ import java.util.Map;
 public class LESSON1 extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
-    private int correctAnswerQuestionsPage[] = {1, 0, 0, 0, 0};
+    private int correctAnswerQuestionsPage[] = {1, 0, 1, 1, 0};
     private int numberOfCorrectAnswer;
     private TextView question1, question2, question3, question4, question5;
     private RadioGroup radioGroup1, radioGroup2, radioGroup3, radioGroup4, radioGroup5;
@@ -41,7 +44,7 @@ public class LESSON1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_snd2_question5);
+        setContentView(R.layout.activity_snd2_question1);
 
         // radioGroup
         radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup_question1);
@@ -116,6 +119,7 @@ public class LESSON1 extends AppCompatActivity {
                 };
                 checkAnswerQuestionsPage(correctAnswerQuestionsPage, radioButtonIndexes);
                 writeUserAnswerToDataBase(questionTexts, answerTexts, numberOfCorrectAnswer);
+                startActivity(new Intent(getApplicationContext(), HomeSeeAndDo2.class));
             }
         });
         LoadPreferences();
@@ -213,7 +217,7 @@ public class LESSON1 extends AppCompatActivity {
         String userName = getUserNameFromDataBase(this);
         // write data to fireStore
         firebaseFirestore
-                .collection("TMC SEE and DO ONE USER")
+                .collection("TMC SEE and DO TWO USER")
                 .document(userName)
                 .collection(className)
                 .document("Questions Page")

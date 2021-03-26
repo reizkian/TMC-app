@@ -37,8 +37,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/relativeLayout_question1">
+                    android:layout_marginTop="10dp">
                     <TextView
                         android:id="@+id/textView_question1"
                         android:layout_width="wrap_content"
@@ -94,7 +93,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Mereka berdoa kepada Yesus untuk membantu mereka menjadi Ibu"/>
+                        android:text="Mereka berdoa kepada Yesus untuk membantu mereka mencari Ibu"/>
                 </RadioGroup>
             </RelativeLayout>
 
@@ -111,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_marginTop="10dp"
-                    android:text="3. Siapakah yang membantu Ken dan Amy menemukan Ibu?"/>
+                    android:text="3. Siapakah yang membantu Ken dan Amy mencari Ibu?"/>
                 <RadioGroup
                     android:id="@+id/radioGroup_question3"
                     android:layout_width="wrap_content"
@@ -147,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_marginTop="10dp"
-                    android:text="3. Apakah Yesus mendengar saat kita berdoa kepada-Nya"/>
+                    android:text="4. Apakah Yesus mendengar saat kita berdoa kepada-Nya"/>
                 <RadioGroup
                     android:id="@+id/radioGroup_question4"
                     android:layout_width="wrap_content"
@@ -159,13 +158,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Tuhan mengampuni" />
+                        android:text="Ya" />
                     <RadioButton
                         android:id="@+id/radioButton_question4_answer4b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Tuhan tidak mengampuni"
+                        android:text="Tidak"
                         />
                 </RadioGroup>
             </RelativeLayout>
@@ -183,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_marginTop="10dp"
-                    android:text="5. Apakah Yesus terkadang menunggu untuk menjawab doa kita?"/>
+                    android:text="5. Apakah Yesus terkadang membiarkan kita menunggu jawaban doa-doa kita?"/>
                 <RadioGroup
                     android:id="@+id/radioGroup_question5"
                     android:layout_width="wrap_content"
@@ -195,17 +194,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Terus berusaha agar orang tua tidak mengetahui kesalahan kita"
+                        android:text="Ya"
                         />
                     <RadioButton
                         android:id="@+id/radioButton_question5_answer_5b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Memohon pengampunan pada Tuhan, dan kepada orang tua kita"
+                        android:text="Tidak"
                         />
                 </RadioGroup>
             </RelativeLayout>
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bible_verse_sd2_3"
+                android:layout_marginVertical="30dp"
+                android:layout_below="@+id/relativeLayout_questionContainer5"/>
+
         </RelativeLayout>
 
         <Button

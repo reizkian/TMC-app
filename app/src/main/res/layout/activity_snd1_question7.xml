@@ -150,6 +150,14 @@
                         android:drawableRight="@drawable/xml_toys"/>
                 </RadioGroup>
             </RelativeLayout>
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bible_verse_sd1_7"
+                android:layout_marginVertical="30dp"
+                android:layout_below="@+id/relativeLayout_questionContainer2"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -206,7 +214,7 @@
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="20dp"
-                android:text="“Tuhan Yesus yang baik, saya tahu bahwa saya telahberdosa, dan saya benar-benar menyesali dosa-dosasaya. Saya berterima kasih kepada Mu karenaEngkau sangat mengasihiku dan Engkau mati diatas kayu Salib untuk dosa-dosaku. Tolong masuklah ke hatiku dan jadilah Juru Selamatku." />
+                android:text="“Tuhan Yesus yang baik, saya tahu bahwa saya telahberdosa, dan saya benar-benar menyesali dosa-dosasaya. Saya berterima kasih kepada Mu karena Engkau sangat mengasihiku dan Engkau mati diatas kayu Salib untuk dosa-dosaku. Tolong masuklah ke hatiku dan jadilah Juru Selamatku." />
             <TextView
                 android:id="@+id/text5"
                 android:layout_width="wrap_content"
@@ -243,7 +251,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="315dp"
-            android:src="@drawable/exp1_jesuspray"
+            android:src="@drawable/amypray"
             android:layout_below="@id/button_CheckAnswer_QuestionsPage"
             android:layout_marginTop="-85dp"
             android:scaleType="fitXY"/>

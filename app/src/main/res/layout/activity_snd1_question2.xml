@@ -59,8 +59,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Tuhan"
-                        android:drawableRight="@drawable/xml_tuhan"
+                        android:text=""
+                        android:drawableRight="@drawable/xml_allah"
                         />
                 </RadioGroup>
             </RelativeLayout>
@@ -126,8 +126,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Tuhan "
-                        android:drawableRight="@drawable/xml_tuhan"
+                        android:text=""
+                        android:drawableRight="@drawable/xml_allah"
                         />
                     <RadioButton
                         android:id="@+id/radioButton_question3_answer_3b"
@@ -164,7 +164,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Berbuat salah  "
+                        android:text=""
                         android:drawableRight="@drawable/xml_berbuatsalah"
                         />
                     <RadioButton
@@ -172,7 +172,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Berbuat baik  "
+                        android:text=""
                         android:drawableRight="@drawable/xml_berbuatbaik"
                         />
                 </RadioGroup>
@@ -216,6 +216,14 @@
                         />
                 </RadioGroup>
             </RelativeLayout>
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bible_verse_sd1_2"
+                android:layout_marginVertical="30dp"
+                android:layout_below="@+id/relativeLayout_questionContainer5"/>
         </RelativeLayout>
 
         <Button
@@ -228,7 +236,6 @@
             android:layout_marginBottom="30dp"
             android:backgroundTint="#fbe087"
             android:textColor="#000000"
-            android:layout_below="@+id/relativeLayout_questionContainer" />
-
+            android:layout_below="@+id/relativeLayout_questionContainer"/>
     </RelativeLayout>
 </ScrollView>

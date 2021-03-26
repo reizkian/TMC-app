@@ -122,7 +122,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Menyambuhkan orang sakit saja"/>
+                        android:text="Menyembuhkan orang sakit saja"/>
                     <RadioButton
                         android:id="@+id/radioButton_question3_answer_3b"
                         android:layout_width="wrap_content"
@@ -205,6 +205,15 @@
                         />
                 </RadioGroup>
             </RelativeLayout>
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bible_verse_sd2_6"
+                android:layout_marginVertical="30dp"
+                android:layout_below="@+id/relativeLayout_questionContainer5"/>
+
         </RelativeLayout>
 
         <Button

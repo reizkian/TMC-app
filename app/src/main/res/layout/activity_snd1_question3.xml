@@ -111,7 +111,7 @@
                     android:id="@+id/textView_question3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="3. Apakah yang ada di dalam hati Adam dan Hawa setelah mereka tidak taat dengan Tuhan?"
+                    android:text="3. Allah memberi manusia di dunia sebuah kado. Kado apa itu?"
                     android:textSize="20sp"
                     />
                 <RadioGroup
@@ -125,16 +125,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Tuhan "
-                        android:drawableRight="@drawable/xml_tuhan"
+                        android:text="Anak-Nya "
+                        android:drawableRight="@drawable/xml_babyjesus"
                         />
                     <RadioButton
                         android:id="@+id/radioButton_question3_answer_3b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Dosa "
-                        android:drawableRight="@drawable/xml_dosa"/>
+                        android:text="Hadiah yang banhak "
+                        android:drawableRight="@drawable/xml_present"/>
                 </RadioGroup>
             </RelativeLayout>
 
@@ -211,6 +211,15 @@
                         />
                 </RadioGroup>
             </RelativeLayout>
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bible_verse_sd1_3"
+                android:layout_marginVertical="30dp"
+                android:layout_below="@+id/relativeLayout_questionContainer5"/>
+
         </RelativeLayout>
         <Button
             android:id="@+id/button_CheckAnswer_QuestionsPage"

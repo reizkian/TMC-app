@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <!--    QUESTION CONTAINER-->
-        <ImageView1
+        <ImageView
             android:id="@+id/title_ayojawab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -206,6 +206,15 @@
                         android:text="Bertanya pada diriku 'Apakah Tuhan Yesus akan senang jika aku melakukannya?' " />
                 </RadioGroup>
             </RelativeLayout>
+            <ImageView
+                android:layout_width="400dp"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bible_verse_sd2_7"
+                android:layout_marginVertical="30dp"
+                android:layout_below="@+id/relativeLayout_questionContainer5"/>
+
         </RelativeLayout>
 
         <Button
