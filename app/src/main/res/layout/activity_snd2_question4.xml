@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_marginTop="10dp"
-                    android:text="1. Ken dan teman-teman barunnya, Robert dan Jimmy, mereka bersama sama di" />
+                    android:text="1. Ken dan teman-teman barunnya, Robert dan Jimmy, mereka bersama-sama di" />
                 <RadioGroup
                     android:id="@+id/radioGroup_question1"
                     android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Pergi benerang dihari berikutnya"/>
+                        android:text="Pergi berenang dihari berikutnya"/>
                 </RadioGroup>
             </RelativeLayout>
 

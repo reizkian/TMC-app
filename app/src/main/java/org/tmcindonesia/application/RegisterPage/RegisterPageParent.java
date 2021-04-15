@@ -111,8 +111,8 @@ public class RegisterPageParent extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month +1;
-                Log.w("date", "onDateSet: dd/mm/yyy is" + dayOfMonth +"/"+ month +"/"+ year);
-                String date = dayOfMonth +"/"+ month +"/"+ year;
+                Log.w("date", "onDateSet: dd-mm-yyy is" + dayOfMonth +"-"+ month +"-"+ year);
+                String date = dayOfMonth +"-"+ month +"-"+ year;
                 tglLahirAnak.setText(date);
             }
         };
@@ -142,7 +142,6 @@ public class RegisterPageParent extends AppCompatActivity {
                 if (TextUtils.isEmpty(sNoHpWali)){noHPWali.setError("masukan nomer hand phone anda"); return;}
                 if (TextUtils.isEmpty(sKotaWali)){kotaWali.setError("masukan kota asal anda"); return;}
                 if (TextUtils.isEmpty(sProvinsiWali)){provinsiWali.setError("masukan provinsi asal anda"); return;}
-
 
                 // Check User Agreement
                 if(!(checkBoxPrivacyPolicy.isChecked())){
@@ -306,6 +305,7 @@ public class RegisterPageParent extends AppCompatActivity {
                     // write to fire store
                     DocumentReference documentReference = firebaseFirestore.collection("USER PERSONAL DATA").document(userID);
                     Map<String, Object> user  = new HashMap<>();
+                    user.put("_id", userID);
                     user.put("Children Name", sNamaAnak);
                     user.put("Children Birth Date", sTglLahir);
                     user.put("Children Institution", sInstitusi);

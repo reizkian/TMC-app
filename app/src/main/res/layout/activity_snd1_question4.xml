@@ -36,7 +36,7 @@
                     android:id="@+id/textView_question1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1. Apa yang ada di dalam hari Ken sehingga ia tidak mentaati ayahnya?"
+                    android:text="1. Apa yang ada di dalam hati Ken sehingga ia tidak mentaati Ayahnya?"
                     android:textSize="20sp"
                     />
                 <RadioGroup

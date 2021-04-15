@@ -214,7 +214,7 @@
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="20dp"
-                android:text="“Tuhan Yesus yang baik, saya tahu bahwa saya telahberdosa, dan saya benar-benar menyesali dosa-dosasaya. Saya berterima kasih kepada Mu karena Engkau sangat mengasihiku dan Engkau mati diatas kayu Salib untuk dosa-dosaku. Tolong masuklah ke hatiku dan jadilah Juru Selamatku." />
+                android:text="“Tuhan Yesus yang baik, saya tahu bahwa saya telah berdosa, dan saya benar-benar menyesali dosa-dosa saya. Saya berterima kasih kepada Mu karena Engkau sangat mengasihiku dan Engkau mati diatas kayu Salib untuk dosa-dosaku. Tolong masuklah ke hatiku dan jadilah Juru Selamatku." />
             <TextView
                 android:id="@+id/text5"
                 android:layout_width="wrap_content"

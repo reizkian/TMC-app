@@ -20,6 +20,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
@@ -207,18 +209,38 @@ public class LESSON1 extends AppCompatActivity {
         // put question and answer to HashMap
         Map<String, Object> answers = new HashMap<>();
         answers.put("Correct answers", correctAnswer);
-        answers.put(textQuestions[0], textAnswers[0]);
-        answers.put(textQuestions[1], textAnswers[1]);
-        answers.put(textQuestions[2], textAnswers[2]);
-        answers.put(textQuestions[3], textAnswers[3]);
-        answers.put(textQuestions[4], textAnswers[4]);
+        answers.put(textQuestions[0].replace(".",""), textAnswers[0]);
+        answers.put(textQuestions[1].replace(".",""), textAnswers[1]);
+        answers.put(textQuestions[2].replace(".",""), textAnswers[2]);
+        answers.put(textQuestions[3].replace(".",""), textAnswers[3]);
+        answers.put(textQuestions[4].replace(".",""), textAnswers[4]);
         // instantiate firebase object
         firebaseFirestore = firebaseFirestore.getInstance();
         String userName = getUserNameFromDataBase(this);
         // write data to fireStore
+        // _id displayName email
+        firebaseAuth = firebaseAuth.getInstance();
+        String userID = firebaseAuth.getCurrentUser().getUid();
+        String userEmail = firebaseAuth.getCurrentUser().getEmail();
+        Map<String, Object> user  = new HashMap<>();
+        user.put("_id", userID);
+        user.put("Email", userEmail);
+        user.put("Name", userName);
+        firebaseFirestore.collection("TMC SEE and DO TWO USER").document(userID).set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "successfully written!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(TAG, "Error writing document", e);
+            }
+        });
+
         firebaseFirestore
                 .collection("TMC SEE and DO TWO USER")
-                .document(userName)
+                .document(userID)
                 .collection(className)
                 .document("Questions Page")
                 .set(answers)
@@ -233,5 +255,30 @@ public class LESSON1 extends AppCompatActivity {
                 Log.w(TAG, "Error writing document", e);
             }
         });
+
+        // write to realtime database
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference realtimeDatabase = firebaseDatabase.getReference();
+        realtimeDatabase.child("__collections__")
+                .child("TMC SEE and DO TWO USER")
+                .child(userID)
+                .setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d(TAG, "successfully write to realtime database!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e(TAG, "Error writing document", e);
+            }
+        });
+        realtimeDatabase.child("__collections__")
+                .child("TMC SEE and DO TWO USER")
+                .child(userID)
+                .child("__collections__")
+                .child(className)
+                .child("Questions Page")
+                .setValue(answers);
     }
 }

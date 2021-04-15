@@ -51,7 +51,7 @@ public class RegisterPageDate extends AppCompatActivity {
                 currentYear = calendar.get(Calendar.YEAR);
                 int month = calendar.get(Calendar.MONDAY);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
-                Log.w("date", "calendar: "+String.valueOf(year)+"/"+String.valueOf(month)+"/"+String.valueOf(day));
+                Log.w("date", "calendar: "+String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(day));
                 DatePickerDialog dialog = new DatePickerDialog(
                         RegisterPageDate.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
@@ -66,8 +66,8 @@ public class RegisterPageDate extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month +1;
-                Log.w("date", "onDateSet: dd/mm/yyy is" + dayOfMonth +"/"+ month +"/"+ year);
-                String date = dayOfMonth +"/"+ month +"/"+ year;
+                Log.w("date", "onDateSet: dd-mm-yyy is" + dayOfMonth +"-"+ month +"-"+ year);
+                String date = dayOfMonth +"-"+ month +"-"+ year;
                 userYear = year;
                 editTextUserBirthDate.setText(date);
             }

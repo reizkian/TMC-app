@@ -186,7 +186,7 @@
                     android:id="@+id/textView_question5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="5. Jika aku memiliki hidup yang kekal, diama aku akan tinggal?"
+                    android:text="5. Jika aku memiliki hidup yang kekal, di mana aku akan tinggal?"
                     android:textSize="20sp"
                     />
                 <RadioGroup

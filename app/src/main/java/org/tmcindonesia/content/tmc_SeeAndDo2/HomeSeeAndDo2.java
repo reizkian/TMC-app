@@ -39,7 +39,7 @@ public class HomeSeeAndDo2 extends AppCompatActivity {
                     "Malam yang gelap",
                     "Frisky kuda poni yang melarikan diri",
                     "Sedih dan Senang",
-                    "Jam dindin rusak"
+                    "Jam dinding rusak"
             };
 
     String mDescription[] =

@@ -22,6 +22,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
@@ -227,16 +229,20 @@ public class LESSON7 extends AppCompatActivity {
                 textAnswers[5]+", "+
                 textAnswers[6]+", "+
                 textAnswers[7];
-        answers.put(textQuestions[0], compoundAnswerQuestion1);
-        answers.put(textQuestions[1], textAnswers[8]);
-        answers.put(textQuestions[2], textAnswers[9]);
+        answers.put(textQuestions[0].replace(".",""), compoundAnswerQuestion1);
+        answers.put(textQuestions[1].replace(".",""), textAnswers[8]);
+        answers.put(textQuestions[2].replace(".",""), textAnswers[9]);
         // instantiate firebase object
         firebaseFirestore = firebaseFirestore.getInstance();
         String userName = getUserNameFromDataBase(this);
         // write data to fireStore
+        // _id displayName email
+        firebaseAuth = firebaseAuth.getInstance();
+        String userID = firebaseAuth.getCurrentUser().getUid();
+        String userEmail = firebaseAuth.getCurrentUser().getEmail();
         firebaseFirestore
                 .collection("TMC SEE and DO ONE USER")
-                .document(userName)
+                .document(userID)
                 .collection(className)
                 .document("Questions Page")
                 .set(answers)
@@ -251,5 +257,15 @@ public class LESSON7 extends AppCompatActivity {
                 Log.w(TAG, "Error writing document", e);
             }
         });
+        // write to realtime database
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference realtimeDatabase = firebaseDatabase.getReference();
+        realtimeDatabase.child("__collections__")
+                .child("TMC SEE and DO ONE USER")
+                .child(userID)
+                .child("__collections__")
+                .child(className)
+                .child("Questions Page")
+                .setValue(answers);
     }
 }

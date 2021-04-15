@@ -21,6 +21,9 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.application.UserInput.AcceptJesusAnswer;
@@ -34,6 +37,7 @@ import java.util.Map;
 
 public class LESSON8 extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
+    FirebaseAuth firebaseAuth;
     String userName;
     public static final String TAG = "TAG";
     // variable TREASURE HUNT
@@ -222,22 +226,26 @@ public class LESSON8 extends AppCompatActivity {
         // question page answers
         Map<String, Object> answers_qp = new HashMap<>();
         answers_qp.put("Correct answer", acceptJesusAnswer.getNumberOfCorrectAnswer());
-        answers_qp.put(questions_ayojawab[0],acceptJesusAnswer.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[1],acceptJesusAnswer.getUserAnswerAyoJawab2());
-        answers_qp.put(questions_ayojawab[2],acceptJesusAnswer.getUserAnswerAyoJawab3());
-        answers_qp.put(questions_ayojawab[3],acceptJesusAnswer.getUserAnswerAyoJawab4());
-        answers_qp.put(questions_ayojawab[4],acceptJesusAnswer.getUserAnswerAyoJawab5());
+        answers_qp.put(questions_ayojawab[0].replace(".",""),acceptJesusAnswer.getUserAnswerAyoJawab1());
+        answers_qp.put(questions_ayojawab[1].replace(".",""),acceptJesusAnswer.getUserAnswerAyoJawab2());
+        answers_qp.put(questions_ayojawab[2].replace(".",""),acceptJesusAnswer.getUserAnswerAyoJawab3());
+        answers_qp.put(questions_ayojawab[3].replace(".",""),acceptJesusAnswer.getUserAnswerAyoJawab4());
+        answers_qp.put(questions_ayojawab[4].replace(".",""),acceptJesusAnswer.getUserAnswerAyoJawab5());
         // my journey with Jesus answers
         Map<String, Object> answers_mjwj = new HashMap<>();
-        answers_mjwj.put("Correct answer", acceptJesusAnswer.getNumberOfCorrectAnswer());
-        answers_mjwj.put(getResources().getString(R.string.MJWJ8_question1), acceptJesusAnswer.getUserAnswerMJWJ1());
-        answers_mjwj.put(getResources().getString(R.string.MJWJ8_question2), acceptJesusAnswer.getUserAnswerMJWJ2());
-        answers_mjwj.put("Setelah belajar materi ini, Aku menerima Yesus sebagai Juru selamat pada tanggal", acceptJesusAnswer.getUserAnswerMJWJ3());
+        answers_mjwj.put("Correct answer".replace(".",""), acceptJesusAnswer.getNumberOfCorrectAnswer());
+        answers_mjwj.put(getResources().getString(R.string.MJWJ8_question1).replace(".",""), acceptJesusAnswer.getUserAnswerMJWJ1());
+        answers_mjwj.put(getResources().getString(R.string.MJWJ8_question2).replace(".",""), acceptJesusAnswer.getUserAnswerMJWJ2());
+        answers_mjwj.put("Setelah belajar materi ini, Aku menerima Yesus sebagai Juru selamat pada tanggal".replace(".",""), acceptJesusAnswer.getUserAnswerMJWJ3());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
         userName = getUserNameFromDataBase(this);
         // write on Fire Base
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("Questions Page")
+        // _id displayName email
+        firebaseAuth = firebaseAuth.getInstance();
+        String userID = firebaseAuth.getCurrentUser().getUid();
+        String userEmail = firebaseAuth.getCurrentUser().getEmail();
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection(className).document("Questions Page")
                 .set(answers_qp)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -250,7 +258,7 @@ public class LESSON8 extends AppCompatActivity {
                 Log.w(TAG, "Error writing document", e);
             }
         });
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("My Journey With Jesus")
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection(className).document("My Journey With Jesus")
                 .set(answers_mjwj)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -264,6 +272,28 @@ public class LESSON8 extends AppCompatActivity {
                         Log.w(TAG, "Error writing document", e);
                     }
                 });
+        // write to realtime database
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference realtimeDatabase = firebaseDatabase.getReference();
+        realtimeDatabase.child("__collections__")
+                .child("TMC EXPLORER ONE USER")
+                .child(userID)
+                .child("__collections__")
+                .child(className)
+                .child("My Journey With Jesus")
+                .setValue(answers_qp).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e(TAG, "Error writing document", e);
+            }
+        });
+        realtimeDatabase.child("__collections__")
+                .child("TMC EXPLORER ONE USER")
+                .child(userID)
+                .child("__collections__")
+                .child(className)
+                .child("Questions Page")
+                .setValue(answers_mjwj);
     }
 
     // SAVE PREFERENCE WHEN BACK BACK PRESSED and ACTIVITY GET DESTROYED

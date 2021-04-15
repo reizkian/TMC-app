@@ -21,6 +21,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.tmcindonesia.R;
@@ -34,6 +37,7 @@ import java.util.Map;
 
 public class LESSON12 extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
+    FirebaseAuth firebaseAuth;
     String userName;
     public static final String TAG = "TAG";
     // variable QUESTIONS PAGE
@@ -195,20 +199,24 @@ public class LESSON12 extends AppCompatActivity {
         // question page answers
         Map<String, Object> answers_qp = new HashMap<>();
         answers_qp.put("Correct answer", testimonyAnswer.getNumberOfCorrectAnswer());
-        answers_qp.put(questions_ayojawab[0],testimonyAnswer.getUserAnswerAyoJawab1());
-        answers_qp.put(questions_ayojawab[1],testimonyAnswer.getUserAnswerAyoJawab2());
-        answers_qp.put(questions_ayojawab[2],testimonyAnswer.getUserAnswerAyoJawab3());
-        answers_qp.put(questions_ayojawab[3],testimonyAnswer.getUserAnswerAyoJawab4());
-        answers_qp.put(questions_ayojawab[4],testimonyAnswer.getUserAnswerAyoJawab5());
+        answers_qp.put(questions_ayojawab[0].replace(".",""),testimonyAnswer.getUserAnswerAyoJawab1());
+        answers_qp.put(questions_ayojawab[1].replace(".",""),testimonyAnswer.getUserAnswerAyoJawab2());
+        answers_qp.put(questions_ayojawab[2].replace(".",""),testimonyAnswer.getUserAnswerAyoJawab3());
+        answers_qp.put(questions_ayojawab[3].replace(".",""),testimonyAnswer.getUserAnswerAyoJawab4());
+        answers_qp.put(questions_ayojawab[4].replace(".",""),testimonyAnswer.getUserAnswerAyoJawab5());
         // my journey with Jesus answers
         Map<String, Object> answers_mjwj = new HashMap<>();
-        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question1), testimonyAnswer.getUserAnswerMJWJ1());
-        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question2), testimonyAnswer.getUserAnswerMJWJ2());
+        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question1).replace(".",""), testimonyAnswer.getUserAnswerMJWJ1());
+        answers_mjwj.put(getResources().getString(R.string.MJWJ1_question2).replace(".",""), testimonyAnswer.getUserAnswerMJWJ2());
         // create fire base instance
         firebaseFirestore = FirebaseFirestore.getInstance();
         userName = getUserNameFromDataBase(this);
         // write on Fire Base
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("Questions Page")
+        // _id displayName email
+        firebaseAuth = firebaseAuth.getInstance();
+        String userID = firebaseAuth.getCurrentUser().getUid();
+        String userEmail = firebaseAuth.getCurrentUser().getEmail();
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection(className).document("Questions Page")
                 .set(answers_qp)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -221,7 +229,7 @@ public class LESSON12 extends AppCompatActivity {
                 Log.w(TAG, "Error writing document", e);
             }
         });
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("My Journey With Jesus")
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection(className).document("My Journey With Jesus")
                 .set(answers_mjwj)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -235,6 +243,28 @@ public class LESSON12 extends AppCompatActivity {
                         Log.w(TAG, "Error writing document", e);
                     }
                 });
+        // write to realtime database
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference realtimeDatabase = firebaseDatabase.getReference();
+        realtimeDatabase.child("__collections__")
+                .child("TMC EXPLORER ONE USER")
+                .child(userID)
+                .child("__collections__")
+                .child(className)
+                .child("My Journey With Jesus")
+                .setValue(answers_qp).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e(TAG, "Error writing document", e);
+            }
+        });
+        realtimeDatabase.child("__collections__")
+                .child("TMC EXPLORER ONE USER")
+                .child(userID)
+                .child("__collections__")
+                .child(className)
+                .child("Questions Page")
+                .setValue(answers_mjwj);
     }
 
     // SAVE PREFERENCE WHEN BACK BACK PRESSED and ACTIVITY GET DESTROYED

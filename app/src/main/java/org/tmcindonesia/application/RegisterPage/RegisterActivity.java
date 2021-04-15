@@ -104,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                 int year = calendar.get(Calendar.YEAR);
                 int month = calendar.get(Calendar.MONDAY);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
-                Log.w("date", "calendar: "+String.valueOf(year)+"/"+String.valueOf(month)+"/"+String.valueOf(day));
+                Log.w("date", "calendar: "+String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(day));
                 DatePickerDialog dialog = new DatePickerDialog(
                         RegisterActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
@@ -120,8 +120,8 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month +1;
-                Log.w("date", "onDateSet: dd/mm/yyy is" + dayOfMonth +"/"+ month +"/"+ year);
-                String date = dayOfMonth +"/"+ month +"/"+ year;
+                Log.w("date", "onDateSet: dd-mm-yyy is" + dayOfMonth +"-"+ month +"-"+ year);
+                String date = dayOfMonth +"-"+ month +"-"+ year;
                 dateBirthRegister.setText(date);
             }
         };
@@ -216,6 +216,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 userID = firebaseAuth.getCurrentUser().getUid();
                                 DocumentReference documentReference = firebaseFirestore.collection("USER PERSONAL DATA").document(userID);
                                 Map<String, Object> user  = new HashMap<>();
+                                user.put("_id", userID);
                                 user.put("Name",username);
                                 user.put("Phone",phonenumber);
                                 user.put("Birth Date", datebirth);
