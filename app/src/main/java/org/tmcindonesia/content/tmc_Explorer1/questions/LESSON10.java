@@ -213,7 +213,7 @@ public class LESSON10 extends AppCompatActivity {
         String userID = firebaseAuth.getCurrentUser().getUid();
         String userEmail = firebaseAuth.getCurrentUser().getEmail();
         // write on Fire Base
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("Questions Page")
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection(className).document("Questions Page")
                 .set(answers_qp)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -226,7 +226,7 @@ public class LESSON10 extends AppCompatActivity {
                 Log.w(TAG, "Error writing document", e);
             }
         });
-        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userName).collection(className).document("My Journey With Jesus")
+        firebaseFirestore.collection("TMC EXPLORER ONE USER").document(userID).collection(className).document("My Journey With Jesus")
                 .set(answers_mjwj)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

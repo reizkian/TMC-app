@@ -219,7 +219,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 user.put("_id", userID);
                                 user.put("Name",username);
                                 user.put("Phone",phonenumber);
-                                user.put("Birth Date", datebirth);
+                                user.put("BirthDate", datebirth);
                                 user.put("Email",email);
                                 user.put("City", city);
                                 user.put("Province", province);

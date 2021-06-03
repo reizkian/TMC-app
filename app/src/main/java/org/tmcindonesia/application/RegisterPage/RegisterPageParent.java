@@ -306,13 +306,13 @@ public class RegisterPageParent extends AppCompatActivity {
                     DocumentReference documentReference = firebaseFirestore.collection("USER PERSONAL DATA").document(userID);
                     Map<String, Object> user  = new HashMap<>();
                     user.put("_id", userID);
-                    user.put("Children Name", sNamaAnak);
-                    user.put("Children Birth Date", sTglLahir);
-                    user.put("Children Institution", sInstitusi);
-                    user.put("Parent Name", sNamaWali);
-                    user.put("Parent Email", sEmailWali);
+                    user.put("ChildrenName", sNamaAnak);
+                    user.put("ChildrenBirthDate", sTglLahir);
+                    user.put("ChildrenInstitution", sInstitusi);
+                    user.put("ParentName", sNamaWali);
+                    user.put("ParentEmail", sEmailWali);
                     user.put("Relation",sHubunganWali);
-                    user.put("Parent Phone Number", sNoHpWali);
+                    user.put("ParentPhoneNumber", sNoHpWali);
                     user.put("City", sKotaWali);
                     user.put("Province/State",sProvinsiWali);
                     documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {

@@ -10,9 +10,9 @@ android {
         applicationId "org.tmcindonesia"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 5
+        versionCode 6
         // version name MAJOR.MINOR.PATCH (changeAPI.Features/Functionality.BugFixed)
-        versionName "1.2.2"
+        versionName "1.2.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
